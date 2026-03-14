@@ -41,7 +41,7 @@ async function login(page: Page) {
     // Wait for form elements with detailed failure info
     try {
       await page.waitForSelector('#user_id', { timeout: 20000 });
-    } catch (e) {
+    } catch {
       const currentUrl = page.url();
       const content = await page.content();
       console.error(`[Finuts] #user_id not found on ${currentUrl}.`);
@@ -70,7 +70,7 @@ async function login(page: Page) {
         page.waitForNavigation({ waitUntil: 'load', timeout: 30000 }),
         page.waitForSelector('a:has-text("로그아웃"), .btn-logout, text="로그아웃"', { timeout: 30000 })
       ]);
-    } catch (e) {
+    } catch {
       console.warn('[Finuts] Login post-action wait timed out, checking final state...');
     }
 
