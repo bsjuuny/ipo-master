@@ -1,0 +1,57 @@
+name: Update Data & Deploy to Cafe24
+
+on:
+  schedule:
+    - cron: '0 1 * * 1-5'  # 매일 오전 10시 KST (UTC+9), 평일만
+  workflow_dispatch:
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run scrapers
+        run: npm run data:update
+        env:
+          NEXT_PUBLIC_FINUTS_EMAIL: ${{ secrets.FINUTS_EMAIL }}
+          NEXT_PUBLIC_FINUTS_PASSWORD: ${{ secrets.FINUTS_PASSWORD }}
+
+      - name: Commit data to git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/ipo_list.json public/data/ipo_history.json
+          git diff --staged --quiet && echo "No data changes" && exit 0
+          git pull --rebase origin main
+          git add public/data/ipo_list.json public/data/ipo_history.json
+          git commit -m "data: update ipo intelligence [skip ci]"
+          git push
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cafe24 via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.CAFE24_FTP_SERVER }}
+          username: ${{ secrets.CAFE24_FTP_USERNAME }}
+          password: ${{ secrets.CAFE24_FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /ipomaster/
+          dangerous-clean-slate: false
