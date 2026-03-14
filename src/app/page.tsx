@@ -181,8 +181,24 @@ export default function HomePage() {
                         </div>
                         
                         <div className="space-y-1">
-                          <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">공모가</span>
-                          <p className={`text-xl font-black ${isPast ? 'text-slate-600' : ''}`}>{ipo.offeringPrice.toLocaleString()} KRW</p>
+                          {ipo.offeringPrice > 0 ? (
+                            <>
+                              <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">확정 공모가</span>
+                              <p className={`text-xl font-black ${isPast ? 'text-slate-600' : ''}`}>{ipo.offeringPrice.toLocaleString()} 원</p>
+                            </>
+                          ) : ipo.priceBandLow ? (
+                            <>
+                              <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">희망 공모가</span>
+                              <p className={`text-xl font-black ${isPast ? 'text-slate-600' : 'text-slate-300'}`}>
+                                {ipo.priceBandLow.toLocaleString()}{ipo.priceBandHigh && ipo.priceBandHigh !== ipo.priceBandLow ? ` ~ ${ipo.priceBandHigh.toLocaleString()}` : ''} 원
+                              </p>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">공모가</span>
+                              <p className="text-xl font-black text-slate-600">미정</p>
+                            </>
+                          )}
                         </div>
 
                         <div className="space-y-1">

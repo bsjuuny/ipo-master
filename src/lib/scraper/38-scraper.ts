@@ -36,11 +36,19 @@ export async function scrape38Schedule(): Promise<Partial<IPO>[]> {
           .replace(/\(구\..*\)/g, ''); // Remove (구.xxx) 
         
         const subscriptionRange = $(cols[1]).text().trim();
-        const offeringPriceRaw = $(cols[2]).text().trim();
-        
+        const confirmedPriceRaw = $(cols[2]).text().trim();
+        const priceBandRaw = $(cols[3]).text().trim();
+
         const [subscriptionStart, subscriptionEnd] = subscriptionRange.split('~').map(s => s.trim());
-        const offeringPrice = parseInt(offeringPriceRaw.replace(/[^0-9]/g, '')) || 0;
-        
+
+        // col[2]: confirmed offering price (shows '-' when not yet set)
+        const offeringPrice = parseInt(confirmedPriceRaw.replace(/[^0-9]/g, '')) || 0;
+
+        // col[3]: price band range "5,300~6,000"
+        const bandParts = priceBandRaw.split('~').map(s => parseInt(s.replace(/[^0-9]/g, '')) || 0);
+        const priceBandLow = bandParts[0] || undefined;
+        const priceBandHigh = bandParts[1] || bandParts[0] || undefined;
+
         const detailLink = $(cols[0]).find('a').attr('href');
         const id = detailLink ? new URLSearchParams(detailLink.split('?')[1]).get('no') || `${page}-${i}` : `${page}-${i}`;
 
@@ -51,6 +59,8 @@ export async function scrape38Schedule(): Promise<Partial<IPO>[]> {
             subscriptionStart,
             subscriptionEnd,
             offeringPrice,
+            priceBandLow,
+            priceBandHigh,
             status: 'active',
             updatedAt: new Date().toISOString()
           });
@@ -151,6 +161,16 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
     const ceo = cleanValue("대표자");
     const headOffice = cleanValue("본점소재지");
 
+    // Confirmed offering price from detail page
+    const confirmedPriceRaw = cleanValue("확정공모가").replace(/[^0-9,]/g, '').replace(/,/g, '');
+    const confirmedOfferingPrice = parseInt(confirmedPriceRaw) || 0;
+
+    // Price band from detail page
+    const priceBandRaw = cleanValue("희망공모가액");
+    const bandParts = priceBandRaw.split('~').map(s => parseInt(s.replace(/[^0-9]/g, '')) || 0);
+    const detailPriceBandLow = bandParts[0] || undefined;
+    const detailPriceBandHigh = bandParts[1] || bandParts[0] || undefined;
+
     // Financials with regex for cleaning
     const extractFinancial = (label: string) => {
       const val = exactCell(label).next('td').text();
@@ -197,7 +217,10 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
       lockupRatio,
       investmentPoints,
       riskFactors,
-      aiVerdict
+      aiVerdict,
+      ...(confirmedOfferingPrice > 0 && { offeringPrice: confirmedOfferingPrice }),
+      ...(detailPriceBandLow && { priceBandLow: detailPriceBandLow }),
+      ...(detailPriceBandHigh && { priceBandHigh: detailPriceBandHigh }),
     };
   } catch (error) {
     console.error(`Error scraping 38 detail for id ${id}:`, error);
