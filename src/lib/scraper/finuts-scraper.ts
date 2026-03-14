@@ -19,40 +19,72 @@ async function login(page: Page) {
   }
 
   try {
-    console.log('[Finuts] Navigating to login page...');
-    await page.goto(LOGIN_PAGE_URL, { waitUntil: 'networkidle' });
+    const navigateWithRetry = async (url: string, retries = 2) => {
+      for (let i = 0; i < retries; i++) {
+        try {
+          console.log(`[Finuts] Navigating to ${url} (Attempt ${i + 1})...`);
+          return await page.goto(url, { waitUntil: 'load', timeout: 45000 });
+        } catch (e) {
+          if (i === retries - 1) throw e;
+          console.warn(`[Finuts] Navigation failed, retrying in 2s...`);
+          await page.waitForTimeout(2000);
+        }
+      }
+    };
 
-    // Wait for form elements
-    await page.waitForSelector('#user_id');
-    await page.waitForSelector('#user_pwd');
+    await navigateWithRetry(LOGIN_PAGE_URL);
+
+    // Diagnostic logging
+    const title = await page.title();
+    console.log(`[Finuts] Page Title: "${title}"`);
+
+    // Wait for form elements with detailed failure info
+    try {
+      await page.waitForSelector('#user_id', { timeout: 20000 });
+    } catch (e) {
+      const currentUrl = page.url();
+      const content = await page.content();
+      console.error(`[Finuts] #user_id not found on ${currentUrl}.`);
+      console.log(`[Finuts] Page Title: "${title}"`);
+      console.log('[Finuts] Page Content Snippet:', content.substring(0, 1000));
+      
+      if (content.includes('Cloudflare') || content.includes('_captcha')) {
+        console.error('[Finuts] Anti-bot (Cloudflare/Captcha) detected!');
+      }
+      return false;
+    }
+
+    await page.waitForSelector('#user_pwd', { timeout: 10000 });
 
     // Fill login form
     await page.fill('#user_id', email);
     await page.fill('#user_pwd', password);
     
     console.log('[Finuts] Submitting login form via #btn_login...');
-    // Click login button and wait for navigation
-    await Promise.all([
-      page.waitForNavigation({ waitUntil: 'networkidle' }),
-      page.click('#btn_login') 
-    ]);
+    // Click login button and wait for navigation or state change
+    await page.click('#btn_login');
+    
+    // Wait for either navigation or success UI
+    try {
+      await Promise.race([
+        page.waitForNavigation({ waitUntil: 'load', timeout: 30000 }),
+        page.waitForSelector('a:has-text("로그아웃"), .btn-logout, text="로그아웃"', { timeout: 30000 })
+      ]);
+    } catch (e) {
+      console.warn('[Finuts] Login post-action wait timed out, checking final state...');
+    }
 
-    console.log('[Finuts] Post-login URL:', page.url());
-    // Check if login was successful
-    const content = await page.content();
-    if (content.includes('로그아웃') || content.includes('마이페이지')) {
-      console.log('[Finuts] Login successful (detected by UI).');
+    const postLoginUrl = page.url();
+    const finalContent = await page.content();
+    console.log('[Finuts] Post-login URL:', postLoginUrl);
+    
+    // Final verification
+    if (finalContent.includes('로그아웃') || finalContent.includes('마이페이지') || postLoginUrl.includes('index.php')) {
+      console.log('[Finuts] Login successful.');
       return true;
     }
 
-    // Fallback check: try to go to list and see if we are still on login
-    await page.goto(LIST_URL, { waitUntil: 'networkidle' });
-    if (!page.url().includes('login.php')) {
-      console.log('[Finuts] Login confirmed by accessing protected page.');
-      return true;
-    }
-
-    console.error('[Finuts] Login failed.');
+    console.error('[Finuts] Login failed. Final URL:', postLoginUrl);
     return false;
   } catch (error) {
     console.error('[Finuts] Error during login:', error);
@@ -109,7 +141,7 @@ export async function scrapeFinutsCompetition(): Promise<Map<string, Partial<IPO
       return competitionMap;
     }
 
-    const items = listData.data.map((entry: any) => ({
+    const items = listData.data.map((entry: { ENT_NM: string; IPO_SN: string }) => ({
       name: entry.ENT_NM,
       detailUrl: `${FINUTS_BASE_URL}/html/ipo/ipoView.php?ipo_sn=${entry.IPO_SN}`
     }));
@@ -127,7 +159,8 @@ export async function scrapeFinutsCompetition(): Promise<Map<string, Partial<IPO
         const loginRequiredVisible = await page.locator('text="로그인 후 열람"').isVisible();
 
         if (!logoutExists || loginRequiredVisible || page.url().includes('login.php')) {
-          console.error(`[Finuts] Session not active for ${item.name}. (Logout button found: ${logoutExists}, Login text visible: ${loginRequiredVisible})`);
+          console.error(`[Finuts] Session inactive for ${item.name}. (Url: ${page.url()}, Logout: ${logoutExists}, LoginReq: ${loginRequiredVisible})`);
+          console.log(`[Finuts] Current Page Title: "${await page.title()}"`);
           console.log('[Finuts] Attempting re-login...');
           const reLoggedIn = await login(page);
           if (!reLoggedIn) {

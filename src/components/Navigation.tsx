@@ -11,7 +11,6 @@ interface NavItem {
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   const navItems: NavItem[] = [
     { label: '대시보드', href: '/' },

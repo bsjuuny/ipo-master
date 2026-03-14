@@ -4,11 +4,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   BarChart3, 
   TrendingUp, 
-  PieChart, 
   ArrowUpRight, 
   ArrowDownRight, 
   Search, 
-  Filter,
   Activity,
   Award,
   Zap,
@@ -73,9 +71,9 @@ export default function AnalysisPage() {
     if (joined.length === 0) return null;
 
     const brackets = [
-      { label: 'High (>1000:1)', filter: (j: any) => j.competition > 1000 },
-      { label: 'Mid (500-1000:1)', filter: (j: any) => j.competition > 500 && j.competition <= 1000 },
-      { label: 'Low (<500:1)', filter: (j: any) => j.competition <= 500 && j.competition > 0 },
+      { label: 'High (>1000:1)', filter: (j: { competition: number }) => j.competition > 1000 },
+      { label: 'Mid (500-1000:1)', filter: (j: { competition: number }) => j.competition > 500 && j.competition <= 1000 },
+      { label: 'Low (<500:1)', filter: (j: { competition: number }) => j.competition <= 500 && j.competition > 0 },
     ];
 
     return brackets.map(b => {

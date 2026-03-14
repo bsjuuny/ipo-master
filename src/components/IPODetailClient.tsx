@@ -79,7 +79,7 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
             <h2 className="text-xl font-black text-white uppercase tracking-tight">AI Master Verdict</h2>
           </div>
           <p className="text-2xl md:text-3xl font-bold text-slate-200 leading-tight">
-            "{ipo.aiVerdict || '분석 데이터를 수집 중입니다. 잠시만 기다려 주세요.'}"
+            &quot;{ipo.aiVerdict || '분석 데이터를 수집 중입니다. 잠시만 기다려 주세요.'}&quot;
           </p>
         </div>
       </section>

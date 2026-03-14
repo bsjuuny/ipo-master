@@ -1,5 +1,5 @@
 import { BrokerCompetition } from '@/types/ipo';
-import { TrendingUp, Users, Target } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 
 interface CompetitionTableProps {
   data: BrokerCompetition[];

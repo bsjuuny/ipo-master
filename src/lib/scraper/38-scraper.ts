@@ -30,7 +30,7 @@ export async function scrape38Schedule(): Promise<Partial<IPO>[]> {
         if (cols.length < 5) return;
 
         // Clean company name more aggressively
-        let companyName = $(cols[0]).text().trim()
+        const companyName = $(cols[0]).text().trim()
           .replace('(유가)', '')
           .replace('(코스닥)', '')
           .replace(/\(구\..*\)/g, ''); // Remove (구.xxx) 

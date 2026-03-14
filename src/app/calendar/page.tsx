@@ -170,7 +170,7 @@ export default function CalendarPage() {
             스케줄링 중...
           </div>
         ) : Object.keys(groupedEvents).length > 0 ? (
-          Object.entries(groupedEvents).map(([date, dateEvents], groupIdx) => (
+          Object.entries(groupedEvents).map(([date, dateEvents]) => (
             <div key={date} className="relative group">
               {/* Date Header */}
               <div className="sticky top-28 z-20 mb-8 md:text-center">
