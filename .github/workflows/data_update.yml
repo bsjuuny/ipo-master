@@ -2,7 +2,7 @@ name: Update Data & Deploy to Cafe24
 
 on:
   schedule:
-    - cron: '0 1 * * 1-5'  # 매일 오전 10시 KST (UTC+9), 평일만
+    - cron: '16 19 * * 0-4'  # 평일 오전 4:16 KST (UTC+9 → 전날 19:16 UTC)
   workflow_dispatch:
 
 jobs:
