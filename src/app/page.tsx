@@ -10,6 +10,7 @@ export default function HomePage() {
   const [ipos, setIpos] = useState<IPO[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/data/ipo_list.json`)
@@ -59,6 +60,11 @@ export default function HomePage() {
         });
 
         setIpos(sortedData);
+        if (data[0]?.updatedAt) {
+          setUpdatedAt(new Date(data[0].updatedAt).toLocaleString('ko-KR', {
+            month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+          }));
+        }
       })
       .catch(err => console.error(err))
       .finally(() => setLoading(false));
@@ -96,6 +102,11 @@ export default function HomePage() {
             </span>
             실시간 인텔리전스
           </div>
+          {updatedAt && (
+            <p className="text-[11px] text-slate-600 font-medium">
+              마지막 업데이트 {updatedAt} · 매 평일 오전 4:16 자동 수집
+            </p>
+          )}
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9]">
             데이터 기반 <br />
             <span className="premium-gradient-text">공모주 투자.</span>
