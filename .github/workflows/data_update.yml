@@ -52,5 +52,5 @@ jobs:
           username: ${{ secrets.CAFE24_FTP_USERNAME }}
           password: ${{ secrets.CAFE24_FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /ipomaster/
+          server-dir: /www/ipomaster/
           dangerous-clean-slate: false
