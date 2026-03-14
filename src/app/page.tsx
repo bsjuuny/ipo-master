@@ -104,7 +104,7 @@ export default function HomePage() {
           </div>
           {updatedAt && (
             <p className="text-[11px] text-slate-600 font-medium">
-              마지막 업데이트 {updatedAt} · 매 평일 오전 4:16 자동 수집
+              마지막 업데이트 {updatedAt} · 평일 오전 자동 수집
             </p>
           )}
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9]">

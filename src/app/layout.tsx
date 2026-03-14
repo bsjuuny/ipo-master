@@ -33,7 +33,7 @@ export default function RootLayout({
         <footer className="mt-20 border-t border-white/5 py-8 px-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-600 font-medium">
             <span className="font-black uppercase tracking-widest premium-gradient-text opacity-40">IPO Master</span>
-            <span>데이터는 매일 평일 오전 4:16에 자동 수집됩니다. 투자 판단의 참고 자료로만 활용하세요.</span>
+            <span>데이터는 평일 오전 자동 수집됩니다. 투자 판단의 참고 자료로만 활용하세요.</span>
           </div>
         </footer>
       </body>
