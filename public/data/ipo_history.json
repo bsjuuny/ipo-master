@@ -1,0 +1,353 @@
+[
+  {
+    "companyName": "한패스",
+    "listingDate": "2026/03/25",
+    "offeringPrice": 19000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "아이엠바이오로직스",
+    "listingDate": "2026/03/20",
+    "offeringPrice": 26000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "카나프테라퓨틱스",
+    "listingDate": "2026/03/16",
+    "offeringPrice": 20000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "액스비스",
+    "listingDate": "2026/03/09",
+    "offeringPrice": 11500,
+    "openingPrice": 46000,
+    "closingPrice": 46000,
+    "openingReturn": 300,
+    "closingReturn": 300
+  },
+  {
+    "companyName": "에스팀",
+    "listingDate": "2026/03/06",
+    "offeringPrice": 8500,
+    "openingPrice": 30650,
+    "closingPrice": 34000,
+    "openingReturn": 260.59,
+    "closingReturn": 300
+  },
+  {
+    "companyName": "케이뱅크",
+    "listingDate": "2026/03/05",
+    "offeringPrice": 8300,
+    "openingPrice": 9000,
+    "closingPrice": 8330,
+    "openingReturn": 8.43,
+    "closingReturn": 0.36
+  },
+  {
+    "companyName": "덕양에너젠",
+    "listingDate": "2026/01/30",
+    "offeringPrice": 10000,
+    "openingPrice": 21050,
+    "closingPrice": 34850,
+    "openingReturn": 110.5,
+    "closingReturn": 248.5
+  },
+  {
+    "companyName": "삼성스팩13호",
+    "listingDate": "2026/01/21",
+    "offeringPrice": 2000,
+    "openingPrice": 4890,
+    "closingPrice": 7200,
+    "openingReturn": 144.5,
+    "closingReturn": 260
+  },
+  {
+    "companyName": "세미파이브",
+    "listingDate": "2025/12/29",
+    "offeringPrice": 24000,
+    "openingPrice": 47170,
+    "closingPrice": 27650,
+    "openingReturn": 96.54,
+    "closingReturn": 15.21
+  },
+  {
+    "companyName": "리브스메드",
+    "listingDate": "2025/12/24",
+    "offeringPrice": 55000,
+    "openingPrice": 66000,
+    "closingPrice": 49600,
+    "openingReturn": 20,
+    "closingReturn": -9.82
+  },
+  {
+    "companyName": "미래에셋비전스팩10호",
+    "listingDate": "2025/12/23",
+    "offeringPrice": 2000,
+    "openingPrice": 5050,
+    "closingPrice": 1991,
+    "openingReturn": 152.5,
+    "closingReturn": -0.45
+  },
+  {
+    "companyName": "하나스팩36호",
+    "listingDate": "2025/12/22",
+    "offeringPrice": 2000,
+    "openingPrice": 3000,
+    "closingPrice": 1977,
+    "openingReturn": 50,
+    "closingReturn": -1.15
+  },
+  {
+    "companyName": "삼진식품",
+    "listingDate": "2025/12/22",
+    "offeringPrice": 7600,
+    "openingPrice": 22900,
+    "closingPrice": 19210,
+    "openingReturn": 201.32,
+    "closingReturn": 152.76
+  },
+  {
+    "companyName": "미래에셋비전스팩11호",
+    "listingDate": "2025/12/22",
+    "offeringPrice": 2000,
+    "openingPrice": 3900,
+    "closingPrice": 2210,
+    "openingReturn": 95,
+    "closingReturn": 10.5
+  },
+  {
+    "companyName": "IBKS스팩25호",
+    "listingDate": "2025/12/19",
+    "offeringPrice": 2000,
+    "openingPrice": 4838,
+    "closingPrice": 2715,
+    "openingReturn": 141.9,
+    "closingReturn": 35.75
+  },
+  {
+    "companyName": "알지노믹스",
+    "listingDate": "2025/12/18",
+    "offeringPrice": 22500,
+    "openingPrice": 90000,
+    "closingPrice": 90000,
+    "openingReturn": 300,
+    "closingReturn": 300
+  },
+  {
+    "companyName": "나라스페이스테크놀로지",
+    "listingDate": "2025/12/17",
+    "offeringPrice": 16500,
+    "openingPrice": 34000,
+    "closingPrice": 27150,
+    "openingReturn": 106.06,
+    "closingReturn": 64.55
+  },
+  {
+    "companyName": "아크릴",
+    "listingDate": "2025/12/16",
+    "offeringPrice": 19500,
+    "openingPrice": 45900,
+    "closingPrice": 67000,
+    "openingReturn": 135.38,
+    "closingReturn": 243.59
+  },
+  {
+    "companyName": "메리츠스팩1호",
+    "listingDate": "2025/12/15",
+    "offeringPrice": 2000,
+    "openingPrice": 3000,
+    "closingPrice": 2045,
+    "openingReturn": 50,
+    "closingReturn": 2.25
+  },
+  {
+    "companyName": "티엠씨",
+    "listingDate": "2025/12/15",
+    "offeringPrice": 9300,
+    "openingPrice": 22550,
+    "closingPrice": 16770,
+    "openingReturn": 142.47,
+    "closingReturn": 80.32
+  },
+  {
+    "companyName": "쿼드메디슨",
+    "listingDate": "2025/12/12",
+    "offeringPrice": 15000,
+    "openingPrice": 23950,
+    "closingPrice": 17630,
+    "openingReturn": 59.67,
+    "closingReturn": 17.53
+  },
+  {
+    "companyName": "교보스팩19호",
+    "listingDate": "2025/12/12",
+    "offeringPrice": 2000,
+    "openingPrice": 4525,
+    "closingPrice": 2030,
+    "openingReturn": 126.25,
+    "closingReturn": 1.5
+  },
+  {
+    "companyName": "키움히어로스팩1호",
+    "listingDate": "2025/12/12",
+    "offeringPrice": 2000,
+    "openingPrice": 3010,
+    "closingPrice": 1986,
+    "openingReturn": 50.5,
+    "closingReturn": -0.7
+  },
+  {
+    "companyName": "이지스",
+    "listingDate": "2025/12/11",
+    "offeringPrice": 15000,
+    "openingPrice": 32000,
+    "closingPrice": 20500,
+    "openingReturn": 113.33,
+    "closingReturn": 36.67
+  },
+  {
+    "companyName": "유진스팩12호",
+    "listingDate": "2025/12/11",
+    "offeringPrice": 2000,
+    "openingPrice": 3015,
+    "closingPrice": 1985,
+    "openingReturn": 50.75,
+    "closingReturn": -0.75
+  },
+  {
+    "companyName": "페스카로",
+    "listingDate": "2025/12/10",
+    "offeringPrice": 15500,
+    "openingPrice": 45000,
+    "closingPrice": 27100,
+    "openingReturn": 190.32,
+    "closingReturn": 74.84
+  },
+  {
+    "companyName": "테라뷰홀딩스",
+    "listingDate": "2025/12/09",
+    "offeringPrice": 8000,
+    "openingPrice": 12000,
+    "closingPrice": 16000,
+    "openingReturn": 50,
+    "closingReturn": 100
+  },
+  {
+    "companyName": "NH스팩32호",
+    "listingDate": "2025/12/05",
+    "offeringPrice": 2000,
+    "openingPrice": 4915,
+    "closingPrice": 3840,
+    "openingReturn": 145.75,
+    "closingReturn": 92
+  },
+  {
+    "companyName": "에임드바이오",
+    "listingDate": "2025/12/04",
+    "offeringPrice": 11000,
+    "openingPrice": 44000,
+    "closingPrice": 44000,
+    "openingReturn": 300,
+    "closingReturn": 300
+  },
+  {
+    "companyName": "미래에셋비전스팩9호",
+    "listingDate": "2025/12/01",
+    "offeringPrice": 2000,
+    "openingPrice": 4500,
+    "closingPrice": 3335,
+    "openingReturn": 125,
+    "closingReturn": 66.75
+  },
+  {
+    "companyName": "삼성스팩12호",
+    "listingDate": "2025/11/28",
+    "offeringPrice": 2000,
+    "openingPrice": 4330,
+    "closingPrice": 3030,
+    "openingReturn": 116.5,
+    "closingReturn": 51.5
+  },
+  {
+    "companyName": "아로마티카",
+    "listingDate": "2025/11/27",
+    "offeringPrice": 8000,
+    "openingPrice": 27500,
+    "closingPrice": 19920,
+    "openingReturn": 243.75,
+    "closingReturn": 149
+  },
+  {
+    "companyName": "미래에셋비전스팩8호",
+    "listingDate": "2025/11/27",
+    "offeringPrice": 2000,
+    "openingPrice": 3365,
+    "closingPrice": 1982,
+    "openingReturn": 68.25,
+    "closingReturn": -0.9
+  },
+  {
+    "companyName": "신영스팩11호",
+    "listingDate": "2025/11/24",
+    "offeringPrice": 2000,
+    "openingPrice": 3300,
+    "closingPrice": 2005,
+    "openingReturn": 65,
+    "closingReturn": 0.25
+  },
+  {
+    "companyName": "비츠로넥스텍",
+    "listingDate": "2025/11/21",
+    "offeringPrice": 6900,
+    "openingPrice": 12500,
+    "closingPrice": 12810,
+    "openingReturn": 81.16,
+    "closingReturn": 85.65
+  },
+  {
+    "companyName": "비엔케이스팩3호",
+    "listingDate": "2025/11/21",
+    "offeringPrice": 2000,
+    "openingPrice": 2980,
+    "closingPrice": 2100,
+    "openingReturn": 49,
+    "closingReturn": 5
+  },
+  {
+    "companyName": "씨엠티엑스",
+    "listingDate": "2025/11/20",
+    "offeringPrice": 60500,
+    "openingPrice": 152000,
+    "closingPrice": 131600,
+    "openingReturn": 151.24,
+    "closingReturn": 117.52
+  },
+  {
+    "companyName": "더핑크퐁컴퍼니",
+    "listingDate": "2025/11/18",
+    "offeringPrice": 38000,
+    "openingPrice": 58000,
+    "closingPrice": 41550,
+    "openingReturn": 52.63,
+    "closingReturn": 9.34
+  },
+  {
+    "companyName": "그린광학",
+    "listingDate": "2025/11/17",
+    "offeringPrice": 16000,
+    "openingPrice": 54000,
+    "closingPrice": 22850,
+    "openingReturn": 237.5,
+    "closingReturn": 42.81
+  }
+]

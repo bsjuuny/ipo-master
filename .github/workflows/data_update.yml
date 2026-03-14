@@ -36,10 +36,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add public/data/ipo_list.json public/data/ipo_history.json
           git diff --staged --quiet && echo "No data changes" && exit 0
-          git pull --rebase origin main
-          git add public/data/ipo_list.json public/data/ipo_history.json
           git commit -m "data: update ipo intelligence [skip ci]"
           git push
 

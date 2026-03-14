@@ -118,32 +118,32 @@ export default function AnalysisPage() {
             <TrendingUp className="h-4 w-4 text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-black text-white">+{stats?.avgOpeningReturn.toFixed(1)}</span>
-            <span className="text-blue-400 font-bold">%</span>
+            <span className="text-4xl font-black text-rose-400">+{stats?.avgOpeningReturn.toFixed(1)}</span>
+            <span className="text-rose-400 font-bold">%</span>
           </div>
           <p className="text-xs text-slate-500 font-medium">최근 {stats?.totalCount}개 종목 기준</p>
         </div>
 
-        <div className="glass-morphism p-8 space-y-2 group hover:border-emerald-500/30 transition-all">
+        <div className="glass-morphism p-8 space-y-2 group hover:border-rose-500/30 transition-all">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase">공모 성공 승률</span>
-            <Award className="h-4 w-4 text-emerald-400 opacity-50 group-hover:opacity-100 transition-opacity" />
+            <Award className="h-4 w-4 text-rose-400 opacity-50 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-black text-white">{stats?.winRate.toFixed(1)}</span>
-            <span className="text-emerald-400 font-bold">%</span>
+            <span className="text-4xl font-black text-rose-400">{stats?.winRate.toFixed(1)}</span>
+            <span className="text-rose-400 font-bold">%</span>
           </div>
           <p className="text-xs text-slate-500 font-medium">공모가 상회 종목 비중</p>
         </div>
 
-        <div className="glass-morphism p-8 space-y-2 group hover:border-indigo-500/30 transition-all">
+        <div className="glass-morphism p-8 space-y-2 group hover:border-rose-500/30 transition-all">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase">최고 수익 종목</span>
-            <Zap className="h-4 w-4 text-indigo-400 opacity-50 group-hover:opacity-100 transition-opacity" />
+            <Zap className="h-4 w-4 text-rose-400 opacity-50 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-black text-white truncate">{stats?.bestPerformer?.companyName}</span>
-            <span className="text-2xl font-black text-indigo-400">+{stats?.bestPerformer?.openingReturn}%</span>
+            <span className="text-2xl font-black text-rose-400">+{stats?.bestPerformer?.openingReturn}%</span>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ export default function AnalysisPage() {
             <span className="text-4xl font-black text-white">{stats?.totalCount}</span>
             <span className="text-slate-400 font-bold">SET</span>
           </div>
-          <p className="text-xs text-slate-500 font-medium">실시간 업데이트 반영</p>
+          <p className="text-xs text-slate-500 font-medium">업데이트 반영</p>
         </div>
       </div>
 
@@ -252,7 +252,7 @@ export default function AnalysisPage() {
                   </td>
                   <td className="px-8 py-6 text-right font-bold text-white tracking-widest">{item.closingPrice.toLocaleString()}</td>
                   <td className="px-8 py-6 text-right">
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${item.closingReturn >= item.openingReturn ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}`}>
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${item.closingReturn >= item.openingReturn ? 'bg-rose-500/10 text-rose-400' : 'bg-blue-500/10 text-blue-400'}`}>
                       {item.closingReturn >= item.openingReturn ? '상승 마감' : '하락 마감'}
                     </span>
                   </td>

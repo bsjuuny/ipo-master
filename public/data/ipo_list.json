@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "2278",
+    "companyName": "코스모로보틱스",
+    "subscriptionStart": "2026.04.09",
+    "subscriptionEnd": "04.10",
+    "offeringPrice": 0,
+    "priceBandLow": 5300,
+    "priceBandHigh": 6000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:08.717Z",
+    "competitionData": [
+      {
+        "brokerName": "유진",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "NH",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "유안타",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "의료용 기기 제조업",
+    "ceo": "오주영",
+    "headOffice": "서울특별시 구로구 디지털로31길 20 (구로동, 에이스테크노타워5차) 801-1호",
+    "sales": "7,019 (백만원)",
+    "netIncome": "-11,982 (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "의료용 기기 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2282",
+    "companyName": "키움히어로스팩2호",
+    "subscriptionStart": "2026.04.06",
+    "subscriptionEnd": "04.07",
+    "offeringPrice": 0,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:08.809Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "박정근",
+    "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower) 8층",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2281",
+    "companyName": "채비",
+    "subscriptionStart": "2026.04.01",
+    "subscriptionEnd": "04.02",
+    "offeringPrice": 0,
+    "priceBandLow": 12300,
+    "priceBandHigh": 15300,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:08.865Z",
+    "competitionData": [
+      {
+        "brokerName": "KB",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "삼성",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "대신",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "하나",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "기타 발전기 및 전기변환장치 제조업",
+    "ceo": "정민교",
+    "headOffice": "대구광역시 달성군 유가읍 테크노순환로7길 25",
+    "sales": "85,082 (백만원)",
+    "netIncome": "-54,495 (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "기타 발전기 및 전기변환장치 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2275",
+    "companyName": "인벤테라",
+    "subscriptionStart": "2026.03.23",
+    "subscriptionEnd": "03.24",
+    "offeringPrice": 0,
+    "priceBandLow": 12100,
+    "priceBandHigh": 16600,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.041Z",
+    "competitionData": [
+      {
+        "brokerName": "NH",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "유진",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "의학 및 약학 연구개발업",
+    "ceo": "신태현",
+    "headOffice": "서울 서초구 서초대로 111, 2층 (방배동,제이에스빌딩)",
+    "sales": "- (백만원)",
+    "netIncome": "-6,043 (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "의학 및 약학 연구개발업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2279",
+    "companyName": "교보스팩20호",
+    "subscriptionStart": "2026.03.23",
+    "subscriptionEnd": "03.24",
+    "offeringPrice": 0,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.128Z",
+    "sector": "기타 금융업",
+    "ceo": "김서호",
+    "headOffice": "서울특별시 영등포구 의사당대로 97, 17층",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "기타 금융업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2270",
+    "companyName": "리센스메디컬",
+    "subscriptionStart": "2026.03.19",
+    "subscriptionEnd": "03.20",
+    "offeringPrice": 0,
+    "priceBandLow": 9000,
+    "priceBandHigh": 11000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.295Z",
+    "competitionData": [
+      {
+        "brokerName": "한국",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "KB",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "그외 기타 의료용 기기 제조업",
+    "ceo": "김건호",
+    "headOffice": "울산 울주군 언양읍 유니스트길 50, 110동 301-1호",
+    "sales": "6,259 (백만원)",
+    "netIncome": "-7,844 (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그외 기타 의료용 기기 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2280",
+    "companyName": "신한스팩17호",
+    "subscriptionStart": "2026.03.19",
+    "subscriptionEnd": "03.20",
+    "offeringPrice": 0,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.378Z",
+    "sector": "금융 지원 서비스업",
+    "ceo": "이효상",
+    "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2277",
+    "companyName": "NH스팩33호",
+    "subscriptionStart": "2026.03.17",
+    "subscriptionEnd": "03.18",
+    "offeringPrice": 0,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.461Z",
+    "sector": "금융 지원 서비스업",
+    "ceo": "남강욱",
+    "headOffice": "서울특별시 영등포구 여의대로 108 (여의도동, 파크원)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2274",
+    "companyName": "메쥬",
+    "subscriptionStart": "2026.03.16",
+    "subscriptionEnd": "03.17",
+    "offeringPrice": 21600,
+    "priceBandLow": 16700,
+    "priceBandHigh": 21600,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.602Z",
+    "competitionData": [
+      {
+        "brokerName": "신한",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "전기식 진단 및 요법 기기 제조업",
+    "ceo": "박정환",
+    "headOffice": "강원특별자치도 원주시 지정면 기업도시로 200 808호(가곡리, 의료기기종합지원센터)",
+    "sales": "2,366 (백만원)",
+    "netIncome": "-7,074 (백만원)",
+    "institutionalCompetition": "1108.93:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "전기식 진단 및 요법 기기 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2276",
+    "companyName": "한패스",
+    "subscriptionStart": "2026.03.16",
+    "subscriptionEnd": "03.17",
+    "offeringPrice": 19000,
+    "priceBandLow": 17000,
+    "priceBandHigh": 19000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.735Z",
+    "competitionData": [
+      {
+        "brokerName": "한국",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      },
+      {
+        "brokerName": "대신",
+        "competitionRate": "청약 전",
+        "equalAllocation": "청약 전",
+        "proportionalAllocation": "청약 전"
+      }
+    ],
+    "totalCompetition": "청약 전",
+    "sector": "그 외 기타 분류 안된 금융업",
+    "ceo": "김경훈",
+    "headOffice": "서울특별시 성동구 아차산로 92 4층 (성수동2가, 광명타워)",
+    "sales": "55,015 (백만원)",
+    "netIncome": "4,641 (백만원)",
+    "institutionalCompetition": "1172.59:1",
+    "lockupRatio": "27.43%",
+    "investmentPoints": [
+      "그 외 기타 분류 안된 금융업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2272",
+    "companyName": "아이엠바이오로직스",
+    "subscriptionStart": "2026.03.11",
+    "subscriptionEnd": "03.12",
+    "offeringPrice": 26000,
+    "priceBandLow": 19000,
+    "priceBandHigh": 26000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:09.908Z",
+    "competitionData": [
+      {
+        "brokerName": "한국",
+        "competitionRate": "3631.61:1",
+        "equalAllocation": "0.42주",
+        "proportionalAllocation": "3631.61:1"
+      },
+      {
+        "brokerName": "신한",
+        "competitionRate": "3561.58:1",
+        "equalAllocation": "0.44주",
+        "proportionalAllocation": "3561.58:1"
+      }
+    ],
+    "totalCompetition": "3631.61:1",
+    "sector": "연구개발업",
+    "ceo": "하경식",
+    "headOffice": "경기도 수원시 영통구 창룡대로 260 10,11층(이의동, 광교센트럴비즈타워)",
+    "sales": "27,594 (백만원)",
+    "netIncome": "-11,884 (백만원)",
+    "institutionalCompetition": "839.23:1",
+    "lockupRatio": "76.01%",
+    "investmentPoints": [
+      "연구개발업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2269",
+    "companyName": "카나프테라퓨틱스",
+    "subscriptionStart": "2026.03.05",
+    "subscriptionEnd": "03.06",
+    "offeringPrice": 20000,
+    "priceBandLow": 16000,
+    "priceBandHigh": 20000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.056Z",
+    "competitionData": [
+      {
+        "brokerName": "한국",
+        "competitionRate": "3797.58:1",
+        "equalAllocation": "0.54주",
+        "proportionalAllocation": "3797.58:1"
+      }
+    ],
+    "totalCompetition": "3797.58:1",
+    "sector": "자연과학 및 공학 연구개발업",
+    "ceo": "이병철",
+    "headOffice": "서울특별시 용산구 이태원로55가길 3 3~5층 (한남동, 골든너겟)",
+    "sales": "4,252 (백만원)",
+    "netIncome": "-28,271 (백만원)",
+    "institutionalCompetition": "962.10:1",
+    "lockupRatio": "76.10%",
+    "investmentPoints": [
+      "자연과학 및 공학 연구개발업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2268",
+    "companyName": "액스비스",
+    "subscriptionStart": "2026.02.23",
+    "subscriptionEnd": "02.24",
+    "offeringPrice": 11500,
+    "priceBandLow": 10100,
+    "priceBandHigh": 11500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.172Z",
+    "competitionData": [
+      {
+        "brokerName": "미래",
+        "competitionRate": "5422.12:1",
+        "equalAllocation": "0.48주",
+        "proportionalAllocation": "5422.12:1"
+      }
+    ],
+    "totalCompetition": "5422.12:1",
+    "sector": "전자 응용 절삭기계 제조업",
+    "ceo": "김명진",
+    "headOffice": "대전광역시 유성구 테크노1로 57 (관평동, 액스비스)",
+    "sales": "55,660 (백만원)",
+    "netIncome": "3,185 (백만원)",
+    "institutionalCompetition": "1124.21:1",
+    "lockupRatio": "75.70%",
+    "investmentPoints": [
+      "전자 응용 절삭기계 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2273",
+    "companyName": "에스팀",
+    "subscriptionStart": "2026.02.23",
+    "subscriptionEnd": "02.24",
+    "offeringPrice": 8500,
+    "priceBandLow": 7000,
+    "priceBandHigh": 8500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.284Z",
+    "competitionData": [
+      {
+        "brokerName": "한국",
+        "competitionRate": "3920.74:1",
+        "equalAllocation": "0.45주",
+        "proportionalAllocation": "3920.74:1"
+      }
+    ],
+    "totalCompetition": "3920.74:1",
+    "sector": "전시, 컨벤션 및 행사 대행업",
+    "ceo": "김소연",
+    "headOffice": "서울특별시 종로구 인사동9길 27 (견지동, 웅지빌딩)",
+    "sales": "35,574 (백만원)",
+    "netIncome": "1,370 (백만원)",
+    "institutionalCompetition": "1334.91:1",
+    "lockupRatio": "42.45%",
+    "investmentPoints": [
+      "전시, 컨벤션 및 행사 대행업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2271",
+    "companyName": "케이뱅크",
+    "subscriptionStart": "2026.02.20",
+    "subscriptionEnd": "02.23",
+    "offeringPrice": 8300,
+    "priceBandLow": 8300,
+    "priceBandHigh": 9500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.441Z",
+    "competitionData": [
+      {
+        "brokerName": "NH",
+        "competitionRate": "268.26:1",
+        "equalAllocation": "11.25주",
+        "proportionalAllocation": "268.26:1"
+      },
+      {
+        "brokerName": "삼성",
+        "competitionRate": "268.31:1",
+        "equalAllocation": "11.59주",
+        "proportionalAllocation": "268.31:1"
+      },
+      {
+        "brokerName": "신한",
+        "competitionRate": "278.1:1",
+        "equalAllocation": "3.74주",
+        "proportionalAllocation": "278.1:1"
+      }
+    ],
+    "totalCompetition": "268.26:1",
+    "sector": "은행 및 저축기관",
+    "ceo": "최우형",
+    "headOffice": "서울특별시 중구 을지로 170 동관 6층(을지로4가, 을지트윈타워)",
+    "sales": "1,225,769 (백만원)",
+    "netIncome": "128,053 (백만원)",
+    "institutionalCompetition": "198.53:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "은행 및 저축기관 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2267",
+    "companyName": "덕양에너젠",
+    "subscriptionStart": "2026.01.20",
+    "subscriptionEnd": "01.21",
+    "offeringPrice": 10000,
+    "priceBandLow": 8500,
+    "priceBandHigh": 10000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.558Z",
+    "sector": "산소, 질소 및 기타 산업용 가스 제조업",
+    "ceo": "김기철",
+    "headOffice": "전라남도 여수시 산단중앙로 233 (화치동)",
+    "sales": "137,370 (백만원)",
+    "netIncome": "3,031 (백만원)",
+    "institutionalCompetition": "650.14:1",
+    "lockupRatio": "14.38%",
+    "investmentPoints": [
+      "산소, 질소 및 기타 산업용 가스 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2266",
+    "companyName": "삼성스팩13호",
+    "subscriptionStart": "2026.01.12",
+    "subscriptionEnd": "01.13",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.599Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "송하용",
+    "headOffice": "서울특별시 강남구 역삼로18길 12 (역삼동)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "1159.11:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2255",
+    "companyName": "세미파이브",
+    "subscriptionStart": "2025.12.18",
+    "subscriptionEnd": "12.19",
+    "offeringPrice": 24000,
+    "priceBandLow": 21000,
+    "priceBandHigh": 24000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.808Z",
+    "sector": "기타 엔지니어링 서비스업",
+    "ceo": "조명현",
+    "headOffice": "경기 성남시 분당구 양현로 322, 6층 603호, 605호 (야탑동,코리아디자인센터)",
+    "sales": "111,813 (백만원)",
+    "netIncome": "-290,897 (백만원)",
+    "institutionalCompetition": "436.89:1",
+    "lockupRatio": "43.93%",
+    "investmentPoints": [
+      "기타 엔지니어링 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2248",
+    "companyName": "리브스메드",
+    "subscriptionStart": "2025.12.15",
+    "subscriptionEnd": "12.16",
+    "offeringPrice": 55000,
+    "priceBandLow": 44000,
+    "priceBandHigh": 55000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:10.968Z",
+    "sector": "그외 기타 의료용 기기 제조업",
+    "ceo": "이정주",
+    "headOffice": "경기 성남시 분당구 판교로 700, D동 304호 (야탑동,분당테크노파크)",
+    "sales": "27,121 (백만원)",
+    "netIncome": "-25,585 (백만원)",
+    "institutionalCompetition": "231.87:1",
+    "lockupRatio": "17.12%",
+    "investmentPoints": [
+      "그외 기타 의료용 기기 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2265",
+    "companyName": "미래에셋비전스팩10호",
+    "subscriptionStart": "2025.12.12",
+    "subscriptionEnd": "12.15",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.014Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "윤태원",
+    "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원(MiraeAssetCENTER1))",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "1137.49:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2262",
+    "companyName": "하나스팩36호",
+    "subscriptionStart": "2025.12.11",
+    "subscriptionEnd": "12.12",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.055Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "박병기",
+    "headOffice": "서울특별시 영등포구 의사당대로 82 (여의도동, 하나증권빌딩)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "1076.96:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2252",
+    "companyName": "삼진식품",
+    "subscriptionStart": "2025.12.11",
+    "subscriptionEnd": "12.12",
+    "offeringPrice": 7600,
+    "priceBandLow": 6700,
+    "priceBandHigh": 7600,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.165Z",
+    "sector": "수산동물 훈제, 조리 및 유사 조제식품 제조업",
+    "ceo": "박용준",
+    "headOffice": "부산광역시 영도구 태종로99번길 36 (봉래동2가)",
+    "sales": "96,400 (백만원)",
+    "netIncome": "1,019 (백만원)",
+    "institutionalCompetition": "1303.87:1",
+    "lockupRatio": "41.05%",
+    "investmentPoints": [
+      "수산동물 훈제, 조리 및 유사 조제식품 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2263",
+    "companyName": "미래에셋비전스팩11호",
+    "subscriptionStart": "2025.12.10",
+    "subscriptionEnd": "12.11",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.212Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "김양태",
+    "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "1144.01:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2264",
+    "companyName": "IBKS스팩25호",
+    "subscriptionStart": "2025.12.09",
+    "subscriptionEnd": "12.10",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.259Z",
+    "sector": "그 외 기타 금융 지원 서비스업",
+    "ceo": "심기섭",
+    "headOffice": "서울특별시 영등포구 국제금융로6길 11 (여의도동, 삼덕빌딩)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "1144.51:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "그 외 기타 금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2258",
+    "companyName": "알지노믹스",
+    "subscriptionStart": "2025.12.09",
+    "subscriptionEnd": "12.10",
+    "offeringPrice": 22500,
+    "priceBandLow": 17000,
+    "priceBandHigh": 22500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.403Z",
+    "sector": "의학 및 약학 연구개발업",
+    "ceo": "이성욱",
+    "headOffice": "경기 용인시 수지구 죽전로 152, 소프트웨어아이씨티관 327호",
+    "sales": "- (백만원)",
+    "netIncome": "-18,850 (백만원)",
+    "institutionalCompetition": "1871.43",
+    "lockupRatio": "74.29%",
+    "investmentPoints": [
+      "의학 및 약학 연구개발업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  },
+  {
+    "id": "2231",
+    "companyName": "나라스페이스테크놀로지",
+    "subscriptionStart": "2025.12.08",
+    "subscriptionEnd": "12.09",
+    "offeringPrice": 16500,
+    "priceBandLow": 13100,
+    "priceBandHigh": 16500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.527Z",
+    "sector": "유인 항공기, 항공우주선 및 보조장치 제조업",
+    "ceo": "박재필",
+    "headOffice": "부산 영도구 해양로 435-1, 205호 (동삼동,해양물류산업센터부산테크노파크)",
+    "sales": "4,299 (백만원)",
+    "netIncome": "-10,733 (백만원)",
+    "institutionalCompetition": "879.08:1",
+    "lockupRatio": "5.53%",
+    "investmentPoints": [
+      "유인 항공기, 항공우주선 및 보조장치 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2257",
+    "companyName": "메리츠스팩1호",
+    "subscriptionStart": "2025.12.04",
+    "subscriptionEnd": "12.05",
+    "offeringPrice": 2000,
+    "priceBandLow": 2000,
+    "priceBandHigh": 2000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.587Z",
+    "sector": "금융 지원 서비스업",
+    "ceo": "이경준",
+    "headOffice": "서울특별시 영등포구 국제금융로 10 (Three IFC 26층)",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "948.16:1",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "금융 지원 서비스업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2247",
+    "companyName": "아크릴",
+    "subscriptionStart": "2025.12.04",
+    "subscriptionEnd": "12.05",
+    "offeringPrice": 19500,
+    "priceBandLow": 17500,
+    "priceBandHigh": 19500,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.712Z",
+    "sector": "응용 소프트웨어 개발 및 공급업",
+    "ceo": "박외진",
+    "headOffice": "서울특별시 강남구 선릉로 704 (청담동, 청담빌딩) 7, 11층",
+    "sales": "13,423 (백만원)",
+    "netIncome": "-5,466 (백만원)",
+    "institutionalCompetition": "790.49:1",
+    "lockupRatio": "52.75%",
+    "investmentPoints": [
+      "응용 소프트웨어 개발 및 공급업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2242",
+    "companyName": "티엠씨",
+    "subscriptionStart": "2025.12.03",
+    "subscriptionEnd": "12.04",
+    "offeringPrice": 9300,
+    "priceBandLow": 8000,
+    "priceBandHigh": 9300,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.826Z",
+    "sector": "절연선 및 케이블 제조업",
+    "ceo": "지영완",
+    "headOffice": "충남 천안시 입장면 가산리368-7",
+    "sales": "375,676 (백만원)",
+    "netIncome": "9,220 (백만원)",
+    "institutionalCompetition": "959.96:1",
+    "lockupRatio": "53.42%",
+    "investmentPoints": [
+      "절연선 및 케이블 제조업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다."
+  },
+  {
+    "id": "2237",
+    "companyName": "쿼드메디슨",
+    "subscriptionStart": "2025.12.02",
+    "subscriptionEnd": "12.03",
+    "offeringPrice": 15000,
+    "priceBandLow": 12000,
+    "priceBandHigh": 15000,
+    "status": "active",
+    "updatedAt": "2026-03-14T07:06:11.947Z",
+    "sector": "의학 및 약학 연구개발업",
+    "ceo": "백승기",
+    "headOffice": "경기 성남시 중원구 사기막골로45번길 14, B동 6층 605호 (상대원동,우림라이온스밸리2차)",
+    "sales": "9,304 (백만원)",
+    "netIncome": "-4,968 (백만원)",
+    "institutionalCompetition": "1139.61:1",
+    "lockupRatio": "17.82%",
+    "investmentPoints": [
+      "의학 및 약학 연구개발업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
+  }
+]

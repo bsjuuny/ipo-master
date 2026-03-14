@@ -101,7 +101,7 @@ export default function CalendarPage() {
       case 'refund':
         return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-indigo-500/10 text-indigo-400'}`}>환불일</span>;
       case 'listing':
-        return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-emerald-500/10 text-emerald-400'}`}>상장일</span>;
+        return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-rose-500/10 text-rose-400'}`}>상장일</span>;
     }
   };
 
@@ -196,8 +196,16 @@ export default function CalendarPage() {
                         <h4 className="text-xl font-black text-white group-hover/event:text-blue-400 transition-colors uppercase tracking-tight">
                           {event.companyName}
                         </h4>
-                        <div className="flex items-center gap-2 text-slate-500 text-xs font-bold">
-                          <span>공모가 {event.ipo.offeringPrice.toLocaleString()}원</span>
+                        <div className="flex items-center gap-2 text-slate-500 text-xs font-bold tabular-nums">
+                          <span>
+                            {event.ipo.offeringPrice > 0 ? (
+                              `공모가 ${event.ipo.offeringPrice.toLocaleString()}원`
+                            ) : event.ipo.priceBandLow ? (
+                              `희망 ${event.ipo.priceBandLow.toLocaleString()}${event.ipo.priceBandHigh && event.ipo.priceBandHigh !== event.ipo.priceBandLow ? `~${event.ipo.priceBandHigh.toLocaleString()}` : ''}원`
+                            ) : (
+                              '공모가 미정'
+                            )}
+                          </span>
                           <ArrowRight className="h-3 w-3" />
                         </div>
                       </div>

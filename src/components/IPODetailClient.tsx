@@ -67,7 +67,8 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
 
       {/* AI Verdict Card */}
       <section className="glass-morphism overflow-hidden relative group">
-        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+        <div className="absolute inset-0 bg-blue-600/5 blur-[100px] -z-10 group-hover:bg-indigo-600/10 transition-colors duration-700" />
+        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-all duration-700 group-hover:scale-110">
           <Star className="h-32 w-32 text-blue-400 fill-blue-400" />
         </div>
         <div className="relative z-10 p-8 md:p-12 space-y-6">
@@ -99,18 +100,18 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">기관 경쟁률</p>
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-2 tabular-nums">
                   <span className="text-4xl font-black text-white">{ipo.institutionalCompetition || '집계 중'}</span>
                   <span className="text-slate-500 font-bold">:1</span>
                 </div>
               </div>
               <div className="space-y-2">
                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">의무보유 확약비율</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-black text-emerald-400">
+                <div className="flex items-baseline gap-2 tabular-nums">
+                  <span className="text-4xl font-black text-rose-400">
                     {ipo.lockupRatio?.replace('%', '') || '0'}
                   </span>
-                  <span className="text-emerald-500/50 font-bold">%</span>
+                  <span className="text-rose-500/50 font-bold">%</span>
                 </div>
               </div>
             </div>
@@ -118,10 +119,10 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
 
           {/* Investment Points & Risks */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-morphism p-8 space-y-6 border-emerald-500/10">
+            <div className="glass-morphism p-8 space-y-6 border-rose-500/10">
               <div className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 text-emerald-400" />
-                <h3 className="text-lg font-black text-emerald-400 uppercase tracking-tight">투자 포인트</h3>
+                <ShieldCheck className="h-5 w-5 text-rose-400" />
+                <h3 className="text-lg font-black text-rose-400 uppercase tracking-tight">투자 포인트</h3>
               </div>
               <ul className="space-y-4">
                 {(ipo.investmentPoints || [
@@ -130,17 +131,17 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
                   "주요 고객사와의 장기 공급 계약 체결"
                 ]).map((pt, i) => (
                   <li key={i} className="flex gap-3 text-sm font-medium text-slate-300 leading-relaxed">
-                    <span className="text-emerald-500 font-black">•</span>
+                    <span className="text-rose-500 font-black">•</span>
                     {pt}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="glass-morphism p-8 space-y-6 border-rose-500/10">
+            <div className="glass-morphism p-8 space-y-6 border-blue-500/10">
               <div className="flex items-center gap-3">
-                <AlertTriangle className="h-5 w-5 text-rose-400" />
-                <h3 className="text-lg font-black text-rose-400 uppercase tracking-tight">리스크 요인</h3>
+                <AlertTriangle className="h-5 w-5 text-blue-400" />
+                <h3 className="text-lg font-black text-blue-400 uppercase tracking-tight">리스크 요인</h3>
               </div>
               <ul className="space-y-4">
                 {(ipo.riskFactors || [
@@ -149,7 +150,7 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
                   "글로벌 경쟁 심화에 따른 시장 점유율 하락 우려"
                 ]).map((rf, i) => (
                   <li key={i} className="flex gap-3 text-sm font-medium text-slate-300 leading-relaxed">
-                    <span className="text-rose-500 font-black">•</span>
+                    <span className="text-blue-500 font-black">•</span>
                     {rf}
                   </li>
                 ))}
