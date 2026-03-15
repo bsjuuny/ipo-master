@@ -179,8 +179,9 @@ export default function HomePage() {
                           <h3 className={`text-xl md:text-2xl font-black tracking-tight transition-colors ${isPast ? 'text-slate-500' : 'group-hover:text-blue-400'}`}>{ipo.companyName}</h3>
                           <p className="text-slate-500 text-[11px] md:text-sm font-medium">{ipo.subscriptionStart} ~ {ipo.subscriptionEnd}</p>
                           {ipo.underwriter && (
-                            <p className="text-[10px] md:text-xs text-slate-600 font-medium truncate">
-                              주관 <span className="text-slate-400">{ipo.underwriter}</span>
+                            <p className="inline-flex items-center gap-1.5 text-[10px] md:text-xs font-semibold truncate">
+                              <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold tracking-wide">주관사</span>
+                              <span className="text-slate-300">{ipo.underwriter}</span>
                             </p>
                           )}
                         </div>
