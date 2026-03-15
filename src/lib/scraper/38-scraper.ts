@@ -161,6 +161,10 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
     const ceo = cleanValue("대표자");
     const headOffice = cleanValue("본점소재지");
 
+    // Schedule dates
+    const refundDate = cleanValue("환불일");
+    const listingDate = cleanValue("상장예정일") || cleanValue("상장일");
+
     // Confirmed offering price from detail page
     const confirmedPriceRaw = cleanValue("확정공모가").replace(/[^0-9,]/g, '').replace(/,/g, '');
     const confirmedOfferingPrice = parseInt(confirmedPriceRaw) || 0;
@@ -218,6 +222,8 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
       investmentPoints,
       riskFactors,
       aiVerdict,
+      ...(refundDate && { refundDate }),
+      ...(listingDate && { listingDate }),
       ...(confirmedOfferingPrice > 0 && { offeringPrice: confirmedOfferingPrice }),
       ...(detailPriceBandLow && { priceBandLow: detailPriceBandLow }),
       ...(detailPriceBandHigh && { priceBandHigh: detailPriceBandHigh }),

@@ -6,14 +6,25 @@ import { Calendar as CalendarIcon, Clock, ArrowRight, CheckCircle2, AlertCircle 
 
 interface TimelineEvent {
   date: string;
-  type: 'subscription' | 'refund' | 'listing';
+  type: 'subscription' | 'subscriptionEnd' | 'refund' | 'listing';
   companyName: string;
   ipo: IPO;
 }
 
+type FilterType = 'all' | 'subscription' | 'subscriptionEnd' | 'refund' | 'listing';
+
+const FILTERS: { value: FilterType; label: string; activeClass: string }[] = [
+  { value: 'all',             label: '전체',     activeClass: 'bg-white/10 text-white border-white/30' },
+  { value: 'subscription',    label: '청약 시작', activeClass: 'bg-blue-500/20 text-blue-400 border-blue-500/40' },
+  { value: 'subscriptionEnd', label: '청약 마감', activeClass: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40' },
+  { value: 'refund',          label: '환불일',   activeClass: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/40' },
+  { value: 'listing',         label: '상장일',   activeClass: 'bg-rose-500/20 text-rose-400 border-rose-500/40' },
+];
+
 export default function CalendarPage() {
   const [events, setEvents] = useState<TimelineEvent[]>([]);
   const [loading, setLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/data/ipo_list.json`)
@@ -32,7 +43,7 @@ export default function CalendarPage() {
         };
 
         data.forEach(ipo => {
-          // Add subscription events
+          // Add subscription start events
           const subDate = parseDateString(ipo.subscriptionStart, ipo);
           if (subDate) {
             timelineEvents.push({
@@ -42,7 +53,18 @@ export default function CalendarPage() {
               ipo
             });
           }
-          
+
+          // Add subscription end events
+          const subEndDate = parseDateString(ipo.subscriptionEnd, ipo);
+          if (subEndDate) {
+            timelineEvents.push({
+              date: ipo.subscriptionEnd,
+              type: 'subscriptionEnd',
+              companyName: ipo.companyName,
+              ipo
+            });
+          }
+
           // Add refund events
           const refDate = parseDateString(ipo.refundDate, ipo);
           if (refDate) {
@@ -96,7 +118,11 @@ export default function CalendarPage() {
     switch (type) {
       case 'subscription':
         return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-blue-500/10 text-blue-400'}`}>
-          {past ? '청약 완료' : '청약 시작'}
+          {past ? '청약 시작 완료' : '청약 시작'}
+        </span>;
+      case 'subscriptionEnd':
+        return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-cyan-500/10 text-cyan-400'}`}>
+          {past ? '청약 마감 완료' : '청약 마감'}
         </span>;
       case 'refund':
         return <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${past ? 'bg-slate-500/10 text-slate-500' : 'bg-indigo-500/10 text-indigo-400'}`}>환불일</span>;
@@ -131,12 +157,12 @@ export default function CalendarPage() {
     return date < today;
   };
 
-  // Group events by date
-  const groupedEvents = events.reduce((groups, event) => {
+  // Apply type filter then group by date
+  const filteredByType = activeFilter === 'all' ? events : events.filter(e => e.type === activeFilter);
+
+  const groupedEvents = filteredByType.reduce((groups, event) => {
     const date = event.date;
-    if (!groups[date]) {
-      groups[date] = [];
-    }
+    if (!groups[date]) groups[date] = [];
     groups[date].push(event);
     return groups;
   }, {} as Record<string, TimelineEvent[]>);
@@ -160,6 +186,23 @@ export default function CalendarPage() {
           </p>
         </div>
       </section>
+
+      {/* Filter Tabs */}
+      <div className="flex flex-wrap gap-2">
+        {FILTERS.map(({ value, label, activeClass }) => (
+          <button
+            key={value}
+            onClick={() => setActiveFilter(value)}
+            className={`px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest border transition-all duration-200 ${
+              activeFilter === value
+                ? activeClass
+                : 'bg-transparent text-slate-500 border-white/10 hover:border-white/20 hover:text-slate-300'
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
 
       <div className="space-y-16 relative">
         {/* Timeline Path */}
@@ -223,7 +266,11 @@ export default function CalendarPage() {
         ) : (
           <div className="h-64 glass-morphism flex flex-col items-center justify-center text-slate-500 gap-4 border-dashed border-white/5">
             <span className="text-lg font-bold">예정된 일정이 없습니다.</span>
-            <p className="text-sm">데이터가 업데이트되는 대로 표시됩니다.</p>
+            <p className="text-sm">
+              {activeFilter === 'all'
+                ? '데이터가 업데이트되는 대로 표시됩니다.'
+                : `'${FILTERS.find(f => f.value === activeFilter)?.label}' 일정이 없습니다.`}
+            </p>
           </div>
         )}
       </div>
