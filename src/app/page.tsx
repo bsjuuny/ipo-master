@@ -178,6 +178,11 @@ export default function HomePage() {
                           </span>
                           <h3 className={`text-xl md:text-2xl font-black tracking-tight transition-colors ${isPast ? 'text-slate-500' : 'group-hover:text-blue-400'}`}>{ipo.companyName}</h3>
                           <p className="text-slate-500 text-[11px] md:text-sm font-medium">{ipo.subscriptionStart} ~ {ipo.subscriptionEnd}</p>
+                          {ipo.underwriter && (
+                            <p className="text-[10px] md:text-xs text-slate-600 font-medium truncate">
+                              주관 <span className="text-slate-400">{ipo.underwriter}</span>
+                            </p>
+                          )}
                         </div>
                         
                         <div className="space-y-0.5 md:space-y-1 tabular-nums">

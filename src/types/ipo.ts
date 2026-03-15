@@ -25,6 +25,7 @@ export interface IPO {
   totalCompetition?: string;
   
   // Detail Info
+  underwriter?: string;
   ceo?: string;
   headOffice?: string;
   majorShareholder?: string;

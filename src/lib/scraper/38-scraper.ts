@@ -160,6 +160,7 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
     const sector = cleanValue("업종");
     const ceo = cleanValue("대표자");
     const headOffice = cleanValue("본점소재지");
+    const underwriter = cleanValue("주간사");
 
     // Schedule dates
     const refundDate = cleanValue("환불일");
@@ -215,6 +216,7 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
       sector,
       ceo,
       headOffice,
+      ...(underwriter && { underwriter }),
       sales,
       netIncome,
       institutionalCompetition,

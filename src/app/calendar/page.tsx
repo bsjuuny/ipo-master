@@ -251,6 +251,11 @@ export default function CalendarPage() {
                           </span>
                           <ArrowRight className="h-3 w-3" />
                         </div>
+                        {event.ipo.underwriter && (
+                          <p className="text-[10px] text-slate-600 font-medium">
+                            주관 <span className="text-slate-500">{event.ipo.underwriter}</span>
+                          </p>
+                        )}
                       </div>
                     </div>
 
