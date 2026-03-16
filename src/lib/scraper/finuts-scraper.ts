@@ -61,18 +61,10 @@ async function login(page: Page) {
     await page.fill('#user_pwd', password);
     
     console.log('[Finuts] Submitting login form via #btn_login...');
-    // Click login button and wait for navigation or state change
+    // Set up navigation wait BEFORE clicking to avoid missing fast redirects
+    const navPromise = page.waitForURL(url => !url.toString().includes('login.php'), { timeout: 30000 }).catch(() => null);
     await page.click('#btn_login');
-    
-    // Wait for either navigation or success UI
-    try {
-      await Promise.race([
-        page.waitForNavigation({ waitUntil: 'load', timeout: 30000 }),
-        page.waitForSelector('a:has-text("로그아웃"), .btn-logout, text="로그아웃"', { timeout: 30000 })
-      ]);
-    } catch {
-      console.warn('[Finuts] Login post-action wait timed out, checking final state...');
-    }
+    await navPromise;
 
     const postLoginUrl = page.url();
     const finalContent = await page.content();
