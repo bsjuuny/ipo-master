@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        shell: powershell -ExecutionPolicy Bypass -NonInteractive -Command "{0}"
+        shell: powershell -ExecutionPolicy Bypass -NonInteractive -File "{0}"
 
     steps:
       - uses: actions/checkout@v4
