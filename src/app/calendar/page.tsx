@@ -43,11 +43,20 @@ export default function CalendarPage() {
         };
 
         data.forEach(ipo => {
+          const normalize = (d: string) => {
+            if (!d || d === '-') return null;
+            if (d.split('.').length === 2) {
+              const startYear = ipo.subscriptionStart.split('.')[0];
+              return `${startYear}.${d}`;
+            }
+            return d;
+          };
+
           // Add subscription start events
-          const subDate = parseDateString(ipo.subscriptionStart, ipo);
-          if (subDate) {
+          const subDateStr = normalize(ipo.subscriptionStart);
+          if (subDateStr) {
             timelineEvents.push({
-              date: ipo.subscriptionStart,
+              date: subDateStr,
               type: 'subscription',
               companyName: ipo.companyName,
               ipo
@@ -55,10 +64,10 @@ export default function CalendarPage() {
           }
 
           // Add subscription end events
-          const subEndDate = parseDateString(ipo.subscriptionEnd, ipo);
-          if (subEndDate) {
+          const subEndDateStr = normalize(ipo.subscriptionEnd);
+          if (subEndDateStr) {
             timelineEvents.push({
-              date: ipo.subscriptionEnd,
+              date: subEndDateStr,
               type: 'subscriptionEnd',
               companyName: ipo.companyName,
               ipo
@@ -66,10 +75,10 @@ export default function CalendarPage() {
           }
 
           // Add refund events
-          const refDate = parseDateString(ipo.refundDate, ipo);
-          if (refDate) {
+          const refDateStr = normalize(ipo.refundDate);
+          if (refDateStr) {
             timelineEvents.push({
-              date: ipo.refundDate,
+              date: refDateStr,
               type: 'refund',
               companyName: ipo.companyName,
               ipo
@@ -77,10 +86,10 @@ export default function CalendarPage() {
           }
           
           // Add listing events
-          const listDate = parseDateString(ipo.listingDate, ipo);
-          if (listDate) {
+          const listDateStr = normalize(ipo.listingDate);
+          if (listDateStr) {
             timelineEvents.push({
-              date: ipo.listingDate,
+              date: listDateStr,
               type: 'listing',
               companyName: ipo.companyName,
               ipo
