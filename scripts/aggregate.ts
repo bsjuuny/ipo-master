@@ -20,12 +20,10 @@ async function aggregateData() {
   console.log(`[Agg] Scraped ${histories.length} historical performance entries.`);
 
   let competitions = new Map<string, Partial<IPO>>();
-  try {
-    competitions = await scrapeFinutsCompetition();
-    console.log(`[Agg] Scraped ${competitions.size} competition entries from Finuts.`);
-  } catch (err) {
-    console.error('[Agg] Finuts scraping failed, but continuing with other data:', err);
-  }
+  // Removed try-catch block around scrapeFinutsCompetition to allow errors to propagate
+  // and cause the process to exit with a non-zero code, as per instruction.
+  competitions = await scrapeFinutsCompetition();
+  console.log(`[Agg] Scraped ${competitions.size} competition entries from Finuts.`);
   
   // Create a map with normalized names
   const normalizedCompMap = new Map<string, Partial<IPO>>();
@@ -76,4 +74,7 @@ async function aggregateData() {
   console.log(`Aggregation complete. ${aggregated.length} IPOs and ${histories.length} history items saved.`);
 }
 
-aggregateData().catch(console.error);
+aggregateData().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
