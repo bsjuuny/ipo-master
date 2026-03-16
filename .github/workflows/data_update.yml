@@ -17,6 +17,10 @@ jobs:
     permissions:
       contents: write
 
+    defaults:
+      run:
+        shell: powershell -ExecutionPolicy Bypass -NonInteractive -Command "{0}"
+
     steps:
       - uses: actions/checkout@v4
 
