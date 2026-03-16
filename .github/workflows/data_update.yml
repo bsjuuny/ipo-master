@@ -43,7 +43,6 @@ jobs:
           NEXT_PUBLIC_FINUTS_PASSWORD: ${{ secrets.FINUTS_PASSWORD }}
 
       - name: Commit data to git
-        shell: powershell
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -74,7 +73,6 @@ jobs:
 
       - name: 📢 Notify Telegram on Success
         if: success()
-        shell: powershell
         run: |
           $msg_b64 = "4pyFIDxiPklQTyBNYXN0ZXIg67Cw7Y+sIOyEseqztSE8L2I+CgpJUE8g7KCV67O06rCAIOyEseqzteyggeycvOuhnCDsl4XrjbDsnbTtirjrkJjsl4jsirXri4jri6QuCgrwn5SXIOybueyCrOydtO2KuDogPGEgaHJlZj0iaHR0cHM6Ly9ic2p1dW55MjAyNi5teWNhZmUyNC5jb20vaXBvbWFzdGVyLyI+67CU66Gc6rCA6riwPC9hPgrwn5SXIOumrO2PrOyngO2GoOumrDogPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL2JzanV1bnkvaXBvLW1hc3Rlci9hY3Rpb25zIj7tmZXsnbjtlZjquLA8L2E+"
           $msg = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($msg_b64))
@@ -84,7 +82,6 @@ jobs:
 
       - name: 🚨 Notify Telegram on Failure
         if: failure()
-        shell: powershell
         run: |
           $msg_b64 = "4p2MIDxiPklQTyBNYXN0ZXIg67Cw7Y+sIOyLpO2MqCE8L2I+CgrrjbDsnbTthLAg7JeF642w7J207Yq4IOuYkOuKlCDruYzrk5wg6rO87KCV7JeQ7IScIOyYpOulmOqwgCDrsJzsg53tlojsirXri4jri6QuCvCflJcg66as7Y+s7KeA7Yag66asOiA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vYnNqdXVueS9pcG8tbWFzdGVyL2FjdGlvbnMiPu2ZleyduO2VmOq4sDwvYT4="
           $msg = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($msg_b64))
