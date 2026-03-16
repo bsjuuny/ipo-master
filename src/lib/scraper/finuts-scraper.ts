@@ -38,6 +38,12 @@ async function login(page: Page) {
     const title = await page.title();
     console.log(`[Finuts] Page Title: "${title}"`);
 
+    // 403 means IP is blocked - bail out immediately
+    if (title.includes('403') || title.includes('Forbidden')) {
+      console.error('[Finuts] IP blocked (403 Forbidden). Skipping Finuts entirely.');
+      return false;
+    }
+
     // Wait for form elements with detailed failure info
     try {
       await page.waitForSelector('#user_id', { timeout: 20000 });
@@ -45,9 +51,8 @@ async function login(page: Page) {
       const currentUrl = page.url();
       const content = await page.content();
       console.error(`[Finuts] #user_id not found on ${currentUrl}.`);
-      console.log(`[Finuts] Page Title: "${title}"`);
       console.log('[Finuts] Page Content Snippet:', content.substring(0, 1000));
-      
+
       if (content.includes('Cloudflare') || content.includes('_captcha')) {
         console.error('[Finuts] Anti-bot (Cloudflare/Captcha) detected!');
       }
@@ -151,13 +156,19 @@ export async function scrapeFinutsCompetition(): Promise<Map<string, Partial<IPO
         const loginRequiredVisible = await page.locator('text="로그인 후 열람"').isVisible();
 
         if (!logoutExists || loginRequiredVisible || page.url().includes('login.php')) {
+          const pageTitle = await page.title();
           console.error(`[Finuts] Session inactive for ${item.name}. (Url: ${page.url()}, Logout: ${logoutExists}, LoginReq: ${loginRequiredVisible})`);
-          console.log(`[Finuts] Current Page Title: "${await page.title()}"`);
+          console.log(`[Finuts] Current Page Title: "${pageTitle}"`);
+          // 403 = IP blocked, no point retrying
+          if (pageTitle.includes('403') || pageTitle.includes('Forbidden')) {
+            console.error('[Finuts] IP blocked (403). Stopping Finuts scraping.');
+            break;
+          }
           console.log('[Finuts] Attempting re-login...');
           const reLoggedIn = await login(page);
           if (!reLoggedIn) {
             console.error('[Finuts] Re-login failed.');
-            continue;
+            break;
           }
           await page.goto(item.detailUrl, { waitUntil: 'load' });
           await page.waitForTimeout(1000);
