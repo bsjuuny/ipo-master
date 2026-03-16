@@ -74,8 +74,9 @@ export default function HomePage() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     
-    // Parse subscriptionStart (Format: YYYY.MM.DD)
-    const startDate = new Date(ipo.subscriptionStart.replace(/\./g, '-'));
+    // Parse subscriptionStart (Format: YYYY.MM.DD) as local time to avoid UTC offset issues
+    const [sy, sm, sd] = ipo.subscriptionStart.split('.');
+    const startDate = new Date(parseInt(sy), parseInt(sm) - 1, parseInt(sd));
     
     if (startDate > today) {
       return '청약 전';

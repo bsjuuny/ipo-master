@@ -13,7 +13,7 @@ env:
 
 jobs:
   update-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: write
 
