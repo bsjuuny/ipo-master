@@ -67,3 +67,23 @@ jobs:
           local-dir: ./out/
           server-dir: /www/ipomaster/
           dangerous-clean-slate: false
+
+      - name: 📢 Notify Telegram on Success
+        if: success()
+        shell: powershell
+        run: |
+          [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+          $msg = "✅ <b>IPO Master</b> 배포 성공!`n`nIPO 정보가 성공적으로 업데이트되었습니다.`n`n🔗 웹사이트: <a href=`"https://bsjuuny2026.mycafe24.com/ipomaster/`">바로가기</a>`n🔗 리포지토리: <a href=`"https://github.com/bsjuuny/ipo-master/actions`">확인하기</a>"
+          $body = @{ chat_id = "${{ secrets.TELEGRAM_CHAT_ID }}"; text = $msg; parse_mode = "HTML" } | ConvertTo-Json
+          $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
+          Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -Method POST -Body $bytes -ContentType "application/json; charset=utf-8"
+
+      - name: 🚨 Notify Telegram on Failure
+        if: failure()
+        shell: powershell
+        run: |
+          [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+          $msg = "❌ <b>IPO Master</b> 배포 실패!`n`n데이터 업데이트 또는 빌드 과정에서 오류가 발생했습니다.`n🔗 리포지토리: <a href=`"https://github.com/bsjuuny/ipo-master/actions`">확인하기</a>"
+          $body = @{ chat_id = "${{ secrets.TELEGRAM_CHAT_ID }}"; text = $msg; parse_mode = "HTML" } | ConvertTo-Json
+          $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
+          Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -Method POST -Body $bytes -ContentType "application/json; charset=utf-8"
