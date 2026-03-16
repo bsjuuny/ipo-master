@@ -14,9 +14,6 @@ env:
 jobs:
   update-and-deploy:
     runs-on: self-hosted
-    defaults:
-      run:
-        shell: cmd
     permissions:
       contents: write
 
@@ -33,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium
 
       - name: Run scrapers
         run: npm run data:update
@@ -42,12 +39,19 @@ jobs:
           NEXT_PUBLIC_FINUTS_PASSWORD: ${{ secrets.FINUTS_PASSWORD }}
 
       - name: Commit data to git
+        shell: powershell
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
           git add public/data/ipo_list.json public/data/ipo_history.json
-          git diff --staged --quiet && echo "No data changes" && exit 0
+          
+          git diff --staged --quiet
+          if ($LASTEXITCODE -eq 0) {
+              Write-Host "No data changes to commit."
+              exit 0
+          }
+          
           git commit -m "data: update ipo intelligence [skip ci]"
           git push
 
