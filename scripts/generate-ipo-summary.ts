@@ -89,10 +89,15 @@ async function generateSummary() {
     sections.push('📅 오늘은 예정된 주요 IPO 일정이 없습니다.');
   }
 
-  const finalSummary = sections.join('\n\n');
-  fs.writeFileSync(outputPath, finalSummary, 'utf8');
+  const header = '✅ <b>IPO Master 정보 업데이트 성공!</b>';
+  const divider = '━━━━━━━━━━━━━━━━━━━━━';
+  const footer = `🔗 웹사이트 바로가기: <a href="https://bsjuun2026.mycafe24.com/ipomaster/">바로가기</a>\n🔗 리포지토리: <a href="https://github.com/bsjuuny/ipo-master/actions">확인하기</a>`;
+
+  const finalMessage = `${header}\n\n${divider}\n${sections.join('\n\n')}\n${divider}\n\n${footer}`;
+  
+  fs.writeFileSync(outputPath, finalMessage, 'utf8');
   console.log('Summary generated successfully:');
-  console.log(finalSummary);
+  console.log(finalMessage);
 }
 
 generateSummary().catch(err => {
