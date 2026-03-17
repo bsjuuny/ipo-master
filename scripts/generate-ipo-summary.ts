@@ -29,6 +29,16 @@ function isSameDate(target: string | undefined, today: string, start?: string): 
   return false;
 }
 
+function escapeHtml(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 async function generateSummary() {
   if (!fs.existsSync(dataPath)) {
     console.error('Data file not found');
@@ -68,22 +78,22 @@ async function generateSummary() {
 
   if (categories.start.length > 0) {
     sections.push(`<b>🚀 청약 시작 (${categories.start.length})</b>\n` + 
-      categories.start.map(ipo => `  • ${ipo.companyName} (${formatPrice(ipo.offeringPrice)})`).join('\n'));
+      categories.start.map(ipo => `  • ${escapeHtml(ipo.companyName)} (${formatPrice(ipo.offeringPrice)})`).join('\n'));
   }
 
   if (categories.end.length > 0) {
     sections.push(`<b>🏁 청약 마감 (${categories.end.length})</b>\n` + 
-      categories.end.map(ipo => `  • ${ipo.companyName}`).join('\n'));
+      categories.end.map(ipo => `  • ${escapeHtml(ipo.companyName)}`).join('\n'));
   }
 
   if (categories.refund.length > 0) {
     sections.push(`<b>💰 오늘 환불 (${categories.refund.length})</b>\n` + 
-      categories.refund.map(ipo => `  • ${ipo.companyName}`).join('\n'));
+      categories.refund.map(ipo => `  • ${escapeHtml(ipo.companyName)}`).join('\n'));
   }
 
   if (categories.listing.length > 0) {
     sections.push(`<b>📈 오늘 상장 (${categories.listing.length})</b>\n` + 
-      categories.listing.map(ipo => `  • ${ipo.companyName}`).join('\n'));
+      categories.listing.map(ipo => `  • ${escapeHtml(ipo.companyName)}`).join('\n'));
   }
 
   if (sections.length === 0) {
@@ -112,15 +122,28 @@ async function generateSummary() {
 
     try {
       console.log('Sending notification to Telegram...');
-      await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+      const response = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
         chat_id: chatId,
         text: finalMessage,
         parse_mode: 'HTML',
         disable_web_page_preview: true
+      }, {
+        timeout: 15000 // 15 seconds timeout
       });
-      console.log('Telegram notification sent successfully.');
+      console.log('Telegram notification sent successfully. Response status:', response.status);
     } catch (error: any) {
-      console.error('Failed to send Telegram notification:', error.response?.data || error.message);
+      console.error('Failed to send Telegram notification.');
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        console.error('Response Data:', JSON.stringify(error.response.data));
+        console.error('Response Status:', error.response.status);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error('No response received. Error Request:', error.message);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error('Error Message:', error.message);
+      }
       process.exit(1);
     }
   }
