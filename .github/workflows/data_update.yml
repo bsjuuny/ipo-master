@@ -76,6 +76,7 @@ jobs:
 
       - name: 📋 Generate & Notify Telegram
         if: success()
+        continue-on-error: true
         run: npm run notify:telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -83,6 +84,7 @@ jobs:
 
       - name: 🚨 Notify Telegram on Failure
         if: failure()
+        continue-on-error: true
         run: npm run notify:failure
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

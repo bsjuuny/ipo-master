@@ -137,16 +137,15 @@ async function generateSummary() {
       });
       console.log('Telegram notification sent successfully. Response status:', response.status);
     } catch (error: any) {
-      console.error('Failed to send Telegram notification.');
+      console.warn('Failed to send Telegram notification (non-fatal).');
       if (error.response) {
-        console.error('Response Data:', JSON.stringify(error.response.data));
-        console.error('Response Status:', error.response.status);
+        console.warn('Response Data:', JSON.stringify(error.response.data));
+        console.warn('Response Status:', error.response.status);
       } else if (error.request) {
-        console.error('No response received. Error Request:', error.message);
+        console.warn('No response received. Error Request:', error.message);
       } else {
-        console.error('Error Message:', error.message);
+        console.warn('Error Message:', error.message);
       }
-      process.exit(1);
     }
   }
 }
