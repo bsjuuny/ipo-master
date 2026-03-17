@@ -62,6 +62,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Use Windows built-in tar (fix FTP-Deploy-Action path issue)
+        run: '"C:\Windows\System32" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append'
+        shell: powershell -ExecutionPolicy Bypass -NonInteractive -Command "{0}"
+
       - name: Deploy to Cafe24 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
