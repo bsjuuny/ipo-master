@@ -16,6 +16,18 @@ function formatPrice(price: number) {
   return price > 0 ? `${price.toLocaleString()}원` : '미정';
 }
 
+function isSameDate(target: string | undefined, today: string, start?: string): boolean {
+  if (!target || !today) return false;
+  if (target === today) return true;
+  
+  // Handle MM.DD format (requires start date to derive year)
+  if (target.split('.').length === 2 && start && start.split('.').length === 3) {
+    const year = start.split('.')[0];
+    return `${year}.${target}` === today;
+  }
+  return false;
+}
+
 async function generateSummary() {
   if (!fs.existsSync(dataPath)) {
     console.error('Data file not found');
@@ -34,15 +46,20 @@ async function generateSummary() {
   };
 
   data.forEach(ipo => {
-    if (ipo.subscriptionStart === today) categories.start.push(ipo);
-    if (ipo.subscriptionEnd === today || (ipo.subscriptionEnd.split('.').length === 2 && `${ipo.subscriptionStart.split('.')[0]}.${ipo.subscriptionEnd}` === today)) {
-        categories.end.push(ipo);
+    if (ipo.subscriptionStart === today) {
+      categories.start.push(ipo);
     }
-    if (ipo.refundDate === today || (ipo.refundDate.split('.').length === 2 && `${ipo.subscriptionStart.split('.')[0]}.${ipo.refundDate}` === today)) {
-        categories.refund.push(ipo);
+    
+    if (isSameDate(ipo.subscriptionEnd, today, ipo.subscriptionStart)) {
+      categories.end.push(ipo);
     }
-    if (ipo.listingDate === today || (ipo.listingDate.split('.').length === 2 && `${ipo.subscriptionStart.split('.')[0]}.${ipo.listingDate}` === today)) {
-        categories.listing.push(ipo);
+    
+    if (isSameDate(ipo.refundDate, today, ipo.subscriptionStart)) {
+      categories.refund.push(ipo);
+    }
+    
+    if (isSameDate(ipo.listingDate, today, ipo.subscriptionStart)) {
+      categories.listing.push(ipo);
     }
   });
 
