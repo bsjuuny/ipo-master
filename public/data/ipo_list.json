@@ -8,7 +8,11 @@
     "priceBandLow": 5300,
     "priceBandHigh": 6000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:17.265Z",
+=======
+    "updatedAt": "2026-03-17T08:27:01.256Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "유진",
@@ -60,7 +64,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:17.368Z",
+=======
+    "updatedAt": "2026-03-17T08:27:01.347Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "박정근",
     "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower) 8층",
@@ -91,7 +99,11 @@
     "priceBandLow": 12300,
     "priceBandHigh": 15300,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:18.715Z",
+=======
+    "updatedAt": "2026-03-17T08:27:01.462Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "KB",
@@ -149,7 +161,11 @@
     "priceBandLow": 12100,
     "priceBandHigh": 16600,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:18.950Z",
+=======
+    "updatedAt": "2026-03-17T08:27:01.766Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "NH",
@@ -196,7 +212,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:19.225Z",
+=======
+    "updatedAt": "2026-03-17T08:27:01.850Z",
+>>>>>>> Stashed changes
     "sector": "기타 금융업",
     "ceo": "김서호",
     "headOffice": "서울특별시 영등포구 의사당대로 97, 17층",
@@ -227,7 +247,11 @@
     "priceBandLow": 9000,
     "priceBandHigh": 11000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:19.496Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.105Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "한국",
@@ -274,7 +298,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:19.584Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.195Z",
+>>>>>>> Stashed changes
     "sector": "금융 지원 서비스업",
     "ceo": "이효상",
     "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower)",
@@ -306,7 +334,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:19.673Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.289Z",
+>>>>>>> Stashed changes
     "sector": "금융 지원 서비스업",
     "ceo": "남강욱",
     "headOffice": "서울특별시 영등포구 여의대로 108 (여의도동, 파크원)",
@@ -338,7 +370,11 @@
     "priceBandLow": 16700,
     "priceBandHigh": 21600,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:19.901Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.518Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "신한",
@@ -379,7 +415,11 @@
     "priceBandLow": 17000,
     "priceBandHigh": 19000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:20.058Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.724Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "한국",
@@ -426,7 +466,11 @@
     "priceBandLow": 19000,
     "priceBandHigh": 26000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:20.259Z",
+=======
+    "updatedAt": "2026-03-17T08:27:02.929Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "한국",
@@ -473,7 +517,11 @@
     "priceBandLow": 16000,
     "priceBandHigh": 20000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:20.460Z",
+=======
+    "updatedAt": "2026-03-17T08:27:03.124Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "한국",
@@ -514,7 +562,11 @@
     "priceBandLow": 10100,
     "priceBandHigh": 11500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:20.978Z",
+=======
+    "updatedAt": "2026-03-17T08:27:03.286Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "미래",
@@ -555,7 +607,11 @@
     "priceBandLow": 7000,
     "priceBandHigh": 8500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:21.156Z",
+=======
+    "updatedAt": "2026-03-17T08:27:03.440Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "한국",
@@ -596,7 +652,11 @@
     "priceBandLow": 8300,
     "priceBandHigh": 9500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:21.378Z",
+=======
+    "updatedAt": "2026-03-17T08:27:03.754Z",
+>>>>>>> Stashed changes
     "competitionData": [
       {
         "brokerName": "NH",
@@ -649,7 +709,11 @@
     "priceBandLow": 8500,
     "priceBandHigh": 10000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:21.550Z",
+=======
+    "updatedAt": "2026-03-17T08:27:03.948Z",
+>>>>>>> Stashed changes
     "sector": "산소, 질소 및 기타 산업용 가스 제조업",
     "ceo": "김기철",
     "headOffice": "전라남도 여수시 산단중앙로 233 (화치동)",
@@ -681,7 +745,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:21.607Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.011Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "송하용",
     "headOffice": "서울특별시 강남구 역삼로18길 12 (역삼동)",
@@ -713,7 +781,11 @@
     "priceBandLow": 21000,
     "priceBandHigh": 24000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:21.913Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.315Z",
+>>>>>>> Stashed changes
     "sector": "기타 엔지니어링 서비스업",
     "ceo": "조명현",
     "headOffice": "경기 성남시 분당구 양현로 322, 6층 603호, 605호 (야탑동,코리아디자인센터)",
@@ -745,7 +817,11 @@
     "priceBandLow": 44000,
     "priceBandHigh": 55000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.171Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.555Z",
+>>>>>>> Stashed changes
     "sector": "그외 기타 의료용 기기 제조업",
     "ceo": "이정주",
     "headOffice": "경기 성남시 분당구 판교로 700, D동 304호 (야탑동,분당테크노파크)",
@@ -777,7 +853,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.220Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.611Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "윤태원",
     "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원(MiraeAssetCENTER1))",
@@ -809,7 +889,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.271Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.667Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "박병기",
     "headOffice": "서울특별시 영등포구 의사당대로 82 (여의도동, 하나증권빌딩)",
@@ -841,7 +925,11 @@
     "priceBandLow": 6700,
     "priceBandHigh": 7600,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.438Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.825Z",
+>>>>>>> Stashed changes
     "sector": "수산동물 훈제, 조리 및 유사 조제식품 제조업",
     "ceo": "박용준",
     "headOffice": "부산광역시 영도구 태종로99번길 36 (봉래동2가)",
@@ -873,7 +961,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.508Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.881Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "김양태",
     "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원)",
@@ -905,7 +997,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.559Z",
+=======
+    "updatedAt": "2026-03-17T08:27:04.955Z",
+>>>>>>> Stashed changes
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "심기섭",
     "headOffice": "서울특별시 영등포구 국제금융로6길 11 (여의도동, 삼덕빌딩)",
@@ -937,7 +1033,11 @@
     "priceBandLow": 17000,
     "priceBandHigh": 22500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:22.829Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.173Z",
+>>>>>>> Stashed changes
     "sector": "의학 및 약학 연구개발업",
     "ceo": "이성욱",
     "headOffice": "경기 용인시 수지구 죽전로 152, 소프트웨어아이씨티관 327호",
@@ -969,7 +1069,11 @@
     "priceBandLow": 13100,
     "priceBandHigh": 16500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:23.173Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.381Z",
+>>>>>>> Stashed changes
     "sector": "유인 항공기, 항공우주선 및 보조장치 제조업",
     "ceo": "박재필",
     "headOffice": "부산 영도구 해양로 435-1, 205호 (동삼동,해양물류산업센터부산테크노파크)",
@@ -1001,7 +1105,11 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:23.239Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.447Z",
+>>>>>>> Stashed changes
     "sector": "금융 지원 서비스업",
     "ceo": "이경준",
     "headOffice": "서울특별시 영등포구 국제금융로 10 (Three IFC 26층)",
@@ -1033,7 +1141,11 @@
     "priceBandLow": 17500,
     "priceBandHigh": 19500,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:23.438Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.637Z",
+>>>>>>> Stashed changes
     "sector": "응용 소프트웨어 개발 및 공급업",
     "ceo": "박외진",
     "headOffice": "서울특별시 강남구 선릉로 704 (청담동, 청담빌딩) 7, 11층",
@@ -1065,7 +1177,11 @@
     "priceBandLow": 8000,
     "priceBandHigh": 9300,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:23.598Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.795Z",
+>>>>>>> Stashed changes
     "sector": "절연선 및 케이블 제조업",
     "ceo": "지영완",
     "headOffice": "충남 천안시 입장면 가산리368-7",
@@ -1097,7 +1213,11 @@
     "priceBandLow": 12000,
     "priceBandHigh": 15000,
     "status": "active",
+<<<<<<< Updated upstream
     "updatedAt": "2026-03-17T08:21:23.770Z",
+=======
+    "updatedAt": "2026-03-17T08:27:05.999Z",
+>>>>>>> Stashed changes
     "sector": "의학 및 약학 연구개발업",
     "ceo": "백승기",
     "headOffice": "경기 성남시 중원구 사기막골로45번길 14, B동 6층 605호 (상대원동,우림라이온스밸리2차)",
