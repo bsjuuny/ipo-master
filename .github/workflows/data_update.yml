@@ -74,17 +74,12 @@ jobs:
           server-dir: /www/ipomaster/
           dangerous-clean-slate: false
 
-      - name: 📋 Generate IPO Summary
+      - name: 📋 Generate & Notify Telegram
         if: success()
-        run: npm run generate:summary
-
-      - name: 📢 Notify Telegram on Success
-        if: success()
-        run: |
-          $msg = Get-Content -Path "ipo-summary.txt" -Raw -Encoding UTF8
-          $body = @{ chat_id = "${{ secrets.TELEGRAM_CHAT_ID }}"; text = $msg; parse_mode = "HTML" } | ConvertTo-Json
-          $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
-          Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -Method POST -Body $bytes -ContentType "application/json; charset=utf-8"
+        run: npm run notify:telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: 🚨 Notify Telegram on Failure
         if: failure()

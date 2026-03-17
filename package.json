@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "data:update": "tsx scripts/aggregate.ts",
-    "generate:summary": "tsx scripts/generate-ipo-summary.ts"
+    "generate:summary": "tsx scripts/generate-ipo-summary.ts",
+    "notify:telegram": "tsx scripts/generate-ipo-summary.ts --send"
   },
   "dependencies": {
     "@types/iconv-lite": "^0.0.1",

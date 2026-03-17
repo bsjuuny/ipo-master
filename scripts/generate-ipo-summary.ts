@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import axios from 'axios';
 import { IPO } from '../src/types/ipo';
 
 const dataPath = path.join(process.cwd(), 'public/data/ipo_list.json');
@@ -98,6 +99,31 @@ async function generateSummary() {
   fs.writeFileSync(outputPath, finalMessage, 'utf8');
   console.log('Summary generated successfully:');
   console.log(finalMessage);
+
+  // Send to Telegram if requested via flag
+  if (process.argv.includes('--send')) {
+    const token = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
+    if (!token || !chatId) {
+      console.error('TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set');
+      process.exit(1);
+    }
+
+    try {
+      console.log('Sending notification to Telegram...');
+      await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+        chat_id: chatId,
+        text: finalMessage,
+        parse_mode: 'HTML',
+        disable_web_page_preview: true
+      });
+      console.log('Telegram notification sent successfully.');
+    } catch (error: any) {
+      console.error('Failed to send Telegram notification:', error.response?.data || error.message);
+      process.exit(1);
+    }
+  }
 }
 
 generateSummary().catch(err => {
