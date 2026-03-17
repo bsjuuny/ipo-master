@@ -9,7 +9,8 @@
     "lint": "next lint",
     "data:update": "tsx scripts/aggregate.ts",
     "generate:summary": "tsx scripts/generate-ipo-summary.ts",
-    "notify:telegram": "tsx scripts/generate-ipo-summary.ts --send"
+    "notify:telegram": "tsx scripts/generate-ipo-summary.ts --send",
+    "notify:failure": "tsx scripts/generate-ipo-summary.ts --failure"
   },
   "dependencies": {
     "@types/iconv-lite": "^0.0.1",

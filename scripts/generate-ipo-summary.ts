@@ -111,7 +111,8 @@ async function generateSummary() {
   console.log(finalMessage);
 
   // Send to Telegram if requested via flag
-  if (process.argv.includes('--send')) {
+  if (process.argv.includes('--send') || process.argv.includes('--failure')) {
+    const isFailure = process.argv.includes('--failure');
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -120,11 +121,15 @@ async function generateSummary() {
       process.exit(1);
     }
 
+    const message = isFailure 
+      ? `🚨 <b>IPO Master 배포 실패!</b>\n\n데이터 업데이트 또는 빌드 과정에서 오류가 발생했습니다.\n🔗 리포지토리: <a href="https://github.com/bsjuuny/ipo-master/actions">확인하기</a>`
+      : finalMessage;
+
     try {
-      console.log('Sending notification to Telegram...');
+      console.log(`Sending ${isFailure ? 'failure' : 'success'} notification to Telegram...`);
       const response = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
         chat_id: chatId,
-        text: finalMessage,
+        text: message,
         parse_mode: 'HTML',
         disable_web_page_preview: true
       }, {
@@ -134,14 +139,11 @@ async function generateSummary() {
     } catch (error: any) {
       console.error('Failed to send Telegram notification.');
       if (error.response) {
-        // The request was made and the server responded with a status code
         console.error('Response Data:', JSON.stringify(error.response.data));
         console.error('Response Status:', error.response.status);
       } else if (error.request) {
-        // The request was made but no response was received
         console.error('No response received. Error Request:', error.message);
       } else {
-        // Something happened in setting up the request that triggered an Error
         console.error('Error Message:', error.message);
       }
       process.exit(1);

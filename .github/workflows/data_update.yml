@@ -83,9 +83,7 @@ jobs:
 
       - name: 🚨 Notify Telegram on Failure
         if: failure()
-        run: |
-          $msg_b64 = "4p2MIDxiPklQTyBNYXN0ZXIg67Cw7Y+sIOyLpO2MqCE8L2I+CgrrjbDsnbTthLAg7JeF642w7J207Yq4IOuYkOuKlCDruYzrk5wg6rO87KCV7JeQ7IScIOyYpOulmOqwgCDrsJzsg53tlojsirXri4jri6QuCvCflJcg66as7Y+s7KeA7Yag66asOiA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vYnNqdXVueS9pcG8tbWFzdGVyL2FjdGlvbnMiPu2ZleyduO2VmOq4sDwvYT4="
-          $msg = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($msg_b64))
-          $body = @{ chat_id = "${{ secrets.TELEGRAM_CHAT_ID }}"; text = $msg; parse_mode = "HTML" } | ConvertTo-Json
-          $bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
-          Invoke-RestMethod -Uri "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -Method POST -Body $bytes -ContentType "application/json; charset=utf-8"
+        run: npm run notify:failure
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
