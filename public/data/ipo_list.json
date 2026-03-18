@@ -8,28 +8,7 @@
     "priceBandLow": 5300,
     "priceBandHigh": 6000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.247Z",
-    "competitionData": [
-      {
-        "brokerName": "유진",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "NH",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "유안타",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      }
-    ],
-    "totalCompetition": "청약 전",
+    "updatedAt": "2026-03-18T03:26:46.586Z",
     "sector": "의료용 기기 제조업",
     "ceo": "오주영",
     "headOffice": "서울특별시 구로구 디지털로31길 20 (구로동, 에이스테크노타워5차) 801-1호",
@@ -60,7 +39,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.328Z",
+    "updatedAt": "2026-03-18T03:26:46.679Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "박정근",
     "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower) 8층",
@@ -91,34 +70,7 @@
     "priceBandLow": 12300,
     "priceBandHigh": 15300,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.383Z",
-    "competitionData": [
-      {
-        "brokerName": "KB",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "삼성",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "대신",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "하나",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      }
-    ],
-    "totalCompetition": "청약 전",
+    "updatedAt": "2026-03-18T03:26:46.775Z",
     "sector": "기타 발전기 및 전기변환장치 제조업",
     "ceo": "정민교",
     "headOffice": "대구광역시 달성군 유가읍 테크노순환로7길 25",
@@ -141,6 +93,34 @@
     "refundDate": "2026.04.06"
   },
   {
+    "id": "2283",
+    "companyName": "하나오피스리츠",
+    "subscriptionStart": "2026.03.31",
+    "subscriptionEnd": "04.01",
+    "offeringPrice": 0,
+    "status": "active",
+    "updatedAt": "2026-03-18T03:26:46.877Z",
+    "sector": "비주거용 건물 임대업",
+    "ceo": "이준구",
+    "headOffice": "서울특별시 강남구 테헤란로 127 (역삼동, 하나금융그룹강남사옥) 15층",
+    "sales": "- (백만원)",
+    "netIncome": "- (백만원)",
+    "institutionalCompetition": "",
+    "lockupRatio": "0.00%",
+    "investmentPoints": [
+      "비주거용 건물 임대업 분야 독보적인 기술력 보유",
+      "글로벌 시장 점유율 매년 15% 이상 성장 중",
+      "탄탄한 재무 구조 및 낮은 부채 비율"
+    ],
+    "riskFactors": [
+      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
+      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
+      "기술 특례 상장에 따른 수익성 개선 지연 우려"
+    ],
+    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.",
+    "refundDate": "2026.04.03"
+  },
+  {
     "id": "2275",
     "companyName": "인벤테라",
     "subscriptionStart": "2026.03.23",
@@ -149,22 +129,7 @@
     "priceBandLow": 12100,
     "priceBandHigh": 16600,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.602Z",
-    "competitionData": [
-      {
-        "brokerName": "NH",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "유진",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      }
-    ],
-    "totalCompetition": "청약 전",
+    "updatedAt": "2026-03-18T03:26:47.117Z",
     "sector": "의학 및 약학 연구개발업",
     "ceo": "신태현",
     "headOffice": "서울 서초구 서초대로 111, 2층 (방배동,제이에스빌딩)",
@@ -196,7 +161,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.666Z",
+    "updatedAt": "2026-03-18T03:26:47.207Z",
     "sector": "기타 금융업",
     "ceo": "김서호",
     "headOffice": "서울특별시 영등포구 의사당대로 97, 17층",
@@ -223,34 +188,19 @@
     "companyName": "리센스메디컬",
     "subscriptionStart": "2026.03.19",
     "subscriptionEnd": "03.20",
-    "offeringPrice": 0,
+    "offeringPrice": 11000,
     "priceBandLow": 9000,
     "priceBandHigh": 11000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.913Z",
-    "competitionData": [
-      {
-        "brokerName": "한국",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      },
-      {
-        "brokerName": "KB",
-        "competitionRate": "청약 전",
-        "equalAllocation": "청약 전",
-        "proportionalAllocation": "청약 전"
-      }
-    ],
-    "totalCompetition": "청약 전",
+    "updatedAt": "2026-03-18T03:26:47.428Z",
     "sector": "그외 기타 의료용 기기 제조업",
     "ceo": "김건호",
     "headOffice": "울산 울주군 언양읍 유니스트길 50, 110동 301-1호",
     "underwriter": "한국투자증권,KB증권",
     "sales": "6,259 (백만원)",
     "netIncome": "-7,844 (백만원)",
-    "institutionalCompetition": "",
-    "lockupRatio": "0.00%",
+    "institutionalCompetition": "1352.63:1",
+    "lockupRatio": "63.92%",
     "investmentPoints": [
       "그외 기타 의료용 기기 제조업 분야 독보적인 기술력 보유",
       "글로벌 시장 점유율 매년 15% 이상 성장 중",
@@ -261,7 +211,7 @@
       "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
       "기술 특례 상장에 따른 수익성 개선 지연 우려"
     ],
-    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.",
+    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다.",
     "refundDate": "2026.03.24",
     "listingDate": "2026.03.31"
   },
@@ -274,7 +224,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:37.980Z",
+    "updatedAt": "2026-03-18T03:26:47.519Z",
     "sector": "금융 지원 서비스업",
     "ceo": "이효상",
     "headOffice": "서울특별시 영등포구 의사당대로 96 (여의도동, TPTower)",
@@ -306,7 +256,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:38.077Z",
+    "updatedAt": "2026-03-18T03:26:47.619Z",
     "sector": "금융 지원 서비스업",
     "ceo": "남강욱",
     "headOffice": "서울특별시 영등포구 여의대로 108 (여의도동, 파크원)",
@@ -338,16 +288,7 @@
     "priceBandLow": 16700,
     "priceBandHigh": 21600,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:38.292Z",
-    "competitionData": [
-      {
-        "brokerName": "신한",
-        "competitionRate": "4855.5:1",
-        "equalAllocation": "0.41주",
-        "proportionalAllocation": "4855.5:1"
-      }
-    ],
-    "totalCompetition": "4855.5:1",
+    "updatedAt": "2026-03-18T03:26:47.889Z",
     "sector": "전기식 진단 및 요법 기기 제조업",
     "ceo": "박정환",
     "headOffice": "강원특별자치도 원주시 지정면 기업도시로 200 808호(가곡리, 의료기기종합지원센터)",
@@ -379,22 +320,7 @@
     "priceBandLow": 17000,
     "priceBandHigh": 19000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:38.454Z",
-    "competitionData": [
-      {
-        "brokerName": "한국",
-        "competitionRate": "3476.04:1",
-        "equalAllocation": "0.27주",
-        "proportionalAllocation": "3476.04:1"
-      },
-      {
-        "brokerName": "대신",
-        "competitionRate": "2822.27:1",
-        "equalAllocation": "0.26주",
-        "proportionalAllocation": "2822.27:1"
-      }
-    ],
-    "totalCompetition": "3476.04:1",
+    "updatedAt": "2026-03-18T03:26:48.065Z",
     "sector": "그 외 기타 분류 안된 금융업",
     "ceo": "김경훈",
     "headOffice": "서울특별시 성동구 아차산로 92 4층 (성수동2가, 광명타워)",
@@ -426,22 +352,7 @@
     "priceBandLow": 19000,
     "priceBandHigh": 26000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:38.668Z",
-    "competitionData": [
-      {
-        "brokerName": "한국",
-        "competitionRate": "3631.61:1",
-        "equalAllocation": "0.42주",
-        "proportionalAllocation": "3631.61:1"
-      },
-      {
-        "brokerName": "신한",
-        "competitionRate": "3561.58:1",
-        "equalAllocation": "0.44주",
-        "proportionalAllocation": "3561.58:1"
-      }
-    ],
-    "totalCompetition": "3631.61:1",
+    "updatedAt": "2026-03-18T03:26:48.307Z",
     "sector": "연구개발업",
     "ceo": "하경식",
     "headOffice": "경기도 수원시 영통구 창룡대로 260 10,11층(이의동, 광교센트럴비즈타워)",
@@ -473,16 +384,7 @@
     "priceBandLow": 16000,
     "priceBandHigh": 20000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:38.961Z",
-    "competitionData": [
-      {
-        "brokerName": "한국",
-        "competitionRate": "3797.58:1",
-        "equalAllocation": "0.54주",
-        "proportionalAllocation": "3797.58:1"
-      }
-    ],
-    "totalCompetition": "3797.58:1",
+    "updatedAt": "2026-03-18T03:26:48.500Z",
     "sector": "자연과학 및 공학 연구개발업",
     "ceo": "이병철",
     "headOffice": "서울특별시 용산구 이태원로55가길 3 3~5층 (한남동, 골든너겟)",
@@ -514,16 +416,7 @@
     "priceBandLow": 10100,
     "priceBandHigh": 11500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:39.157Z",
-    "competitionData": [
-      {
-        "brokerName": "미래",
-        "competitionRate": "5422.12:1",
-        "equalAllocation": "0.48주",
-        "proportionalAllocation": "5422.12:1"
-      }
-    ],
-    "totalCompetition": "5422.12:1",
+    "updatedAt": "2026-03-18T03:26:48.673Z",
     "sector": "전자 응용 절삭기계 제조업",
     "ceo": "김명진",
     "headOffice": "대전광역시 유성구 테크노1로 57 (관평동, 액스비스)",
@@ -555,16 +448,7 @@
     "priceBandLow": 7000,
     "priceBandHigh": 8500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:39.384Z",
-    "competitionData": [
-      {
-        "brokerName": "한국",
-        "competitionRate": "3920.74:1",
-        "equalAllocation": "0.45주",
-        "proportionalAllocation": "3920.74:1"
-      }
-    ],
-    "totalCompetition": "3920.74:1",
+    "updatedAt": "2026-03-18T03:26:48.819Z",
     "sector": "전시, 컨벤션 및 행사 대행업",
     "ceo": "김소연",
     "headOffice": "서울특별시 종로구 인사동9길 27 (견지동, 웅지빌딩)",
@@ -596,28 +480,7 @@
     "priceBandLow": 8300,
     "priceBandHigh": 9500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:39.666Z",
-    "competitionData": [
-      {
-        "brokerName": "NH",
-        "competitionRate": "268.26:1",
-        "equalAllocation": "11.25주",
-        "proportionalAllocation": "268.26:1"
-      },
-      {
-        "brokerName": "삼성",
-        "competitionRate": "268.31:1",
-        "equalAllocation": "11.59주",
-        "proportionalAllocation": "268.31:1"
-      },
-      {
-        "brokerName": "신한",
-        "competitionRate": "278.1:1",
-        "equalAllocation": "3.74주",
-        "proportionalAllocation": "278.1:1"
-      }
-    ],
-    "totalCompetition": "268.26:1",
+    "updatedAt": "2026-03-18T03:26:49.079Z",
     "sector": "은행 및 저축기관",
     "ceo": "최우형",
     "headOffice": "서울특별시 중구 을지로 170 동관 6층(을지로4가, 을지트윈타워)",
@@ -649,7 +512,7 @@
     "priceBandLow": 8500,
     "priceBandHigh": 10000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:39.853Z",
+    "updatedAt": "2026-03-18T03:26:49.261Z",
     "sector": "산소, 질소 및 기타 산업용 가스 제조업",
     "ceo": "김기철",
     "headOffice": "전라남도 여수시 산단중앙로 233 (화치동)",
@@ -681,7 +544,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:39.910Z",
+    "updatedAt": "2026-03-18T03:26:49.320Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "송하용",
     "headOffice": "서울특별시 강남구 역삼로18길 12 (역삼동)",
@@ -713,7 +576,7 @@
     "priceBandLow": 21000,
     "priceBandHigh": 24000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.258Z",
+    "updatedAt": "2026-03-18T03:26:49.609Z",
     "sector": "기타 엔지니어링 서비스업",
     "ceo": "조명현",
     "headOffice": "경기 성남시 분당구 양현로 322, 6층 603호, 605호 (야탑동,코리아디자인센터)",
@@ -745,7 +608,7 @@
     "priceBandLow": 44000,
     "priceBandHigh": 55000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.590Z",
+    "updatedAt": "2026-03-18T03:26:49.913Z",
     "sector": "그외 기타 의료용 기기 제조업",
     "ceo": "이정주",
     "headOffice": "경기 성남시 분당구 판교로 700, D동 304호 (야탑동,분당테크노파크)",
@@ -777,7 +640,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.637Z",
+    "updatedAt": "2026-03-18T03:26:49.979Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "윤태원",
     "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원(MiraeAssetCENTER1))",
@@ -809,7 +672,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.685Z",
+    "updatedAt": "2026-03-18T03:26:50.040Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "박병기",
     "headOffice": "서울특별시 영등포구 의사당대로 82 (여의도동, 하나증권빌딩)",
@@ -841,7 +704,7 @@
     "priceBandLow": 6700,
     "priceBandHigh": 7600,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.886Z",
+    "updatedAt": "2026-03-18T03:26:50.245Z",
     "sector": "수산동물 훈제, 조리 및 유사 조제식품 제조업",
     "ceo": "박용준",
     "headOffice": "부산광역시 영도구 태종로99번길 36 (봉래동2가)",
@@ -873,7 +736,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:40.953Z",
+    "updatedAt": "2026-03-18T03:26:50.299Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "김양태",
     "headOffice": "서울특별시 중구 을지로5길 26 (수하동, 미래에셋센터원)",
@@ -905,7 +768,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:41.019Z",
+    "updatedAt": "2026-03-18T03:26:50.351Z",
     "sector": "그 외 기타 금융 지원 서비스업",
     "ceo": "심기섭",
     "headOffice": "서울특별시 영등포구 국제금융로6길 11 (여의도동, 삼덕빌딩)",
@@ -937,7 +800,7 @@
     "priceBandLow": 17000,
     "priceBandHigh": 22500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:41.283Z",
+    "updatedAt": "2026-03-18T03:26:50.598Z",
     "sector": "의학 및 약학 연구개발업",
     "ceo": "이성욱",
     "headOffice": "경기 용인시 수지구 죽전로 152, 소프트웨어아이씨티관 327호",
@@ -969,7 +832,7 @@
     "priceBandLow": 13100,
     "priceBandHigh": 16500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:41.522Z",
+    "updatedAt": "2026-03-18T03:26:50.775Z",
     "sector": "유인 항공기, 항공우주선 및 보조장치 제조업",
     "ceo": "박재필",
     "headOffice": "부산 영도구 해양로 435-1, 205호 (동삼동,해양물류산업센터부산테크노파크)",
@@ -1001,7 +864,7 @@
     "priceBandLow": 2000,
     "priceBandHigh": 2000,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:41.605Z",
+    "updatedAt": "2026-03-18T03:26:50.849Z",
     "sector": "금융 지원 서비스업",
     "ceo": "이경준",
     "headOffice": "서울특별시 영등포구 국제금융로 10 (Three IFC 26층)",
@@ -1033,7 +896,7 @@
     "priceBandLow": 17500,
     "priceBandHigh": 19500,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:41.845Z",
+    "updatedAt": "2026-03-18T03:26:51.070Z",
     "sector": "응용 소프트웨어 개발 및 공급업",
     "ceo": "박외진",
     "headOffice": "서울특별시 강남구 선릉로 704 (청담동, 청담빌딩) 7, 11층",
@@ -1065,7 +928,7 @@
     "priceBandLow": 8000,
     "priceBandHigh": 9300,
     "status": "active",
-    "updatedAt": "2026-03-17T20:01:42.048Z",
+    "updatedAt": "2026-03-18T03:26:51.248Z",
     "sector": "절연선 및 케이블 제조업",
     "ceo": "지영완",
     "headOffice": "충남 천안시 입장면 가산리368-7",
@@ -1087,37 +950,5 @@
     "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.",
     "refundDate": "2025.12.08",
     "listingDate": "2025.12.15"
-  },
-  {
-    "id": "2237",
-    "companyName": "쿼드메디슨",
-    "subscriptionStart": "2025.12.02",
-    "subscriptionEnd": "12.03",
-    "offeringPrice": 15000,
-    "priceBandLow": 12000,
-    "priceBandHigh": 15000,
-    "status": "active",
-    "updatedAt": "2026-03-17T20:01:42.265Z",
-    "sector": "의학 및 약학 연구개발업",
-    "ceo": "백승기",
-    "headOffice": "경기 성남시 중원구 사기막골로45번길 14, B동 6층 605호 (상대원동,우림라이온스밸리2차)",
-    "underwriter": "NH투자증권",
-    "sales": "9,304 (백만원)",
-    "netIncome": "-4,968 (백만원)",
-    "institutionalCompetition": "1139.61:1",
-    "lockupRatio": "17.82%",
-    "investmentPoints": [
-      "의학 및 약학 연구개발업 분야 독보적인 기술력 보유",
-      "글로벌 시장 점유율 매년 15% 이상 성장 중",
-      "탄탄한 재무 구조 및 낮은 부채 비율"
-    ],
-    "riskFactors": [
-      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
-      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
-      "기술 특례 상장에 따른 수익성 개선 지연 우려"
-    ],
-    "aiVerdict": "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다.",
-    "refundDate": "2025.12.05",
-    "listingDate": "2025.12.12"
   }
 ]
