@@ -73,16 +73,26 @@ export default function HomePage() {
   const getCompetitionStatus = (ipo: IPO) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    
+
     // Parse subscriptionStart (Format: YYYY.MM.DD) as local time to avoid UTC offset issues
     const [sy, sm, sd] = ipo.subscriptionStart.split('.');
     const startDate = new Date(parseInt(sy), parseInt(sm) - 1, parseInt(sd));
-    
+
     if (startDate > today) {
       return '청약 전';
     }
-    
-    return ipo.totalCompetition || '집계 중...';
+
+    return ipo.totalCompetition || ipo.institutionalCompetition || '집계 중...';
+  };
+
+  const getCompetitionLabel = (ipo: IPO) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const [sy, sm, sd] = ipo.subscriptionStart.split('.');
+    const startDate = new Date(parseInt(sy), parseInt(sm) - 1, parseInt(sd));
+    if (startDate > today) return '통합 경쟁률';
+    if (!ipo.totalCompetition && ipo.institutionalCompetition) return '수요예측 경쟁률';
+    return '통합 경쟁률';
   };
 
   const toggleExpand = (id: string) => {
@@ -209,7 +219,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="space-y-0.5 md:space-y-1 tabular-nums">
-                          <span className="text-[9px] md:text-[10px] font-bold text-slate-500 tracking-widest uppercase">통합 경쟁률</span>
+                          <span className="text-[9px] md:text-[10px] font-bold text-slate-500 tracking-widest uppercase">{getCompetitionLabel(ipo)}</span>
                           <p className={`text-base md:text-xl font-black ${getCompetitionStatus(ipo) === '청약 전' || isPast ? 'text-slate-500' : 'text-blue-500'}`}>
                             {getCompetitionStatus(ipo)}
                           </p>
