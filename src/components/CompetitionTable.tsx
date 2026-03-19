@@ -11,10 +11,10 @@ export default function CompetitionTable({ data }: CompetitionTableProps) {
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-white/5">
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">증권사</th>
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">경쟁률</th>
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase text-center">균등 배정</th>
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase text-center">비례 배정<br /><span className="normal-case font-normal text-[9px]">1천만원 기준</span></th>
+            <th className="pb-4 pt-2 text-xs font-black tracking-widest text-slate-500 uppercase">증권사</th>
+            <th className="pb-4 pt-2 text-xs font-black tracking-widest text-slate-500 uppercase">경쟁률</th>
+            <th className="pb-4 pt-2 text-xs font-black tracking-widest text-slate-500 uppercase text-center">균등 배정</th>
+            <th className="pb-4 pt-2 text-xs font-black tracking-widest text-slate-500 uppercase text-center">비례 배정<br /><span className="normal-case font-normal text-[11px]">1천만원 기준</span></th>
           </tr>
         </thead>
         <tbody className="divide-y divide-white/5">
