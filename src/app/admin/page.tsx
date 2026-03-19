@@ -40,6 +40,7 @@ async function saveOverridesToGitHub(overrides: Overrides, sha: string): Promise
 
 export default function AdminPage() {
   const [input, setInput] = useState('');
+  const [showPw, setShowPw] = useState(false);
   const [authed, setAuthed] = useState(false);
   const [ipoList, setIpoList] = useState<IPO[]>([]);
   const [overrides, setOverrides] = useState<Overrides>({});
@@ -148,17 +149,26 @@ export default function AdminPage() {
       <div className="min-h-screen flex items-center justify-center bg-black">
         <div className="bg-gray-900 p-8 rounded-xl space-y-4 w-80">
           <h1 className="text-white font-bold text-lg">Admin</h1>
-          <input
-            type="password"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && login()}
-            placeholder="비밀번호"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="none"
-            className="w-full px-4 py-2 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500"
-          />
+          <div className="relative">
+            <input
+              type={showPw ? 'text' : 'password'}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && login()}
+              placeholder="비밀번호"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              className="w-full px-4 py-2 pr-12 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPw(v => !v)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs font-bold"
+            >
+              {showPw ? '숨김' : '보기'}
+            </button>
+          </div>
           <button onClick={login} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700">
             입력
           </button>
