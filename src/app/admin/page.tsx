@@ -58,13 +58,14 @@ export default function AdminPage() {
       .then((data: IPO[]) => {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
+        const threeDaysAgo = new Date(today);
+        threeDaysAgo.setDate(today.getDate() - 3);
         const active = data.filter(ipo => {
           const startYear = ipo.subscriptionStart.split('.')[0];
           let endStr = ipo.subscriptionEnd;
           if (endStr.split('.').length === 2) endStr = `${startYear}.${endStr}`;
-          const start = new Date(ipo.subscriptionStart.replace(/\./g, '-'));
           const end = new Date(endStr.replace(/\./g, '-'));
-          return start <= today && today <= end;
+          return end >= threeDaysAgo;
         });
         setIpoList(active);
       })
@@ -170,7 +171,7 @@ export default function AdminPage() {
       {loadError && <p className="text-red-400 text-sm mb-4">{loadError}</p>}
 
       {ipoList.length === 0 && !loadError && (
-        <p className="text-gray-500 text-sm">로딩 중...</p>
+        <p className="text-gray-500 text-sm">현재 청약 중이거나 최근 마감된 공모주가 없습니다.</p>
       )}
 
       <div className="space-y-8 mt-6">
