@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react';
 import { IPO, BrokerCompetition } from '@/types/ipo';
 
 const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? '';
+
+// ":1" 제거 (입력 표시용)
+function stripRate(v?: string) { return v ? v.replace(/:1$/, '').trim() : ''; }
+// ":1" 추가 (저장용)
+function appendRate(v: string) { return v && !v.endsWith(':1') ? `${v}:1` : v; }
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN ?? '';
 const GITHUB_REPO = 'bsjuuny/ipo-master';
 const OVERRIDE_PATH = 'public/data/competition_override.json';
@@ -76,7 +81,13 @@ export default function AdminPage() {
     fetchOverridesFromGitHub()
       .then(({ content, sha }) => {
         setOverrides(content);
-        setEdits(content);
+        // 입력 표시용: :1 제거
+        const stripped = Object.fromEntries(Object.entries(content).map(([id, v]) => [id, {
+          ...v,
+          ...(v.totalCompetition ? { totalCompetition: stripRate(v.totalCompetition) } : {}),
+          ...(v.competitionData ? { competitionData: v.competitionData.map(r => ({ ...r, competitionRate: stripRate(r.competitionRate) })) } : {}),
+        }]));
+        setEdits(stripped);
         setSha(sha);
       })
       .catch(e => setLoadError(`GitHub 로드 실패: ${e.message}`));
@@ -121,8 +132,8 @@ export default function AdminPage() {
     setSaving(id);
     const edit = edits[id] ?? {};
     const newOverrides = { ...overrides };
-    const totalCompetition = edit.totalCompetition ?? '';
-    const competitionData = (edit.competitionData ?? []).filter(r => r.brokerName);
+    const totalCompetition = appendRate(edit.totalCompetition ?? '');
+    const competitionData = (edit.competitionData ?? []).filter(r => r.brokerName).map(r => ({ ...r, competitionRate: appendRate(r.competitionRate) }));
 
     if (!totalCompetition && competitionData.length === 0) {
       delete newOverrides[id];
@@ -209,13 +220,16 @@ export default function AdminPage() {
 
               <div className="mb-4">
                 <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">통합 경쟁률</label>
-                <input
-                  type="text"
-                  value={edit.totalCompetition ?? ''}
-                  onChange={e => setTotal(ipo.id, e.target.value)}
-                  placeholder="예: 1,234.56:1"
-                  className="w-full md:w-64 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
-                />
+                <div className="flex items-center gap-1">
+                  <input
+                    type="text"
+                    value={edit.totalCompetition ?? ''}
+                    onChange={e => setTotal(ipo.id, e.target.value)}
+                    placeholder="예: 1,234.56"
+                    className="w-40 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
+                  />
+                  <span className="text-gray-400 text-sm font-bold">:1</span>
+                </div>
               </div>
 
               <div className="mb-4">
@@ -235,8 +249,9 @@ export default function AdminPage() {
                         value={row.competitionRate}
                         onChange={e => setBrokerRow(ipo.id, idx, 'competitionRate', e.target.value)}
                         placeholder="경쟁률"
-                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-32"
+                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
                       />
+                      <span className="text-gray-400 text-sm font-bold">:1</span>
                       <input
                         type="text"
                         value={row.equalAllocation ?? ''}
