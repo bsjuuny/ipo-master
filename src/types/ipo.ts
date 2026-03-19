@@ -47,6 +47,7 @@ export interface IPO {
 export interface BrokerCompetition {
   brokerName: string;
   competitionRate: string;
+  allocatedShares?: number;
   equalAllocation?: string;
   proportionalAllocation?: string;
   minSubscriptionAmount?: number;

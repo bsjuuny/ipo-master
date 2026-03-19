@@ -9,6 +9,30 @@ const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? '';
 function stripRate(v?: string) { return v ? v.replace(/:1$/, '').trim() : ''; }
 // ":1" 추가 (저장용)
 function appendRate(v: string) { return v && !v.endsWith(':1') ? `${v}:1` : v; }
+
+// 1천만원 증거금 기준 비례배정 계산
+const DEPOSIT = 10_000_000;
+function calcProportional(offeringPrice: number, competitionRate: string): number {
+  const rate = parseFloat(competitionRate.replace(/,/g, ''));
+  if (!rate || !offeringPrice || rate <= 0) return 0;
+  const subscriptionShares = Math.floor((DEPOSIT * 2) / offeringPrice);
+  return Math.floor(subscriptionShares / rate);
+}
+
+// 증권사별 배정 주식수 가중평균으로 통합 경쟁률 계산
+function calcTotalCompetition(brokers: BrokerCompetition[]): number {
+  let weightedSum = 0;
+  let totalShares = 0;
+  for (const b of brokers) {
+    const rate = parseFloat(b.competitionRate.replace(/,/g, ''));
+    const shares = b.allocatedShares ?? 0;
+    if (!rate || !shares) continue;
+    weightedSum += rate * shares;
+    totalShares += shares;
+  }
+  if (!totalShares) return 0;
+  return Math.round((weightedSum / totalShares) * 100) / 100;
+}
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN ?? '';
 const GITHUB_REPO = 'bsjuuny/ipo-master';
 const OVERRIDE_PATH = 'public/data/competition_override.json';
@@ -107,7 +131,8 @@ export default function AdminPage() {
   function setBrokerRow(id: string, idx: number, field: keyof BrokerCompetition, value: string) {
     setEdits(prev => {
       const rows = [...(prev[id]?.competitionData ?? [])];
-      rows[idx] = { ...rows[idx], [field]: field === 'minSubscriptionAmount' ? Number(value) : value };
+      const numFields = ['minSubscriptionAmount', 'allocatedShares'];
+      rows[idx] = { ...rows[idx], [field]: numFields.includes(field) ? Number(value) : value };
       return { ...prev, [id]: { ...prev[id], competitionData: rows } };
     });
   }
@@ -131,9 +156,22 @@ export default function AdminPage() {
   async function save(id: string) {
     setSaving(id);
     const edit = edits[id] ?? {};
+    const ipo = ipoList.find(i => i.id === id);
     const newOverrides = { ...overrides };
-    const totalCompetition = appendRate(edit.totalCompetition ?? '');
-    const competitionData = (edit.competitionData ?? []).filter(r => r.brokerName).map(r => ({ ...r, competitionRate: appendRate(r.competitionRate) }));
+    const competitionData = (edit.competitionData ?? []).filter(r => r.brokerName).map(r => {
+      const proportional = ipo ? calcProportional(ipo.offeringPrice, r.competitionRate) : 0;
+      return {
+        brokerName: r.brokerName,
+        competitionRate: appendRate(r.competitionRate),
+        ...(r.allocatedShares ? { allocatedShares: r.allocatedShares } : {}),
+        ...(r.equalAllocation ? { equalAllocation: r.equalAllocation } : {}),
+        ...(proportional > 0 ? { proportionalAllocation: String(proportional) } : {}),
+      };
+    });
+    // 배정 주식수가 있으면 통합 경쟁률 자동 계산, 수동 입력이 있으면 우선
+    const calculated = calcTotalCompetition(competitionData);
+    const manualTotal = edit.totalCompetition ?? '';
+    const totalCompetition = appendRate(manualTotal || (calculated > 0 ? String(calculated) : ''));
 
     if (!totalCompetition && competitionData.length === 0) {
       delete newOverrides[id];
@@ -213,62 +251,87 @@ export default function AdminPage() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h2 className="font-bold text-lg">{ipo.companyName}</h2>
-                  <p className="text-gray-500 text-xs">{ipo.subscriptionStart} ~ {ipo.subscriptionEnd}</p>
+                  <p className="text-gray-500 text-xs">{ipo.subscriptionStart} ~ {ipo.subscriptionEnd} · 공모가 {ipo.offeringPrice.toLocaleString()}원</p>
                 </div>
                 {hasOverride && <span className="text-xs bg-blue-600/30 text-blue-400 px-2 py-0.5 rounded">저장됨</span>}
               </div>
 
               <div className="mb-4">
                 <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">통합 경쟁률</label>
-                <div className="flex items-center gap-1">
-                  <input
-                    type="text"
-                    value={edit.totalCompetition ?? ''}
-                    onChange={e => setTotal(ipo.id, e.target.value)}
-                    placeholder="예: 1,234.56"
-                    className="w-40 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
-                  />
-                  <span className="text-gray-400 text-sm font-bold">:1</span>
-                </div>
+                {(() => {
+                  const calculated = calcTotalCompetition(brokers);
+                  const displayRate = edit.totalCompetition || (calculated > 0 ? String(calculated) : '');
+                  const proportional = calcProportional(ipo.offeringPrice, displayRate);
+                  return (
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <input
+                        type="text"
+                        value={edit.totalCompetition ?? ''}
+                        onChange={e => setTotal(ipo.id, e.target.value)}
+                        placeholder={calculated > 0 ? `자동: ${calculated}` : '예: 1,234.56'}
+                        className="w-40 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
+                      />
+                      <span className="text-gray-400 text-sm font-bold">:1</span>
+                      {calculated > 0 && !edit.totalCompetition && (
+                        <span className="text-yellow-400 text-xs">자동계산 {calculated}:1</span>
+                      )}
+                      {proportional > 0 && (
+                        <span className="text-blue-400 text-sm">→ 비례 <span className="font-bold font-mono">{proportional}주</span></span>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
 
               <div className="mb-4">
-                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-2 block">증권사별 경쟁률</label>
+                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">증권사별 경쟁률</label>
+                <p className="text-xs text-gray-500 mb-2">1천만원 증거금 기준 · 공모가 {ipo.offeringPrice.toLocaleString()}원</p>
                 <div className="space-y-2">
-                  {brokers.map((row, idx) => (
-                    <div key={idx} className="flex gap-2 items-center flex-wrap">
-                      <input
-                        type="text"
-                        value={row.brokerName}
-                        onChange={e => setBrokerRow(ipo.id, idx, 'brokerName', e.target.value)}
-                        placeholder="증권사명"
-                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-28"
-                      />
-                      <input
-                        type="text"
-                        value={row.competitionRate}
-                        onChange={e => setBrokerRow(ipo.id, idx, 'competitionRate', e.target.value)}
-                        placeholder="경쟁률"
-                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
-                      />
-                      <span className="text-gray-400 text-sm font-bold">:1</span>
-                      <input
-                        type="text"
-                        value={row.equalAllocation ?? ''}
-                        onChange={e => setBrokerRow(ipo.id, idx, 'equalAllocation', e.target.value)}
-                        placeholder="균등"
-                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-20"
-                      />
-                      <input
-                        type="text"
-                        value={row.proportionalAllocation ?? ''}
-                        onChange={e => setBrokerRow(ipo.id, idx, 'proportionalAllocation', e.target.value)}
-                        placeholder="비례"
-                        className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-20"
-                      />
-                      <button onClick={() => removeBrokerRow(ipo.id, idx)} className="text-gray-500 hover:text-red-400 text-xs font-bold px-1">✕</button>
-                    </div>
-                  ))}
+                  {brokers.map((row, idx) => {
+                    const proportional = calcProportional(ipo.offeringPrice, row.competitionRate);
+                    const equal = parseInt(row.equalAllocation ?? '0') || 0;
+                    const total = equal + proportional;
+                    return (
+                      <div key={idx} className="flex gap-2 items-center flex-wrap">
+                        <input
+                          type="text"
+                          value={row.brokerName}
+                          onChange={e => setBrokerRow(ipo.id, idx, 'brokerName', e.target.value)}
+                          placeholder="증권사명"
+                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-28"
+                        />
+                        <input
+                          type="text"
+                          value={row.competitionRate}
+                          onChange={e => setBrokerRow(ipo.id, idx, 'competitionRate', e.target.value)}
+                          placeholder="경쟁률"
+                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
+                        />
+                        <span className="text-gray-400 text-sm font-bold">:1</span>
+                        <input
+                          type="number"
+                          value={row.allocatedShares ?? ''}
+                          onChange={e => setBrokerRow(ipo.id, idx, 'allocatedShares', e.target.value)}
+                          placeholder="배정주식수"
+                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
+                        />
+                        <input
+                          type="text"
+                          value={row.equalAllocation ?? ''}
+                          onChange={e => setBrokerRow(ipo.id, idx, 'equalAllocation', e.target.value)}
+                          placeholder="균등"
+                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-16"
+                        />
+                        <span className="text-gray-500 text-xs">균등</span>
+                        <span className="text-blue-400 text-sm font-mono w-10 text-right">{proportional > 0 ? proportional : '-'}</span>
+                        <span className="text-gray-500 text-xs">비례</span>
+                        {total > 0 && (
+                          <span className="text-green-400 text-sm font-bold">{total}주</span>
+                        )}
+                        <button onClick={() => removeBrokerRow(ipo.id, idx)} className="text-gray-500 hover:text-red-400 text-xs font-bold px-1">✕</button>
+                      </div>
+                    );
+                  })}
                 </div>
                 <button onClick={() => addBrokerRow(ipo.id)} className="mt-2 text-xs text-blue-400 hover:text-blue-300 font-bold">
                   + 증권사 추가
