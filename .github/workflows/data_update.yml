@@ -1,9 +1,10 @@
 name: Update Data & Deploy to Cafe24
 
 on:
-  schedule:
-    - cron: '16 19 * * 0-4'  # 평일 오전 4:16 KST (UTC+9 → 전날 19:16 UTC)
-    - cron: '16 8 * * 1-5'   # 평일 오후 17:16 KST (08:16 UTC)
+  # schedule 비활성화 — PM2 스케줄러(run-ipo-master.mjs)가 동일 작업을 수행하므로 중복 방지
+  # schedule:
+  #   - cron: '16 19 * * 0-4'  # 평일 오전 4:16 KST
+  #   - cron: '16 8 * * 1-5'   # 평일 오후 17:16 KST
   push:
     branches:
       - main
