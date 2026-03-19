@@ -10,12 +10,11 @@ function stripRate(v?: string) { return v ? v.replace(/:1$/, '').trim() : ''; }
 // ":1" 추가 (저장용)
 function appendRate(v: string) { return v && !v.endsWith(':1') ? `${v}:1` : v; }
 
-// 1천만원 증거금 기준 비례배정 계산
-const DEPOSIT = 10_000_000;
-function calcProportional(offeringPrice: number, competitionRate: string): number {
+// 증거금 기준 비례배정 계산
+function calcProportional(offeringPrice: number, competitionRate: string, deposit: number): number {
   const rate = parseFloat(competitionRate.replace(/,/g, ''));
-  if (!rate || !offeringPrice || rate <= 0) return 0;
-  const subscriptionShares = Math.floor((DEPOSIT * 2) / offeringPrice);
+  if (!rate || !offeringPrice || rate <= 0 || deposit <= 0) return 0;
+  const subscriptionShares = Math.floor((deposit * 2) / offeringPrice);
   return Math.floor(subscriptionShares / rate);
 }
 
@@ -78,6 +77,7 @@ export default function AdminPage() {
   const [saving, setSaving] = useState<string | null>(null);
   const [saved, setSaved] = useState<string | null>(null);
   const [loadError, setLoadError] = useState('');
+  const [deposit, setDeposit] = useState(10_000_000);
 
   useEffect(() => {
     if (!authed) return;
@@ -159,7 +159,7 @@ export default function AdminPage() {
     const ipo = ipoList.find(i => i.id === id);
     const newOverrides = { ...overrides };
     const competitionData = (edit.competitionData ?? []).filter(r => r.brokerName).map(r => {
-      const proportional = ipo ? calcProportional(ipo.offeringPrice, r.competitionRate) : 0;
+      const proportional = ipo ? calcProportional(ipo.offeringPrice, r.competitionRate, deposit) : 0;
       return {
         brokerName: r.brokerName,
         competitionRate: appendRate(r.competitionRate),
@@ -231,7 +231,24 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-black text-white p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-black mb-2">공모주 경쟁률 입력</h1>
-      <p className="text-gray-500 text-sm mb-2">저장하면 GitHub에 바로 커밋됩니다. PM2 다음 실행 시 자동 반영.</p>
+      <p className="text-gray-500 text-sm mb-3">저장하면 GitHub에 바로 커밋됩니다. PM2 다음 실행 시 자동 반영.</p>
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-sm text-gray-400">청약증거금</span>
+        <select
+          value={deposit}
+          onChange={e => setDeposit(Number(e.target.value))}
+          className="px-3 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
+        >
+          <option value={1_000_000}>100만원</option>
+          <option value={3_000_000}>300만원</option>
+          <option value={5_000_000}>500만원</option>
+          <option value={10_000_000}>1,000만원</option>
+          <option value={30_000_000}>3,000만원</option>
+          <option value={50_000_000}>5,000만원</option>
+          <option value={100_000_000}>1억원</option>
+        </select>
+        <span className="text-xs text-gray-500">기준 비례배정 자동계산</span>
+      </div>
       {loadError && <p className="text-red-400 text-sm mb-4">{loadError}</p>}
 
       {ipoList.length === 0 && !loadError && (
@@ -261,7 +278,7 @@ export default function AdminPage() {
                 {(() => {
                   const calculated = calcTotalCompetition(brokers);
                   const displayRate = edit.totalCompetition || (calculated > 0 ? String(calculated) : '');
-                  const proportional = calcProportional(ipo.offeringPrice, displayRate);
+                  const proportional = calcProportional(ipo.offeringPrice, displayRate, deposit);
                   return (
                     <div className="flex items-center gap-2 flex-wrap">
                       <input
@@ -285,10 +302,10 @@ export default function AdminPage() {
 
               <div className="mb-4">
                 <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">증권사별 경쟁률</label>
-                <p className="text-xs text-gray-500 mb-2">1천만원 증거금 기준 · 공모가 {ipo.offeringPrice.toLocaleString()}원</p>
+                <p className="text-xs text-gray-500 mb-2">{(deposit / 10000).toLocaleString()}만원 증거금 기준 · 공모가 {ipo.offeringPrice.toLocaleString()}원</p>
                 <div className="space-y-2">
                   {brokers.map((row, idx) => {
-                    const proportional = calcProportional(ipo.offeringPrice, row.competitionRate);
+                    const proportional = calcProportional(ipo.offeringPrice, row.competitionRate, deposit);
                     const equal = parseInt(row.equalAllocation ?? '0') || 0;
                     const total = equal + proportional;
                     return (

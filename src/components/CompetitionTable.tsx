@@ -13,8 +13,8 @@ export default function CompetitionTable({ data }: CompetitionTableProps) {
           <tr className="border-b border-white/5">
             <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">증권사</th>
             <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">경쟁률</th>
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">균등 배정</th>
-            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase">비례 배정</th>
+            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase text-center">균등 배정</th>
+            <th className="pb-4 pt-2 text-[10px] font-black tracking-widest text-slate-500 uppercase text-center">비례 배정<br /><span className="normal-case font-normal text-[9px]">1천만원 기준</span></th>
           </tr>
         </thead>
         <tbody className="divide-y divide-white/5">
@@ -34,15 +34,11 @@ export default function CompetitionTable({ data }: CompetitionTableProps) {
                   <span className="text-xs md:text-base font-black text-blue-500">{item.competitionRate}</span>
                 </div>
               </td>
-              <td className="py-3 md:py-5 text-slate-400">
-                <div className="flex items-center gap-1">
-                  <span className="text-xs md:text-base font-medium">{item.equalAllocation || '-'}</span>
-                </div>
+              <td className="py-3 md:py-5 text-slate-400 text-center">
+                <span className="text-xs md:text-base font-medium">{item.equalAllocation || '-'}</span>
               </td>
-              <td className="py-3 md:py-5 text-slate-400">
-                <div className="flex items-center gap-1">
-                  <span className="text-xs md:text-base font-medium">{item.proportionalAllocation || '-'}</span>
-                </div>
+              <td className="py-3 md:py-5 text-slate-400 text-center">
+                <span className="text-xs md:text-base font-medium">{item.proportionalAllocation || '-'}</span>
               </td>
             </tr>
           ))}
