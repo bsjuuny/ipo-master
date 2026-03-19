@@ -4,15 +4,15 @@
     "competitionData": [
       {
         "brokerName": "한국투자증권",
-        "competitionRate": "50:1",
-        "equalAllocation": "0.65",
-        "proportionalAllocation": "258.32:1"
+        "competitionRate": "290.42:1",
+        "equalAllocation": "0.6",
+        "proportionalAllocation": "6"
       },
       {
         "brokerName": "KB증권",
-        "competitionRate": "60:1",
-        "equalAllocation": "1.19",
-        "proportionalAllocation": "140.22"
+        "competitionRate": "289.96:1",
+        "equalAllocation": "1.08",
+        "proportionalAllocation": "6"
       }
     ]
   },
