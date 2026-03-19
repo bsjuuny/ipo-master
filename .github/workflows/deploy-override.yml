@@ -1,11 +1,12 @@
 name: Deploy Competition Override
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'public/data/competition_override.json'
+  workflow_dispatch:  # 시크릿 설정 후 수동으로만 실행 (GitHub Secrets: NEXT_PUBLIC_ADMIN_KEY, NEXT_PUBLIC_GITHUB_TOKEN, CAFE24_FTP_* 필요)
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'public/data/competition_override.json'
 
 jobs:
   deploy:
