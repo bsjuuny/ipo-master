@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "data:update": "tsx scripts/aggregate.ts",
+    "override:apply": "tsx scripts/apply-override.ts",
     "generate:summary": "tsx scripts/generate-ipo-summary.ts",
     "notify:telegram": "tsx scripts/generate-ipo-summary.ts --send",
     "notify:failure": "tsx scripts/generate-ipo-summary.ts --failure"
