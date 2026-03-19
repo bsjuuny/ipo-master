@@ -1,1 +1,19 @@
-{}
+{
+  "2270": {
+    "totalCompetition": "55:1",
+    "competitionData": [
+      {
+        "brokerName": "한국투자증권",
+        "competitionRate": "50:1",
+        "equalAllocation": "3.0",
+        "proportionalAllocation": "50:1"
+      },
+      {
+        "brokerName": "KB증권",
+        "competitionRate": "60:1",
+        "equalAllocation": "2.5",
+        "proportionalAllocation": "60:1"
+      }
+    ]
+  }
+}
