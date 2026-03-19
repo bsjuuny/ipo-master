@@ -83,6 +83,8 @@ export default function AdminPage() {
   }, [authed]);
 
   function login() {
+    if (!input) return;
+    if (!ADMIN_KEY) { alert('설정 오류: NEXT_PUBLIC_ADMIN_KEY가 비어있습니다.'); return; }
     if (input === ADMIN_KEY) setAuthed(true);
     else alert('비밀번호가 틀렸습니다.');
   }

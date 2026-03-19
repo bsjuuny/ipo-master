@@ -25,6 +25,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check required secrets
+        run: |
+          if [ -z "$NEXT_PUBLIC_ADMIN_KEY" ]; then
+            echo "ERROR: NEXT_PUBLIC_ADMIN_KEY secret is not set"
+            exit 1
+          fi
+        env:
+          NEXT_PUBLIC_ADMIN_KEY: ${{ secrets.NEXT_PUBLIC_ADMIN_KEY }}
+
       - name: Apply competition override
         run: npm run override:apply
 
