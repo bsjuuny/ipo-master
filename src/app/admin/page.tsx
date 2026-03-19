@@ -18,7 +18,7 @@ async function fetchOverridesFromGitHub(): Promise<{ content: Overrides; sha: st
   });
   if (!res.ok) throw new Error(`GitHub GET failed: ${res.status}`);
   const data = await res.json();
-  const decoded = JSON.parse(atob(data.content.replace(/\n/g, '')));
+  const decoded = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
   return { content: decoded, sha: data.sha };
 }
 
