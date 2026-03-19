@@ -19,13 +19,14 @@
     ]
   },
   "2280": {
-    "totalCompetition": "80:1",
+    "totalCompetition": "88.57:1",
     "competitionData": [
       {
         "brokerName": "신한투자증권",
-        "competitionRate": "50:1",
-        "equalAllocation": "13.3",
-        "proportionalAllocation": "82.44:1"
+        "competitionRate": "88.57:1",
+        "allocatedShares": 1365.83,
+        "equalAllocation": "11.83",
+        "proportionalAllocation": "112"
       }
     ]
   }
