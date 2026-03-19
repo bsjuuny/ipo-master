@@ -1,13 +1,15 @@
 name: Update Data & Deploy to Cafe24
 
 on:
-  # schedule 비활성화 — PM2 스케줄러(run-ipo-master.mjs)가 동일 작업을 수행하므로 중복 방지
+  # schedule/push 비활성화 — PM2 스케줄러(run-ipo-master.mjs)가 담당
+  # push 제거 이유: self-hosted runner가 별도 workspace 체크아웃 →
+  #   .env.local 없어서 NEXT_PUBLIC_ADMIN_KEY 빈 값으로 빌드/배포됨
   # schedule:
-  #   - cron: '16 19 * * 0-4'  # 평일 오전 4:16 KST
-  #   - cron: '16 8 * * 1-5'   # 평일 오후 17:16 KST
-  push:
-    branches:
-      - main
+  #   - cron: '16 19 * * 0-4'
+  #   - cron: '16 8 * * 1-5'
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 env:
