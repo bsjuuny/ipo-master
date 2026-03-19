@@ -154,6 +154,9 @@ export default function AdminPage() {
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && login()}
             placeholder="비밀번호"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="none"
             className="w-full px-4 py-2 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500"
           />
           <button onClick={login} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700">
