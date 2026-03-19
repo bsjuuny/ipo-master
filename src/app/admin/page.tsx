@@ -52,10 +52,22 @@ export default function AdminPage() {
   useEffect(() => {
     if (!authed) return;
 
-    // Load IPO list from deployed static file
+    // Load IPO list — 청약 중인 항목만 표시
     fetch(`${BASE}/data/ipo_list.json`)
       .then(r => r.json())
-      .then((data: IPO[]) => setIpoList(data))
+      .then((data: IPO[]) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const active = data.filter(ipo => {
+          const startYear = ipo.subscriptionStart.split('.')[0];
+          let endStr = ipo.subscriptionEnd;
+          if (endStr.split('.').length === 2) endStr = `${startYear}.${endStr}`;
+          const start = new Date(ipo.subscriptionStart.replace(/\./g, '-'));
+          const end = new Date(endStr.replace(/\./g, '-'));
+          return start <= today && today <= end;
+        });
+        setIpoList(active);
+      })
       .catch(() => setLoadError('ipo_list.json 로드 실패'));
 
     // Load overrides from GitHub
