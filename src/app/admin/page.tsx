@@ -273,79 +273,125 @@ export default function AdminPage() {
                 {hasOverride && <span className="text-xs bg-blue-600/30 text-blue-400 px-2 py-0.5 rounded">저장됨</span>}
               </div>
 
-              <div className="mb-4">
-                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">통합 경쟁률</label>
+              <div className="mb-5">
+                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">통합 경쟁률</p>
                 {(() => {
                   const calculated = calcTotalCompetition(brokers);
                   const displayRate = edit.totalCompetition || (calculated > 0 ? String(calculated) : '');
                   const proportional = calcProportional(ipo.offeringPrice, displayRate, deposit);
                   return (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <input
-                        type="text"
-                        value={edit.totalCompetition ?? ''}
-                        onChange={e => setTotal(ipo.id, e.target.value)}
-                        placeholder={calculated > 0 ? `자동: ${calculated}` : '예: 1,234.56'}
-                        className="w-40 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
-                      />
-                      <span className="text-gray-400 text-sm font-bold">:1</span>
-                      {calculated > 0 && !edit.totalCompetition && (
-                        <span className="text-yellow-400 text-xs">자동계산 {calculated}:1</span>
+                    <div className="flex items-end gap-4 flex-wrap">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs text-gray-500">직접 입력 <span className="text-gray-600">(증권사별 입력 시 자동 계산됨)</span></span>
+                        <div className="flex items-center gap-1">
+                          <input
+                            type="text"
+                            value={edit.totalCompetition ?? ''}
+                            onChange={e => setTotal(ipo.id, e.target.value)}
+                            placeholder="예: 1,234.56"
+                            className="w-36 px-3 py-2 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none"
+                          />
+                          <span className="text-gray-400 text-sm font-bold">:1</span>
+                        </div>
+                      </div>
+                      {calculated > 0 && (
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs text-gray-500">자동 계산 결과</span>
+                          <span className="px-3 py-2 text-sm font-mono text-yellow-400 bg-gray-800/50 rounded border border-gray-700/50">
+                            {edit.totalCompetition ? <span className="line-through text-gray-600">{calculated}</span> : calculated}:1
+                          </span>
+                        </div>
                       )}
-                      {proportional > 0 && (
-                        <span className="text-blue-400 text-sm">→ 비례 <span className="font-bold font-mono">{proportional}주</span></span>
-                      )}
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs text-gray-500">비례배정 예상 <span className="text-gray-600">(자동)</span></span>
+                        <span className={`px-3 py-2 text-sm font-bold rounded border border-gray-700/50 ${proportional > 0 ? 'text-blue-400 bg-gray-800/50' : 'text-gray-600 bg-gray-800/30'}`}>
+                          {proportional}주
+                        </span>
+                      </div>
                     </div>
                   );
                 })()}
               </div>
 
               <div className="mb-4">
-                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1 block">증권사별 경쟁률</label>
-                <p className="text-xs text-gray-500 mb-2">{(deposit / 10000).toLocaleString()}만원 증거금 기준 · 공모가 {ipo.offeringPrice.toLocaleString()}원</p>
+                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">증권사별 경쟁률</p>
+
+                {/* 사용 안내 */}
+                <div className="mb-3 bg-gray-800/40 rounded-lg p-3 border border-gray-700/60 text-xs text-gray-400 space-y-1">
+                  <p className="text-gray-300 font-semibold mb-1.5">📝 입력 방법</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                    <span><span className="text-white">증권사명</span> : 청약한 증권사 이름 <span className="text-gray-600">(예: 삼성증권)</span></span>
+                    <span><span className="text-white">경쟁률</span> : 해당 증권사 청약 경쟁률 <span className="text-gray-600">(예: 1,234.56)</span></span>
+                    <span><span className="text-white">배정주식수</span> : 증권사에 배정된 총 주식수 <span className="text-gray-600">(예: 50,000)</span></span>
+                    <span><span className="text-white">균등</span> : 1계좌당 균등배정 주식수 <span className="text-gray-600">(예: 5)</span></span>
+                    <span><span className="text-yellow-500/80">비례 · 합계</span> : 자동 계산 — 입력 불필요</span>
+                  </div>
+                  <p className="text-gray-600 mt-1">· 경쟁률 + 배정주식수를 모두 입력하면 통합 경쟁률이 자동 계산됩니다.</p>
+                </div>
+
                 <div className="space-y-2">
                   {brokers.map((row, idx) => {
                     const proportional = calcProportional(ipo.offeringPrice, row.competitionRate, deposit);
                     const equal = parseInt(row.equalAllocation ?? '0') || 0;
                     const total = equal + proportional;
                     return (
-                      <div key={idx} className="flex gap-2 items-center flex-wrap">
-                        <input
-                          type="text"
-                          value={row.brokerName}
-                          onChange={e => setBrokerRow(ipo.id, idx, 'brokerName', e.target.value)}
-                          placeholder="증권사명"
-                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-28"
-                        />
-                        <input
-                          type="text"
-                          value={row.competitionRate}
-                          onChange={e => setBrokerRow(ipo.id, idx, 'competitionRate', e.target.value)}
-                          placeholder="경쟁률"
-                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
-                        />
-                        <span className="text-gray-400 text-sm font-bold">:1</span>
-                        <input
-                          type="number"
-                          value={row.allocatedShares ?? ''}
-                          onChange={e => setBrokerRow(ipo.id, idx, 'allocatedShares', e.target.value)}
-                          placeholder="배정주식수"
-                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
-                        />
-                        <input
-                          type="text"
-                          value={row.equalAllocation ?? ''}
-                          onChange={e => setBrokerRow(ipo.id, idx, 'equalAllocation', e.target.value)}
-                          placeholder="균등"
-                          className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-16"
-                        />
-                        <span className="text-gray-500 text-xs">균등</span>
-                        <span className="text-blue-400 text-sm font-mono w-10 text-right">{proportional > 0 ? proportional : '-'}</span>
-                        <span className="text-gray-500 text-xs">비례</span>
-                        {total > 0 && (
-                          <span className="text-green-400 text-sm font-bold">{total}주</span>
-                        )}
-                        <button onClick={() => removeBrokerRow(ipo.id, idx)} className="text-gray-500 hover:text-red-400 text-xs font-bold px-1">✕</button>
+                      <div key={idx} className="bg-gray-800/30 rounded-lg p-3 border border-gray-700/50">
+                        <div className="flex gap-3 items-end flex-wrap">
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">증권사명</span>
+                            <input
+                              type="text"
+                              value={row.brokerName}
+                              onChange={e => setBrokerRow(ipo.id, idx, 'brokerName', e.target.value)}
+                              className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-28"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">경쟁률</span>
+                            <div className="flex items-center gap-1">
+                              <input
+                                type="text"
+                                value={row.competitionRate}
+                                onChange={e => setBrokerRow(ipo.id, idx, 'competitionRate', e.target.value)}
+                                className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
+                              />
+                              <span className="text-gray-400 text-sm font-bold">:1</span>
+                            </div>
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">배정주식수</span>
+                            <input
+                              type="number"
+                              value={row.allocatedShares ?? ''}
+                              onChange={e => setBrokerRow(ipo.id, idx, 'allocatedShares', e.target.value)}
+                              className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-24"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">균등</span>
+                            <input
+                              type="text"
+                              value={row.equalAllocation ?? ''}
+                              onChange={e => setBrokerRow(ipo.id, idx, 'equalAllocation', e.target.value)}
+                              className="px-2 py-1.5 rounded bg-gray-800 text-white text-sm border border-gray-700 focus:border-blue-500 outline-none w-16"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">비례 <span className="text-gray-600">(자동)</span></span>
+                            <span className={`px-2 py-1.5 text-sm font-mono rounded border border-gray-700/50 w-16 text-center ${proportional > 0 ? 'text-blue-400 bg-gray-800/50' : 'text-gray-600 bg-gray-800/30'}`}>
+                              {proportional}주
+                            </span>
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-xs text-gray-500">합계 <span className="text-gray-600">(자동)</span></span>
+                            <span className={`px-2 py-1.5 text-sm font-bold rounded border border-gray-700/50 w-16 text-center ${total > 0 ? 'text-green-400 bg-gray-800/50' : 'text-gray-600 bg-gray-800/30'}`}>
+                              {total}주
+                            </span>
+                          </div>
+                          <div className="flex flex-col justify-end">
+                            <button onClick={() => removeBrokerRow(ipo.id, idx)} className="py-1.5 px-2 text-gray-600 hover:text-red-400 text-sm font-bold">✕</button>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}
