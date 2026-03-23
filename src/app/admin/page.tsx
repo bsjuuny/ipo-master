@@ -97,6 +97,25 @@ export default function AdminPage() {
           const end = new Date(endStr.replace(/\./g, '-'));
           return end >= threeDaysAgo;
         });
+
+        // 청약 중 → 청약 예정 → 최근 마감 순 정렬
+        active.sort((a, b) => {
+          const getStatus = (ipo: IPO) => {
+            const startYear = ipo.subscriptionStart.split('.')[0];
+            const start = new Date(ipo.subscriptionStart.replace(/\./g, '-'));
+            let endStr = ipo.subscriptionEnd;
+            if (endStr.split('.').length === 2) endStr = `${startYear}.${endStr}`;
+            const end = new Date(endStr.replace(/\./g, '-'));
+            if (start <= today && end >= today) return 0; // 청약 중
+            if (start > today) return 1;                  // 청약 예정
+            return 2;                                     // 마감
+          };
+          const sa = getStatus(a), sb = getStatus(b);
+          if (sa !== sb) return sa - sb;
+          return new Date(a.subscriptionStart.replace(/\./g, '-')).getTime()
+               - new Date(b.subscriptionStart.replace(/\./g, '-')).getTime();
+        });
+
         setIpoList(active);
       })
       .catch(() => setLoadError('ipo_list.json 로드 실패'));
