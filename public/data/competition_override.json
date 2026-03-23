@@ -35,6 +35,18 @@
       }
     ]
   },
+  "2279": {
+    "totalCompetition": "8.09:1",
+    "competitionData": [
+      {
+        "brokerName": "교보",
+        "competitionRate": "8.09:1",
+        "allocatedShares": 677,
+        "equalAllocation": "59",
+        "proportionalAllocation": "1236"
+      }
+    ]
+  },
   "2280": {
     "totalCompetition": "2806.48:1",
     "competitionData": [
