@@ -16,6 +16,22 @@
       }
     ]
   },
+  "2275": {
+    "competitionData": [
+      {
+        "brokerName": "NH",
+        "competitionRate": "",
+        "allocatedShares": 11.73,
+        "equalAllocation": "0.73"
+      },
+      {
+        "brokerName": "유진",
+        "competitionRate": "",
+        "allocatedShares": 48.98,
+        "equalAllocation": "3.98"
+      }
+    ]
+  },
   "2280": {
     "totalCompetition": "2806.48:1",
     "competitionData": [
