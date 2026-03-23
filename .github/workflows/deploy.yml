@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Apply competition override
+        run: npm run override:apply
+
       - name: Build
         run: npm run build
         env:
