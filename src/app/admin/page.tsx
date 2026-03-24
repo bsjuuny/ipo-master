@@ -72,7 +72,7 @@ export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [ipoList, setIpoList] = useState<IPO[]>([]);
   const [overrides, setOverrides] = useState<Overrides>({});
-  const [sha, setSha] = useState('');
+  const [, setSha] = useState('');
   const [edits, setEdits] = useState<Overrides>({});
   const [saving, setSaving] = useState<string | null>(null);
   const [saved, setSaved] = useState<string | null>(null);
