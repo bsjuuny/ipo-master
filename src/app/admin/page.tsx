@@ -202,8 +202,11 @@ export default function AdminPage() {
     }
 
     try {
-      const newSha = await saveOverridesToGitHub(newOverrides, sha);
-      setOverrides(newOverrides);
+      // 저장 직전 최신 SHA 재조회 (다른 종목 동시 저장 시 충돌 방지)
+      const { content: latestOverrides, sha: latestSha } = await fetchOverridesFromGitHub();
+      const merged = { ...latestOverrides, ...newOverrides };
+      const newSha = await saveOverridesToGitHub(merged, latestSha);
+      setOverrides(merged);
       setSha(newSha);
       setSaved(id);
       setTimeout(() => setSaved(null), 2000);
