@@ -33,6 +33,34 @@ function calcTotalCompetition(brokers: BrokerCompetition[]): number {
 }
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN ?? '';
 const GITHUB_REPO = 'bsjuuny/ipo-master';
+const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? '';
+const TOTP_SECRET = process.env.NEXT_PUBLIC_TOTP_SECRET ?? '';
+
+async function verifyTotp(token: string, secret: string): Promise<boolean> {
+  const base32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+  let bits = '';
+  for (const char of secret.replace(/=+$/, '').toUpperCase()) {
+    const idx = base32Chars.indexOf(char);
+    if (idx === -1) continue;
+    bits += idx.toString(2).padStart(5, '0');
+  }
+  const keyBytes = new Uint8Array(Math.floor(bits.length / 8));
+  for (let i = 0; i < keyBytes.length; i++) {
+    keyBytes[i] = parseInt(bits.slice(i * 8, i * 8 + 8), 2);
+  }
+  const key = await crypto.subtle.importKey('raw', keyBytes, { name: 'HMAC', hash: 'SHA-1' }, false, ['sign']);
+  const timeStep = Math.floor(Date.now() / 1000 / 30);
+  for (const delta of [-1, 0, 1]) {
+    const counter = timeStep + delta;
+    const buf = new ArrayBuffer(8);
+    new DataView(buf).setUint32(4, counter, false);
+    const hmac = new Uint8Array(await crypto.subtle.sign('HMAC', key, buf));
+    const offset = hmac[19] & 0xf;
+    const code = (((hmac[offset] & 0x7f) << 24) | ((hmac[offset+1] & 0xff) << 16) | ((hmac[offset+2] & 0xff) << 8) | (hmac[offset+3] & 0xff)) % 1_000_000;
+    if (code.toString().padStart(6, '0') === token) return true;
+  }
+  return false;
+}
 const OVERRIDE_PATH = 'public/data/competition_override.json';
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -139,48 +167,30 @@ export default function AdminPage() {
       .catch(e => setLoadError(`GitHub 로드 실패: ${e.message}`));
   }, [authed]);
 
-  async function login() {
+  function login() {
     if (!input) return;
-    setAuthLoading(true);
-    setAuthError('');
-    try {
-      const res = await fetch('/api/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: input }),
-      });
-      const data = await res.json();
-      if (res.ok && data.step === 'totp') {
-        setStep('totp');
-      } else {
-        setAuthError(data.error || '비밀번호가 올바르지 않습니다.');
-      }
-    } catch {
-      setAuthError('서버 연결 오류');
-    } finally {
-      setAuthLoading(false);
+    if (input !== ADMIN_KEY) {
+      setAuthError('비밀번호가 올바르지 않습니다.');
+      return;
     }
+    setAuthError('');
+    setStep('totp');
   }
 
-  async function verifyTotp() {
+  async function handleVerifyTotp() {
     if (!totpInput) return;
     setAuthLoading(true);
     setAuthError('');
     try {
-      const res = await fetch('/api/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: input, totp: totpInput }),
-      });
-      const data = await res.json();
-      if (res.ok && data.ok) {
+      const valid = await verifyTotp(totpInput, TOTP_SECRET);
+      if (valid) {
         setAuthed(true);
       } else {
-        setAuthError(data.error || '인증 코드가 올바르지 않습니다.');
+        setAuthError('인증 코드가 올바르지 않습니다.');
         setTotpInput('');
       }
     } catch {
-      setAuthError('서버 연결 오류');
+      setAuthError('인증 처리 오류');
     } finally {
       setAuthLoading(false);
     }
@@ -302,13 +312,13 @@ export default function AdminPage() {
                 maxLength={6}
                 value={totpInput}
                 onChange={e => setTotpInput(e.target.value.replace(/\D/g, ''))}
-                onKeyDown={e => e.key === 'Enter' && verifyTotp()}
+                onKeyDown={e => e.key === 'Enter' && handleVerifyTotp()}
                 placeholder="000000"
                 autoFocus
                 className="w-full px-4 py-2 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500 text-center text-2xl tracking-widest font-mono"
               />
               {authError && <p className="text-red-400 text-xs">{authError}</p>}
-              <button onClick={verifyTotp} disabled={authLoading || totpInput.length < 6} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 disabled:opacity-50">
+              <button onClick={handleVerifyTotp} disabled={authLoading || totpInput.length < 6} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 disabled:opacity-50">
                 {authLoading ? '확인 중...' : '인증'}
               </button>
               <button onClick={() => { setStep('password'); setAuthError(''); }} className="w-full py-1.5 text-gray-500 text-sm hover:text-gray-300">
