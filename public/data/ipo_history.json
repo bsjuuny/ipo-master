@@ -66,10 +66,10 @@
     "companyName": "한패스",
     "listingDate": "2026/03/25",
     "offeringPrice": 19000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 37100,
+    "closingPrice": 27200,
+    "openingReturn": 95.26,
+    "closingReturn": 43.16
   },
   {
     "companyName": "아이엠바이오로직스",
