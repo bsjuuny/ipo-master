@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { IPO, BrokerCompetition } from '@/types/ipo';
 
-const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? '';
 
 // ":1" 제거 (입력 표시용)
 function stripRate(v?: string) { return v ? v.replace(/:1$/, '').trim() : ''; }
@@ -70,6 +69,10 @@ export default function AdminPage() {
   const [input, setInput] = useState('');
   const [showPw, setShowPw] = useState(false);
   const [authed, setAuthed] = useState(false);
+  const [step, setStep] = useState<'password' | 'totp'>('password');
+  const [totpInput, setTotpInput] = useState('');
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
   const [ipoList, setIpoList] = useState<IPO[]>([]);
   const [overrides, setOverrides] = useState<Overrides>({});
   const [, setSha] = useState('');
@@ -136,11 +139,51 @@ export default function AdminPage() {
       .catch(e => setLoadError(`GitHub 로드 실패: ${e.message}`));
   }, [authed]);
 
-  function login() {
+  async function login() {
     if (!input) return;
-    if (!ADMIN_KEY) { alert('설정 오류: NEXT_PUBLIC_ADMIN_KEY가 비어있습니다.'); return; }
-    if (input === ADMIN_KEY) setAuthed(true);
-    else alert('비밀번호가 틀렸습니다.');
+    setAuthLoading(true);
+    setAuthError('');
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: input }),
+      });
+      const data = await res.json();
+      if (res.ok && data.step === 'totp') {
+        setStep('totp');
+      } else {
+        setAuthError(data.error || '비밀번호가 올바르지 않습니다.');
+      }
+    } catch {
+      setAuthError('서버 연결 오류');
+    } finally {
+      setAuthLoading(false);
+    }
+  }
+
+  async function verifyTotp() {
+    if (!totpInput) return;
+    setAuthLoading(true);
+    setAuthError('');
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: input, totp: totpInput }),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        setAuthed(true);
+      } else {
+        setAuthError(data.error || '인증 코드가 올바르지 않습니다.');
+        setTotpInput('');
+      }
+    } catch {
+      setAuthError('서버 연결 오류');
+    } finally {
+      setAuthLoading(false);
+    }
   }
 
   function setTotal(id: string, value: string) {
@@ -222,29 +265,57 @@ export default function AdminPage() {
       <div className="min-h-screen flex items-center justify-center bg-black">
         <div className="bg-gray-900 p-8 rounded-xl space-y-4 w-80">
           <h1 className="text-white font-bold text-lg">Admin</h1>
-          <div className="relative">
-            <input
-              type={showPw ? 'text' : 'password'}
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && login()}
-              placeholder="비밀번호"
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="none"
-              className="w-full px-4 py-2 pr-12 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPw(v => !v)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs font-bold"
-            >
-              {showPw ? '숨김' : '보기'}
-            </button>
-          </div>
-          <button onClick={login} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700">
-            입력
-          </button>
+
+          {step === 'password' ? (
+            <>
+              <div className="relative">
+                <input
+                  type={showPw ? 'text' : 'password'}
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && login()}
+                  placeholder="비밀번호"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  className="w-full px-4 py-2 pr-12 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPw(v => !v)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs font-bold"
+                >
+                  {showPw ? '숨김' : '보기'}
+                </button>
+              </div>
+              {authError && <p className="text-red-400 text-xs">{authError}</p>}
+              <button onClick={login} disabled={authLoading} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 disabled:opacity-50">
+                {authLoading ? '확인 중...' : '다음'}
+              </button>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-400 text-sm">Google Authenticator 앱의 6자리 코드를 입력하세요.</p>
+              <input
+                type="text"
+                inputMode="numeric"
+                maxLength={6}
+                value={totpInput}
+                onChange={e => setTotpInput(e.target.value.replace(/\D/g, ''))}
+                onKeyDown={e => e.key === 'Enter' && verifyTotp()}
+                placeholder="000000"
+                autoFocus
+                className="w-full px-4 py-2 rounded bg-gray-800 text-white outline-none border border-gray-700 focus:border-blue-500 text-center text-2xl tracking-widest font-mono"
+              />
+              {authError && <p className="text-red-400 text-xs">{authError}</p>}
+              <button onClick={verifyTotp} disabled={authLoading || totpInput.length < 6} className="w-full py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 disabled:opacity-50">
+                {authLoading ? '확인 중...' : '인증'}
+              </button>
+              <button onClick={() => { setStep('password'); setAuthError(''); }} className="w-full py-1.5 text-gray-500 text-sm hover:text-gray-300">
+                ← 비밀번호 재입력
+              </button>
+            </>
+          )}
         </div>
       </div>
     );
