@@ -36,28 +36,56 @@ const GITHUB_REPO = 'bsjuuny/ipo-master';
 const ADMIN_KEY = process.env.NEXT_PUBLIC_ADMIN_KEY ?? '';
 const TOTP_SECRET = process.env.NEXT_PUBLIC_TOTP_SECRET ?? '';
 
-async function verifyTotp(token: string, secret: string): Promise<boolean> {
-  const base32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
-  let bits = '';
-  for (const char of secret.replace(/=+$/, '').toUpperCase()) {
-    const idx = base32Chars.indexOf(char);
-    if (idx === -1) continue;
-    bits += idx.toString(2).padStart(5, '0');
+function sha1(data: number[]): number[] {
+  let h0=0x67452301,h1=0xEFCDAB89,h2=0x98BADCFE,h3=0x10325476,h4=0xC3D2E1F0;
+  const msg=[...data,0x80];
+  while(msg.length%64!==56)msg.push(0);
+  const bl=data.length*8;
+  for(let i=7;i>=0;i--)msg.push((bl/Math.pow(2,i*8))&0xff);
+  for(let i=0;i<msg.length;i+=64){
+    const w:number[]=[];
+    for(let j=0;j<16;j++)w[j]=(msg[i+j*4]<<24)|(msg[i+j*4+1]<<16)|(msg[i+j*4+2]<<8)|msg[i+j*4+3];
+    for(let j=16;j<80;j++){const n=w[j-3]^w[j-8]^w[j-14]^w[j-16];w[j]=(n<<1)|(n>>>31);}
+    let a=h0,b=h1,c=h2,d=h3,e=h4;
+    for(let j=0;j<80;j++){
+      let f=0,k=0;
+      if(j<20){f=(b&c)|((~b)&d);k=0x5A827999;}
+      else if(j<40){f=b^c^d;k=0x6ED9EBA1;}
+      else if(j<60){f=(b&c)|(b&d)|(c&d);k=0x8F1BBCDC;}
+      else{f=b^c^d;k=0xCA62C1D6;}
+      const t=(((a<<5)|(a>>>27))+f+e+k+w[j])>>>0;
+      e=d;d=c;c=(b<<30)|(b>>>2);b=a;a=t;
+    }
+    h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;
   }
-  const keyBytes = new Uint8Array(Math.floor(bits.length / 8));
-  for (let i = 0; i < keyBytes.length; i++) {
-    keyBytes[i] = parseInt(bits.slice(i * 8, i * 8 + 8), 2);
+  const r:number[]=[];
+  for(const h of[h0,h1,h2,h3,h4])for(let i=3;i>=0;i--)r.push((h>>(i*8))&0xff);
+  return r;
+}
+
+function verifyTotp(token: string, secret: string): boolean {
+  const B32='ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+  let bits='';
+  for(const c of secret.replace(/=+$/,'').toUpperCase()){
+    const i=B32.indexOf(c);
+    if(i>=0)bits+=i.toString(2).padStart(5,'0');
   }
-  const key = await crypto.subtle.importKey('raw', keyBytes, { name: 'HMAC', hash: 'SHA-1' }, false, ['sign']);
-  const timeStep = Math.floor(Date.now() / 1000 / 30);
-  for (const delta of [-1, 0, 1]) {
-    const counter = timeStep + delta;
-    const buf = new ArrayBuffer(8);
-    new DataView(buf).setUint32(4, counter, false);
-    const hmac = new Uint8Array(await crypto.subtle.sign('HMAC', key, buf));
-    const offset = hmac[19] & 0xf;
-    const code = (((hmac[offset] & 0x7f) << 24) | ((hmac[offset+1] & 0xff) << 16) | ((hmac[offset+2] & 0xff) << 8) | (hmac[offset+3] & 0xff)) % 1_000_000;
-    if (code.toString().padStart(6, '0') === token) return true;
+  const key:number[]=[];
+  for(let i=0;i+8<=bits.length;i+=8)key.push(parseInt(bits.slice(i,i+8),2));
+
+  const k=key.length>64?sha1(key):[...key];
+  while(k.length<64)k.push(0);
+  const opad=k.map(b=>b^0x5c),ipad=k.map(b=>b^0x36);
+  const hmac=(msg:number[])=>sha1([...opad,...sha1([...ipad,...msg])]);
+
+  const step=Math.floor(Date.now()/1000/30);
+  for(const d of[-1,0,1]){
+    const c=step+d;
+    const msg=[0,0,0,0,(c>>>24)&0xff,(c>>>16)&0xff,(c>>>8)&0xff,c&0xff];
+    const h=hmac(msg);
+    const off=h[19]&0xf;
+    const code=(((h[off]&0x7f)<<24)|((h[off+1]&0xff)<<16)|((h[off+2]&0xff)<<8)|(h[off+3]&0xff))%1_000_000;
+    if(code.toString().padStart(6,'0')===token)return true;
   }
   return false;
 }
@@ -100,7 +128,7 @@ export default function AdminPage() {
   const [step, setStep] = useState<'password' | 'totp'>('password');
   const [totpInput, setTotpInput] = useState('');
   const [authError, setAuthError] = useState('');
-  const [authLoading, setAuthLoading] = useState(false);
+  const [authLoading] = useState(false);
   const [ipoList, setIpoList] = useState<IPO[]>([]);
   const [overrides, setOverrides] = useState<Overrides>({});
   const [, setSha] = useState('');
@@ -177,22 +205,13 @@ export default function AdminPage() {
     setStep('totp');
   }
 
-  async function handleVerifyTotp() {
+  function handleVerifyTotp() {
     if (!totpInput) return;
-    setAuthLoading(true);
-    setAuthError('');
-    try {
-      const valid = await verifyTotp(totpInput, TOTP_SECRET);
-      if (valid) {
-        setAuthed(true);
-      } else {
-        setAuthError('인증 코드가 올바르지 않습니다.');
-        setTotpInput('');
-      }
-    } catch {
-      setAuthError('인증 처리 오류');
-    } finally {
-      setAuthLoading(false);
+    if (verifyTotp(totpInput, TOTP_SECRET)) {
+      setAuthed(true);
+    } else {
+      setAuthError('인증 코드가 올바르지 않습니다.');
+      setTotpInput('');
     }
   }
 
