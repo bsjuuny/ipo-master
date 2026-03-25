@@ -122,6 +122,19 @@ export default function CalendarPage() {
       .finally(() => setLoading(false));
   }, []);
 
+  // 오늘 날짜로 자동 스크롤
+  useEffect(() => {
+    if (!loading && events.length > 0) {
+      const timer = setTimeout(() => {
+        const todayEl = document.getElementById('today-section');
+        if (todayEl) {
+          todayEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [loading, events.length]);
+
   const getEventBadge = (type: TimelineEvent['type'], dateStr: string, ipo: IPO) => {
     const past = isPast(dateStr, ipo);
     switch (type) {
@@ -141,16 +154,19 @@ export default function CalendarPage() {
   };
 
   const isToday = (dateStr: string, ipo: IPO) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // 한국 시간(KST) 기준 오늘 날짜 문자열 'YYYY.MM.DD' 생성
+    const now = new Date();
+    const kstOffset = 9 * 60 * 60 * 1000;
+    const kstDate = new Date(now.getTime() + kstOffset);
+    const kstToday = kstDate.toISOString().split('T')[0].replace(/-/g, '.');
     
     let fullDateStr = dateStr;
     if (fullDateStr.split('.').length === 2) {
       const startYear = ipo.subscriptionStart.split('.')[0];
       fullDateStr = `${startYear}.${fullDateStr}`;
     }
-    const date = new Date(fullDateStr.replace(/\./g, '-'));
-    return date.getTime() === today.getTime();
+    
+    return fullDateStr === kstToday;
   };
 
   const isPast = (dateStr: string, ipo: IPO) => {
@@ -225,7 +241,10 @@ export default function CalendarPage() {
           Object.entries(groupedEvents).map(([date, dateEvents]) => (
             <div key={date} className="relative group">
               {/* Date Header */}
-              <div className="sticky top-28 z-20 mb-8 md:text-center">
+              <div 
+                className="sticky top-28 z-20 mb-8 md:text-center"
+                id={isToday(date, dateEvents[0].ipo) ? 'today-section' : undefined}
+              >
                 <div className={`inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 glass-morphism shadow-2xl transition-all duration-500 ${isToday(date, dateEvents[0].ipo) ? 'ring-2 ring-blue-500/50 bg-blue-500/5 scale-110' : ''}`}>
                   <Clock className={`h-4 w-4 ${isToday(date, dateEvents[0].ipo) ? 'text-blue-400 animate-pulse' : 'text-slate-500'}`} />
                   <span className={`text-sm font-black tracking-tight ${isToday(date, dateEvents[0].ipo) ? 'text-white' : 'text-slate-400'}`}>
