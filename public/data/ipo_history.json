@@ -39,10 +39,10 @@
     "companyName": "NH스팩33호",
     "listingDate": "2026/03/27",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 3460,
+    "closingPrice": 2660,
+    "openingReturn": 73,
+    "closingReturn": 33
   },
   {
     "companyName": "메쥬",
