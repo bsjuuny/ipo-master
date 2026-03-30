@@ -126,9 +126,12 @@ export default function CalendarPage() {
   useEffect(() => {
     if (!loading && events.length > 0) {
       const timer = setTimeout(() => {
+        const NAV_HEIGHT = 120;
         const todayEl = document.getElementById('today-section');
-        if (todayEl) {
-          todayEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const targetEl = todayEl ?? document.getElementById('upcoming-section');
+        if (targetEl) {
+          const top = targetEl.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT - 16;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
       }, 600);
       return () => clearTimeout(timer);
@@ -238,8 +241,11 @@ export default function CalendarPage() {
             스케줄링 중...
           </div>
         ) : Object.keys(groupedEvents).length > 0 ? (
-          Object.entries(groupedEvents).map(([date, dateEvents]) => (
-            <div key={date} className="relative group" id={isToday(date, dateEvents[0].ipo) ? 'today-section' : undefined}>
+          Object.entries(groupedEvents).map(([date, dateEvents], idx) => {
+            const todayId = isToday(date, dateEvents[0].ipo) ? 'today-section' : undefined;
+            const upcomingId = !todayId && idx > 0 && !isPast(date, dateEvents[0].ipo) && !Object.entries(groupedEvents).slice(0, idx).some(([d, ev]) => !isPast(d, ev[0].ipo)) ? 'upcoming-section' : undefined;
+            return (
+            <div key={date} className="relative group" id={todayId ?? upcomingId}>
               {/* Date Header */}
               <div
                 className="sticky top-28 z-20 mb-8 md:text-center"
@@ -295,7 +301,8 @@ export default function CalendarPage() {
                 ))}
               </div>
             </div>
-          ))
+            );
+          })
         ) : (
           <div className="h-64 glass-morphism flex flex-col items-center justify-center text-slate-500 gap-4 border-dashed border-white/5">
             <span className="text-lg font-bold">예정된 일정이 없습니다.</span>
