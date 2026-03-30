@@ -128,9 +128,9 @@ export default function CalendarPage() {
       const timer = setTimeout(() => {
         const todayEl = document.getElementById('today-section');
         if (todayEl) {
-          todayEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          todayEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 300);
+      }, 600);
       return () => clearTimeout(timer);
     }
   }, [loading, events.length]);
@@ -239,11 +239,10 @@ export default function CalendarPage() {
           </div>
         ) : Object.keys(groupedEvents).length > 0 ? (
           Object.entries(groupedEvents).map(([date, dateEvents]) => (
-            <div key={date} className="relative group">
+            <div key={date} className="relative group" id={isToday(date, dateEvents[0].ipo) ? 'today-section' : undefined}>
               {/* Date Header */}
-              <div 
+              <div
                 className="sticky top-28 z-20 mb-8 md:text-center"
-                id={isToday(date, dateEvents[0].ipo) ? 'today-section' : undefined}
               >
                 <div className={`inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 glass-morphism shadow-2xl transition-all duration-500 ${isToday(date, dateEvents[0].ipo) ? 'ring-2 ring-blue-500/50 bg-blue-500/5 scale-110' : ''}`}>
                   <Clock className={`h-4 w-4 ${isToday(date, dateEvents[0].ipo) ? 'text-blue-400 animate-pulse' : 'text-slate-500'}`} />
