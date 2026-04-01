@@ -22,9 +22,9 @@
     "listingDate": "2026/04/01",
     "offeringPrice": 2000,
     "openingPrice": 5760,
-    "closingPrice": 0,
+    "closingPrice": 2045,
     "openingReturn": 188,
-    "closingReturn": 0
+    "closingReturn": 2.25
   },
   {
     "companyName": "리센스메디컬",
