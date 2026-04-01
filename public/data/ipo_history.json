@@ -21,9 +21,9 @@
     "companyName": "신한스팩17호",
     "listingDate": "2026/04/01",
     "offeringPrice": 2000,
-    "openingPrice": 0,
+    "openingPrice": 5760,
     "closingPrice": 0,
-    "openingReturn": 0,
+    "openingReturn": 188,
     "closingReturn": 0
   },
   {
@@ -31,9 +31,9 @@
     "listingDate": "2026/03/31",
     "offeringPrice": 11000,
     "openingPrice": 37600,
-    "closingPrice": 0,
+    "closingPrice": 18450,
     "openingReturn": 241.82,
-    "closingReturn": 0
+    "closingReturn": 67.73
   },
   {
     "companyName": "NH스팩33호",
