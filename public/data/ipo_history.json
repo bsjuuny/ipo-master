@@ -3,19 +3,19 @@
     "companyName": "인벤테라",
     "listingDate": "2026/04/02",
     "offeringPrice": 16600,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 39150,
+    "closingPrice": 35250,
+    "openingReturn": 135.84,
+    "closingReturn": 112.35
   },
   {
     "companyName": "교보스팩20호",
     "listingDate": "2026/04/02",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 4900,
+    "closingPrice": 2020,
+    "openingReturn": 145,
+    "closingReturn": 1
   },
   {
     "companyName": "신한스팩17호",
