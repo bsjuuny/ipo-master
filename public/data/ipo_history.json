@@ -331,32 +331,5 @@
     "closingPrice": 3030,
     "openingReturn": 116.5,
     "closingReturn": 51.5
-  },
-  {
-    "companyName": "아로마티카",
-    "listingDate": "2025/11/27",
-    "offeringPrice": 8000,
-    "openingPrice": 27500,
-    "closingPrice": 19920,
-    "openingReturn": 243.75,
-    "closingReturn": 149
-  },
-  {
-    "companyName": "미래에셋비전스팩8호",
-    "listingDate": "2025/11/27",
-    "offeringPrice": 2000,
-    "openingPrice": 3365,
-    "closingPrice": 1982,
-    "openingReturn": 68.25,
-    "closingReturn": -0.9
-  },
-  {
-    "companyName": "신영스팩11호",
-    "listingDate": "2025/11/24",
-    "offeringPrice": 2000,
-    "openingPrice": 3300,
-    "closingPrice": 2005,
-    "openingReturn": 65,
-    "closingReturn": 0.25
   }
 ]
