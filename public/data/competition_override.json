@@ -57,5 +57,17 @@
       }
     ]
   },
+  "2282": {
+    "totalCompetition": "90.46:1",
+    "competitionData": [
+      {
+        "brokerName": "키움",
+        "competitionRate": "90.46:1",
+        "allocatedShares": 128.16,
+        "equalAllocation": "18.16",
+        "proportionalAllocation": "110"
+      }
+    ]
+  },
   "_lastDeploy": "2026-03-24T13:37:10"
 }
