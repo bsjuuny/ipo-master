@@ -62,10 +62,10 @@
     "competitionData": [
       {
         "brokerName": "키움",
-        "competitionRate": "90.46:1",
-        "allocatedShares": 128.16,
-        "equalAllocation": "18.16",
-        "proportionalAllocation": "110"
+        "competitionRate": "3455.18:1",
+        "allocatedShares": 6.98,
+        "equalAllocation": "4.98",
+        "proportionalAllocation": "2"
       }
     ]
   },
