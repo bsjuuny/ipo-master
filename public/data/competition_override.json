@@ -57,6 +57,39 @@
       }
     ]
   },
+  "2281": {
+    "totalCompetition": "8.92:1",
+    "competitionData": [
+      {
+        "brokerName": "KB",
+        "competitionRate": "20.63:1",
+        "allocatedShares": 81.77,
+        "equalAllocation": "9.77",
+        "proportionalAllocation": "78"
+      },
+      {
+        "brokerName": "삼성",
+        "competitionRate": "21.69:1",
+        "allocatedShares": 79.13,
+        "equalAllocation": "10.13",
+        "proportionalAllocation": "74"
+      },
+      {
+        "brokerName": "대신",
+        "competitionRate": "9.81:1",
+        "allocatedShares": 182.21,
+        "equalAllocation": "19.21",
+        "proportionalAllocation": "165"
+      },
+      {
+        "brokerName": "하나",
+        "competitionRate": "3.98:1",
+        "allocatedShares": 430.48,
+        "equalAllocation": "28.48",
+        "proportionalAllocation": "408"
+      }
+    ]
+  },
   "2282": {
     "totalCompetition": "90.46:1",
     "competitionData": [
