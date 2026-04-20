@@ -102,5 +102,17 @@
       }
     ]
   },
+  "2284": {
+    "totalCompetition": "71.74:1",
+    "competitionData": [
+      {
+        "brokerName": "신한",
+        "competitionRate": "71.74:1",
+        "allocatedShares": 82.8,
+        "equalAllocation": "13.8",
+        "proportionalAllocation": "139"
+      }
+    ]
+  },
   "_lastDeploy": "2026-03-24T13:37:10"
 }
