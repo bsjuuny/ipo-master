@@ -107,10 +107,10 @@
     "competitionData": [
       {
         "brokerName": "신한",
-        "competitionRate": "71.74:1",
-        "allocatedShares": 82.8,
-        "equalAllocation": "13.8",
-        "proportionalAllocation": "139"
+        "competitionRate": "3201.72:1",
+        "allocatedShares": 1.82,
+        "equalAllocation": "0.82",
+        "proportionalAllocation": "3"
       }
     ]
   },
