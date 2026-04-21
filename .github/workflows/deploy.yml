@@ -43,4 +43,4 @@ jobs:
           password: ${{ secrets.CAFE24_FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: /www/ipomaster/
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
