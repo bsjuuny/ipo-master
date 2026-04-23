@@ -21,10 +21,10 @@
     "companyName": "키움히어로스팩2호",
     "listingDate": "2026/04/23",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 4790,
+    "closingPrice": 2735,
+    "openingReturn": 139.5,
+    "closingReturn": 36.75
   },
   {
     "companyName": "인벤테라",
