@@ -33,6 +33,31 @@
       }
     ]
   },
+  "2278": {
+    "totalCompetition": "3112.75:1",
+    "competitionData": [
+      {
+        "brokerName": "유진",
+        "competitionRate": "6055.48:1",
+        "allocatedShares": 2.34,
+        "equalAllocation": "2.34"
+      },
+      {
+        "brokerName": "NH",
+        "competitionRate": "3316.94:1",
+        "allocatedShares": 0.64,
+        "equalAllocation": "0.64",
+        "proportionalAllocation": "1"
+      },
+      {
+        "brokerName": "유안타",
+        "competitionRate": "1405.53:1",
+        "allocatedShares": 4.11,
+        "equalAllocation": "2.11",
+        "proportionalAllocation": "2"
+      }
+    ]
+  },
   "2279": {
     "totalCompetition": "756.94:1",
     "competitionData": [
