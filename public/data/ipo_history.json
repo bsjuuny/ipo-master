@@ -21,10 +21,10 @@
     "companyName": "채비",
     "listingDate": "2026/04/29",
     "offeringPrice": 12300,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 15250,
+    "closingPrice": 22550,
+    "openingReturn": 23.98,
+    "closingReturn": 83.33
   },
   {
     "companyName": "키움히어로스팩2호",
