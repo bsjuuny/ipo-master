@@ -195,6 +195,11 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
     }
     const lockupRatio = exactCell("의무보유확약").next('td').text().trim();
 
+    // Retail Competition Rate (일반 청약경쟁률) — available after subscription close
+    const totalCompetitionRaw = cleanValue("청약경쟁률");
+    const totalCompetitionMatch = totalCompetitionRaw.match(/(\d[\d.]*):\s*1/);
+    const totalCompetition = totalCompetitionMatch ? `${totalCompetitionMatch[1]}:1` : undefined;
+
     // Mockup AI Analysis (In real case, this would come from a real AI or more complex scraping)
     const investmentPoints = [
       `${sector} 분야 독보적인 기술력 보유`,
@@ -229,6 +234,7 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
       ...(confirmedOfferingPrice > 0 && { offeringPrice: confirmedOfferingPrice }),
       ...(detailPriceBandLow && { priceBandLow: detailPriceBandLow }),
       ...(detailPriceBandHigh && { priceBandHigh: detailPriceBandHigh }),
+      ...(totalCompetition && { totalCompetition }),
     };
   } catch (error) {
     console.error(`Error scraping 38 detail for id ${id}:`, error);
