@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "마키나락스",
+    "listingDate": "2026/05/20",
+    "offeringPrice": 15000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "폴레드",
     "listingDate": "2026/05/14",
     "offeringPrice": 5000,
@@ -12,10 +21,10 @@
     "companyName": "코스모로보틱스",
     "listingDate": "2026/05/11",
     "offeringPrice": 6000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 23500,
+    "closingPrice": 24000,
+    "openingReturn": 291.67,
+    "closingReturn": 300
   },
   {
     "companyName": "신한스팩18호",
@@ -340,5 +349,14 @@
     "closingPrice": 16000,
     "openingReturn": 50,
     "closingReturn": 100
+  },
+  {
+    "companyName": "NH스팩32호",
+    "listingDate": "2025/12/05",
+    "offeringPrice": 2000,
+    "openingPrice": 4915,
+    "closingPrice": 3840,
+    "openingReturn": 145.75,
+    "closingReturn": 92
   }
 ]
