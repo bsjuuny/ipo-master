@@ -46,11 +46,13 @@ jobs:
           lftp -c "set ftp:list-options -a; \
           set ftp:passive-mode true; \
           set ftp:ssl-allow no; \
+          set ftp:charset utf-8; \
           open -u \"$FTP_USER\",\"$FTP_PASS\" $FTP_HOST; \
+          mkdir -p /www/ipomaster || true; \
           mirror -R ./out/ /www/ipomaster/ \
           --delete \
           --ignore-time \
-          --parallel=10 \
+          --parallel=2 \
           --exclude .git/ \
           --exclude .github/ \
           --verbose"
