@@ -139,6 +139,14 @@ export default function AdminPage() {
   const [deposit, setDeposit] = useState(10_000_000);
 
   useEffect(() => {
+    console.log("--- 환경 변수 주입 상태 확인 ---");
+    console.log("Admin Key Length:", ADMIN_KEY?.length || 0);
+    console.log("TOTP Secret Length:", TOTP_SECRET?.length || 0);
+    console.log("GitHub Token Length:", GITHUB_TOKEN?.length || 0);
+    console.log("-------------------------------");
+  }, []);
+
+  useEffect(() => {
     if (!authed) return;
 
     // Load IPO list — 청약 중인 항목만 표시
