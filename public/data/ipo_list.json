@@ -256,7 +256,7 @@
     "priceBandLow": 12500,
     "priceBandHigh": 15000,
     "status": "active",
-    "updatedAt": "2026-05-11T23:10:07.755Z",
+    "updatedAt": "2026-05-12T08:23:40.000Z",
     "sector": "응용 소프트웨어 개발 및 공급업",
     "ceo": "윤성호, 이재혁",
     "headOffice": "서울 서초구 강남대로 343, 12층 (서초동, 신덕빌딩)",
@@ -277,7 +277,22 @@
     ],
     "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.",
     "refundDate": "2026.05.14",
-    "listingDate": "2026.05.20"
+    "listingDate": "2026.05.20",
+    "totalCompetition": "49.78:1",
+    "competitionData": [
+      {
+        "brokerName": "미래에셋증권",
+        "competitionRate": "49.78:1",
+        "equalAllocation": "7주",
+        "proportionalAllocation": "5주"
+      },
+      {
+        "brokerName": "현대차증권",
+        "competitionRate": "12.41:1",
+        "equalAllocation": "17주",
+        "proportionalAllocation": "20주"
+      }
+    ]
   },
   {
     "id": "2286",

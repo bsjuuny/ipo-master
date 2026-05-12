@@ -140,21 +140,21 @@
     ]
   },
   "2285": {
-    "totalCompetition": "5259.25:1",
+    "totalCompetition": "49.78:1",
     "competitionData": [
       {
         "brokerName": "미래에셋증권",
-        "competitionRate": "6150.050:1",
-        "allocatedShares": 559940,
-        "equalAllocation": "0.594"
+        "competitionRate": "49.78:1",
+        "equalAllocation": "7주",
+        "proportionalAllocation": "5주"
       },
       {
         "brokerName": "현대차증권",
-        "competitionRate": "2586.830:1",
-        "allocatedShares": 98810,
-        "equalAllocation": "0.258"
+        "competitionRate": "12.41:1",
+        "equalAllocation": "17주",
+        "proportionalAllocation": "20주"
       }
     ]
   },
-  "_lastDeploy": "2026-03-24T13:37:10"
+  "_lastDeploy": "2026-05-12T08:24:10"
 }
