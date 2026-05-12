@@ -36,23 +36,12 @@ jobs:
           NEXT_PUBLIC_GITHUB_TOKEN: ${{ secrets.NEXT_PUBLIC_GITHUB_TOKEN }}
           NEXT_PUBLIC_TOTP_SECRET: ${{ secrets.NEXT_PUBLIC_TOTP_SECRET }}
 
-      - name: Deploy to Cafe24 via lftp mirror
-        env:
-          FTP_HOST: ${{ secrets.CAFE24_FTP_SERVER }}
-          FTP_USER: ${{ secrets.CAFE24_FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.CAFE24_FTP_PASSWORD }}
-        run: |
-          sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "set ftp:list-options -a; \
-          set ftp:passive-mode true; \
-          set ftp:ssl-allow no; \
-          set ftp:charset utf-8; \
-          open -u \"$FTP_USER\",\"$FTP_PASS\" $FTP_HOST; \
-          mkdir -p /www/ipomaster || true; \
-          mirror -R ./out/ /www/ipomaster/ \
-          --delete \
-          --ignore-time \
-          --parallel=2 \
-          --exclude .git/ \
-          --exclude .github/ \
-          --verbose"
+      - name: Deploy to Cafe24 via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.CAFE24_FTP_SERVER }}
+          username: ${{ secrets.CAFE24_FTP_USERNAME }}
+          password: ${{ secrets.CAFE24_FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /www/ipomaster/
+          dangerous-clean-slate: true
