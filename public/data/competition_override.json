@@ -140,15 +140,18 @@
     ]
   },
   "2285": {
+    "totalCompetition": "5259.25:1",
     "competitionData": [
       {
         "brokerName": "미래에셋증권",
         "competitionRate": "6150.050:1",
+        "allocatedShares": 187500,
         "equalAllocation": "0.594"
       },
       {
         "brokerName": "현대차증권",
         "competitionRate": "2586.830:1",
+        "allocatedShares": 62500,
         "equalAllocation": "0.258"
       }
     ]
