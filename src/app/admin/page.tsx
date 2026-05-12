@@ -11,10 +11,21 @@ function appendRate(v: string) { return v && !v.endsWith(':1') ? `${v}:1` : v; }
 
 // 증거금 기준 비례배정 계산
 function calcProportional(offeringPrice: number, competitionRate: string, deposit: number): number {
-  const rate = parseFloat(competitionRate.replace(/,/g, ''));
-  if (!rate || !offeringPrice || rate <= 0 || deposit <= 0) return 0;
+  if (!competitionRate) return 0;
+  // 콤마 및 :1 등 불필요한 문자 제거
+  const cleanRate = competitionRate.replace(/,/g, '').replace(/:1$/, '').trim();
+  const rate = parseFloat(cleanRate);
+  
+  if (!rate || isNaN(rate) || !offeringPrice || rate <= 0 || deposit <= 0) {
+    return 0;
+  }
+  
+  // 한국 공모주 청약은 보통 증거금 50% (입금액의 2배만큼 청약 가능)
   const subscriptionShares = Math.floor((deposit * 2) / offeringPrice);
-  return Math.floor(subscriptionShares / rate);
+  const result = Math.floor(subscriptionShares / rate);
+  
+  console.log(`[Calc] 종목가:${offeringPrice}, 경쟁률:${rate}, 증거금:${deposit} => 청약가능주수:${subscriptionShares}, 비례배정결과:${result}주`);
+  return result;
 }
 
 // 증권사별 배정 주식수 가중평균으로 통합 경쟁률 계산
