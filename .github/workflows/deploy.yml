@@ -34,6 +34,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /ipomaster
           NEXT_PUBLIC_ADMIN_KEY: ${{ secrets.NEXT_PUBLIC_ADMIN_KEY }}
           NEXT_PUBLIC_GITHUB_TOKEN: ${{ secrets.NEXT_PUBLIC_GITHUB_TOKEN }}
+          NEXT_PUBLIC_TOTP_SECRET: ${{ secrets.NEXT_PUBLIC_TOTP_SECRET }}
 
       - name: Clean up old chunks (Prevent Cafe24 Storage Full)
         env:
@@ -42,7 +43,7 @@ jobs:
           FTP_PASS: ${{ secrets.CAFE24_FTP_PASSWORD }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "open -u $FTP_USER,$FTP_PASS $FTP_HOST; rm -rf /www/ipomaster/_next/static/chunks || true"
+          lftp -c "set ftp:list-options -a; open -u \"$FTP_USER\",\"$FTP_PASS\" $FTP_HOST; rm -rf /www/ipomaster/_next/static/chunks || true"
 
       - name: Deploy to Cafe24 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
