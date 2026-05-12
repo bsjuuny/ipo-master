@@ -145,13 +145,13 @@
       {
         "brokerName": "미래에셋증권",
         "competitionRate": "6150.050:1",
-        "allocatedShares": 187500,
+        "allocatedShares": 559940,
         "equalAllocation": "0.594"
       },
       {
         "brokerName": "현대차증권",
         "competitionRate": "2586.830:1",
-        "allocatedShares": 62500,
+        "allocatedShares": 98810,
         "equalAllocation": "0.258"
       }
     ]
