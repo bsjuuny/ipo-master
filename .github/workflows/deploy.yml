@@ -43,7 +43,9 @@ jobs:
           FTP_PASS: ${{ secrets.CAFE24_FTP_PASSWORD }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "set ftp:list-options -a; open -u \"$FTP_USER\",\"$FTP_PASS\" $FTP_HOST; rm -rf /www/ipomaster/_next/static/chunks || true"
+          lftp -c "set ftp:list-options -a; open -u \"$FTP_USER\",\"$FTP_PASS\" $FTP_HOST; \
+          rm -rf /www/ipomaster/_next/static/chunks || true; \
+          mkdir -p /www/ipomaster/_next/static/chunks || true"
 
       - name: Deploy to Cafe24 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
