@@ -12,10 +12,10 @@
     "companyName": "폴레드",
     "listingDate": "2026/05/14",
     "offeringPrice": 5000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 20000,
+    "closingPrice": 20000,
+    "openingReturn": 300,
+    "closingReturn": 300
   },
   {
     "companyName": "코스모로보틱스",
