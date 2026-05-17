@@ -349,14 +349,5 @@
     "closingPrice": 16000,
     "openingReturn": 50,
     "closingReturn": 100
-  },
-  {
-    "companyName": "NH스팩32호",
-    "listingDate": "2025/12/05",
-    "offeringPrice": 2000,
-    "openingPrice": 4915,
-    "closingPrice": 3840,
-    "openingReturn": 145.75,
-    "closingReturn": 92
   }
 ]
