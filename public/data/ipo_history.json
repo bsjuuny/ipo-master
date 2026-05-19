@@ -331,23 +331,5 @@
     "closingPrice": 1985,
     "openingReturn": 50.75,
     "closingReturn": -0.75
-  },
-  {
-    "companyName": "페스카로",
-    "listingDate": "2025/12/10",
-    "offeringPrice": 15500,
-    "openingPrice": 45000,
-    "closingPrice": 27100,
-    "openingReturn": 190.32,
-    "closingReturn": 74.84
-  },
-  {
-    "companyName": "테라뷰홀딩스",
-    "listingDate": "2025/12/09",
-    "offeringPrice": 8000,
-    "openingPrice": 12000,
-    "closingPrice": 16000,
-    "openingReturn": 50,
-    "closingReturn": 100
   }
 ]
