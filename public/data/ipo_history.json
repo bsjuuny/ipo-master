@@ -3,10 +3,10 @@
     "companyName": "마키나락스",
     "listingDate": "2026/05/20",
     "offeringPrice": 15000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 60000,
+    "closingPrice": 60000,
+    "openingReturn": 300,
+    "closingReturn": 300
   },
   {
     "companyName": "폴레드",
@@ -331,5 +331,14 @@
     "closingPrice": 1985,
     "openingReturn": 50.75,
     "closingReturn": -0.75
+  },
+  {
+    "companyName": "페스카로",
+    "listingDate": "2025/12/10",
+    "offeringPrice": 15500,
+    "openingPrice": 45000,
+    "closingPrice": 27100,
+    "openingReturn": 190.32,
+    "closingReturn": 74.84
   }
 ]
