@@ -340,5 +340,14 @@
     "closingPrice": 1985,
     "openingReturn": 50.75,
     "closingReturn": -0.75
+  },
+  {
+    "companyName": "페스카로",
+    "listingDate": "2025/12/10",
+    "offeringPrice": 15500,
+    "openingPrice": 45000,
+    "closingPrice": 27100,
+    "openingReturn": 190.32,
+    "closingReturn": 74.84
   }
 ]
