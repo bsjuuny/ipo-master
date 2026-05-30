@@ -221,9 +221,9 @@ export default function HomePage() {
 
                       {/* Explicit Action Area */}
                       <div className="w-full md:col-span-1 flex md:flex-row justify-between md:justify-end items-center gap-4 border-t md:border-t-0 border-white/5 pt-4 md:pt-0">
-                        <Link 
+                        <Link
                           href={`/ipo/${ipo.id}`}
-                          className={`flex-1 md:flex-none text-center px-4 py-2.5 md:py-2 rounded-xl md:rounded-lg text-[11px] md:text-xs font-bold uppercase tracking-widest transition-all ${isPast ? 'bg-slate-500/10 text-slate-500 hover:bg-slate-500/20' : 'bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 hover:border-blue-500/40'}`}
+                          className={`w-full text-center px-4 py-2.5 md:py-2 rounded-xl md:rounded-lg text-[11px] md:text-xs font-bold uppercase tracking-widest transition-all ${isPast ? 'bg-slate-500/10 text-slate-500 hover:bg-slate-500/20' : 'bg-blue-600/10 text-blue-400 border border-blue-500/20 hover:bg-blue-600/20 hover:border-blue-500/40'}`}
                         >
                           분석 리포트
                         </Link>
