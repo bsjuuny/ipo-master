@@ -169,8 +169,6 @@ export default function HomePage() {
               return (
                 <div key={ipo.id} className={`glass-morphism premium-card-hover transition-all duration-500 overflow-hidden ${isPast ? 'opacity-80 grayscale-[0.2] pointer-events-auto bg-black/10' : ''}`}>
                   <div className="p-5 md:p-8 relative group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    
                     <div className="flex flex-col md:grid md:grid-cols-4 gap-6 md:gap-8 items-start md:items-center">
                       {/* Data Area */}
                       <div
