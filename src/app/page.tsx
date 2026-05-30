@@ -3,13 +3,11 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { IPO } from '@/types/ipo';
-import CompetitionTable from '@/components/CompetitionTable';
-import { ChevronDown, ChevronUp, Activity, BarChart3, TrendingUp } from 'lucide-react';
+import { Activity, BarChart3, TrendingUp } from 'lucide-react';
 
 export default function HomePage() {
   const [ipos, setIpos] = useState<IPO[]>([]);
   const [loading, setLoading] = useState(true);
-  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
 
   useEffect(() => {
@@ -95,10 +93,6 @@ export default function HomePage() {
     return '통합 경쟁률';
   };
 
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
   return (
     <div className="space-y-12 pb-20">
       {/* ... Hero Section and Stats Quick View remain same ... */}
@@ -173,15 +167,14 @@ export default function HomePage() {
               const isPast = new Date(endStr.replace(/\./g, '-')) < today;
 
               return (
-                <div key={ipo.id} className={`glass-morphism premium-card-hover transition-all duration-500 overflow-hidden ${expandedId === ipo.id ? 'ring-1 ring-blue-500/40 bg-white/[0.04]' : ''} ${isPast ? 'opacity-80 grayscale-[0.2] pointer-events-auto bg-black/10' : ''}`}>
+                <div key={ipo.id} className={`glass-morphism premium-card-hover transition-all duration-500 overflow-hidden ${isPast ? 'opacity-80 grayscale-[0.2] pointer-events-auto bg-black/10' : ''}`}>
                   <div className="p-5 md:p-8 relative group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     <div className="flex flex-col md:grid md:grid-cols-4 gap-6 md:gap-8 items-start md:items-center">
-                      {/* Clickable Data Area */}
-                      <div 
-                        className="w-full md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 items-start cursor-pointer"
-                        onClick={() => toggleExpand(ipo.id)}
+                      {/* Data Area */}
+                      <div
+                        className="w-full md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 items-start"
                       >
                         <div className="col-span-2 md:col-span-1 space-y-2">
                           <span className={`px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[9px] md:text-[10px] font-black uppercase ${isPast ? 'bg-slate-500/10 text-slate-500' : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'}`}>
@@ -234,33 +227,10 @@ export default function HomePage() {
                         >
                           분석 리포트
                         </Link>
-                        <button 
-                          onClick={() => toggleExpand(ipo.id)}
-                          className="p-3 md:p-2 bg-white/5 md:bg-transparent rounded-xl md:rounded-full transition-colors"
-                        >
-                          {expandedId === ipo.id ? <ChevronUp className="h-5 w-5 md:h-6 md:w-6 text-slate-400" /> : <ChevronDown className="h-5 w-5 md:h-6 md:w-6 text-slate-400" />}
-                        </button>
                       </div>
                     </div>
                   </div>
 
-                   {expandedId === ipo.id && (
-                    <div className="px-5 md:px-8 pb-5 md:pb-8 animate-in fade-in slide-in-from-top-4 duration-500">
-                      <div className="pt-6 md:pt-8 border-t border-white/5 space-y-6 md:space-y-8">
-                        <div className="flex items-center gap-3">
-                          <BarChart3 className={`h-4 w-4 md:h-5 md:w-5 ${isPast ? 'text-slate-500' : 'text-blue-400'}`} />
-                          <h4 className={`text-base md:text-lg font-black tracking-tight ${isPast ? 'text-slate-500' : ''}`}>증권사 현황</h4>
-                        </div>
-                        {ipo.competitionData && ipo.competitionData.length > 0 ? (
-                          <CompetitionTable data={ipo.competitionData} />
-                        ) : (
-                          <div className="py-12 md:py-20 text-center glass-morphism bg-white/[0.02] border-dashed">
-                            <p className="text-xs md:text-sm text-slate-500 font-black tracking-tighter uppercase">데이터 집계 중</p>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             })
