@@ -340,23 +340,5 @@
     "closingPrice": 20500,
     "openingReturn": 113.33,
     "closingReturn": 36.67
-  },
-  {
-    "companyName": "유진스팩12호",
-    "listingDate": "2025/12/11",
-    "offeringPrice": 2000,
-    "openingPrice": 3015,
-    "closingPrice": 1985,
-    "openingReturn": 50.75,
-    "closingReturn": -0.75
-  },
-  {
-    "companyName": "페스카로",
-    "listingDate": "2025/12/10",
-    "offeringPrice": 15500,
-    "openingPrice": 45000,
-    "closingPrice": 27100,
-    "openingReturn": 190.32,
-    "closingReturn": 74.84
   }
 ]
