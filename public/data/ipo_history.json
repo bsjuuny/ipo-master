@@ -1,12 +1,21 @@
 [
   {
-    "companyName": "피스피스스튜디오",
-    "listingDate": "2026/06/08",
-    "offeringPrice": 21500,
+    "companyName": "메리츠스팩2호",
+    "listingDate": "2026/06/19",
+    "offeringPrice": 2000,
     "openingPrice": 0,
     "closingPrice": 0,
     "openingReturn": 0,
     "closingReturn": 0
+  },
+  {
+    "companyName": "피스피스스튜디오",
+    "listingDate": "2026/06/08",
+    "offeringPrice": 21500,
+    "openingPrice": 32000,
+    "closingPrice": 13730,
+    "openingReturn": 48.84,
+    "closingReturn": -36.14
   },
   {
     "companyName": "대신밸런스스팩20호",
@@ -322,23 +331,5 @@
     "closingPrice": 2030,
     "openingReturn": 126.25,
     "closingReturn": 1.5
-  },
-  {
-    "companyName": "키움히어로스팩1호",
-    "listingDate": "2025/12/12",
-    "offeringPrice": 2000,
-    "openingPrice": 3010,
-    "closingPrice": 1986,
-    "openingReturn": 50.5,
-    "closingReturn": -0.7
-  },
-  {
-    "companyName": "이지스",
-    "listingDate": "2025/12/11",
-    "offeringPrice": 15000,
-    "openingPrice": 32000,
-    "closingPrice": 20500,
-    "openingReturn": 113.33,
-    "closingReturn": 36.67
   }
 ]
