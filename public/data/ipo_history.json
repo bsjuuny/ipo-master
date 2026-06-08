@@ -12,10 +12,10 @@
     "companyName": "대신밸런스스팩20호",
     "listingDate": "2026/06/05",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 6200,
+    "closingPrice": 1984,
+    "openingReturn": 210,
+    "closingReturn": -0.8
   },
   {
     "companyName": "마키나락스",
