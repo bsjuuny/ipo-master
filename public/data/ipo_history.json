@@ -322,14 +322,5 @@
     "closingPrice": 17630,
     "openingReturn": 59.67,
     "closingReturn": 17.53
-  },
-  {
-    "companyName": "교보스팩19호",
-    "listingDate": "2025/12/12",
-    "offeringPrice": 2000,
-    "openingPrice": 4525,
-    "closingPrice": 2030,
-    "openingReturn": 126.25,
-    "closingReturn": 1.5
   }
 ]
