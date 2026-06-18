@@ -322,23 +322,5 @@
     "closingPrice": 2045,
     "openingReturn": 50,
     "closingReturn": 2.25
-  },
-  {
-    "companyName": "티엠씨",
-    "listingDate": "2025/12/15",
-    "offeringPrice": 9300,
-    "openingPrice": 22550,
-    "closingPrice": 16770,
-    "openingReturn": 142.47,
-    "closingReturn": 80.32
-  },
-  {
-    "companyName": "쿼드메디슨",
-    "listingDate": "2025/12/12",
-    "offeringPrice": 15000,
-    "openingPrice": 23950,
-    "closingPrice": 17630,
-    "openingReturn": 59.67,
-    "closingReturn": 17.53
   }
 ]
