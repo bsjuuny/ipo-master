@@ -38,6 +38,12 @@ export async function scrape38Schedule(): Promise<Partial<IPO>[]> {
         const subscriptionRange = $(cols[1]).text().trim();
         const confirmedPriceRaw = $(cols[2]).text().trim();
         const priceBandRaw = $(cols[3]).text().trim();
+        const scheduleStatusRaw = $(cols[4]).text().trim();
+
+        if (scheduleStatusRaw.includes('정정신고서')) {
+          console.log(`[38comm] Skipping suspended IPO schedule: ${companyName} (${scheduleStatusRaw})`);
+          return;
+        }
 
         const [subscriptionStart, subscriptionEnd] = subscriptionRange.split('~').map(s => s.trim());
 

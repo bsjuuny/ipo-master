@@ -221,38 +221,6 @@
     "listingDate": "2026.06.30"
   },
   {
-    "id": "2294",
-    "companyName": "빅웨이브로보틱스",
-    "subscriptionStart": "2026.06.19",
-    "subscriptionEnd": "06.22",
-    "offeringPrice": 0,
-    "priceBandLow": 22000,
-    "priceBandHigh": 27000,
-    "status": "active",
-    "updatedAt": "2026-06-18T23:10:07.553Z",
-    "sector": "포털 및 기타 인터넷 정보매개 서비스업",
-    "ceo": "김민교",
-    "headOffice": "서울 강남구 영동대로106길 11, 501호, 501-1호, 501-에이호 (삼성동,현성빌딩)",
-    "underwriter": "유진투자증권,미래에셋증권",
-    "sales": "13,851 (백만원)",
-    "netIncome": "-5,856 (백만원)",
-    "institutionalCompetition": "",
-    "lockupRatio": "0.00%",
-    "investmentPoints": [
-      "포털 및 기타 인터넷 정보매개 서비스업 분야 독보적인 기술력 보유",
-      "글로벌 시장 점유율 매년 15% 이상 성장 중",
-      "탄탄한 재무 구조 및 낮은 부채 비율"
-    ],
-    "riskFactors": [
-      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
-      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
-      "기술 특례 상장에 따른 수익성 개선 지연 우려"
-    ],
-    "aiVerdict": "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.",
-    "refundDate": "2026.06.24",
-    "totalCompetition": "0:1"
-  },
-  {
     "id": "2289",
     "companyName": "스트라드비젼",
     "subscriptionStart": "2026.06.18",
