@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "한국스팩16호",
+    "listingDate": "2026/06/30",
+    "offeringPrice": 2000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "스트라드비젼",
     "listingDate": "2026/06/30",
     "offeringPrice": 12000,
@@ -21,10 +30,10 @@
     "companyName": "메리츠스팩2호",
     "listingDate": "2026/06/19",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 3905,
+    "closingPrice": 1970,
+    "openingReturn": 95.25,
+    "closingReturn": -1.5
   },
   {
     "companyName": "피스피스스튜디오",
