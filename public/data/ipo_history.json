@@ -48,10 +48,10 @@
     "companyName": "져스텍",
     "listingDate": "2026/06/29",
     "offeringPrice": 12500,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 35350,
+    "closingPrice": 17530,
+    "openingReturn": 182.8,
+    "closingReturn": 40.24
   },
   {
     "companyName": "메리츠스팩2호",
