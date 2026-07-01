@@ -21,10 +21,10 @@
     "companyName": "매드업",
     "listingDate": "2026/07/01",
     "offeringPrice": 8000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 22250,
+    "closingPrice": 10080,
+    "openingReturn": 178.13,
+    "closingReturn": 26
   },
   {
     "companyName": "한국스팩16호",
