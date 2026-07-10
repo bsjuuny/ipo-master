@@ -29,6 +29,12 @@ yarn-error.log*
 .env
 .env*.local
 
+# runtime state / logs
+.ftp-deploy-sync-state.json
+.next_dev_log.txt
+pm2_scheduler_logs.txt
+ipo-summary.txt
+
 # vercel
 .vercel
 
