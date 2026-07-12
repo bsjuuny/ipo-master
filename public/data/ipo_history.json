@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "에이치엘지노믹스",
+    "listingDate": "2026/07/24",
+    "offeringPrice": 21500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "레메디",
     "listingDate": "2026/07/13",
     "offeringPrice": 20700,
@@ -13,9 +22,9 @@
     "listingDate": "2026/07/06",
     "offeringPrice": 10000,
     "openingPrice": 16560,
-    "closingPrice": 0,
+    "closingPrice": 9850,
     "openingReturn": 65.6,
-    "closingReturn": 0
+    "closingReturn": -1.5
   },
   {
     "companyName": "매드업",
