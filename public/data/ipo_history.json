@@ -12,10 +12,10 @@
     "companyName": "레메디",
     "listingDate": "2026/07/13",
     "offeringPrice": 20700,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 30750,
+    "closingPrice": 22000,
+    "openingReturn": 48.55,
+    "closingReturn": 6.28
   },
   {
     "companyName": "레몬헬스케어",
