@@ -349,14 +349,5 @@
     "closingPrice": 27150,
     "openingReturn": 106.06,
     "closingReturn": 64.55
-  },
-  {
-    "companyName": "아크릴",
-    "listingDate": "2025/12/16",
-    "offeringPrice": 19500,
-    "openingPrice": 45900,
-    "closingPrice": 67000,
-    "openingReturn": 135.38,
-    "closingReturn": 243.59
   }
 ]
