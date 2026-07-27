@@ -322,32 +322,5 @@
     "closingPrice": 2210,
     "openingReturn": 95,
     "closingReturn": 10.5
-  },
-  {
-    "companyName": "IBKS스팩25호",
-    "listingDate": "2025/12/19",
-    "offeringPrice": 2000,
-    "openingPrice": 4838,
-    "closingPrice": 2715,
-    "openingReturn": 141.9,
-    "closingReturn": 35.75
-  },
-  {
-    "companyName": "알지노믹스",
-    "listingDate": "2025/12/18",
-    "offeringPrice": 22500,
-    "openingPrice": 90000,
-    "closingPrice": 90000,
-    "openingReturn": 300,
-    "closingReturn": 300
-  },
-  {
-    "companyName": "나라스페이스테크놀로지",
-    "listingDate": "2025/12/17",
-    "offeringPrice": 16500,
-    "openingPrice": 34000,
-    "closingPrice": 27150,
-    "openingReturn": 106.06,
-    "closingReturn": 64.55
   }
 ]
