@@ -331,23 +331,5 @@
     "closingPrice": 1977,
     "openingReturn": 50,
     "closingReturn": -1.15
-  },
-  {
-    "companyName": "삼진식품",
-    "listingDate": "2025/12/22",
-    "offeringPrice": 7600,
-    "openingPrice": 22900,
-    "closingPrice": 19210,
-    "openingReturn": 201.32,
-    "closingReturn": 152.76
-  },
-  {
-    "companyName": "미래에셋비전스팩11호",
-    "listingDate": "2025/12/22",
-    "offeringPrice": 2000,
-    "openingPrice": 3900,
-    "closingPrice": 2210,
-    "openingReturn": 95,
-    "closingReturn": 10.5
   }
 ]
