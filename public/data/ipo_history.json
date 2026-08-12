@@ -48,10 +48,10 @@
     "companyName": "딜리셔스",
     "listingDate": "2026/08/12",
     "offeringPrice": 7000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 6000,
+    "closingPrice": 5140,
+    "openingReturn": -14.29,
+    "closingReturn": -26.57
   },
   {
     "companyName": "에이치엘지노믹스",
