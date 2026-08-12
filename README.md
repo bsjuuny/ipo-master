@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IPO Master
 
-## Getting Started
+국내 공모주 일정과 수요예측·청약 경쟁률·상장 성과를 한곳에서 확인하는 데이터 대시보드입니다.
 
-First, run the development server:
+[서비스 바로가기](https://bsjuun2026.mycafe24.com/ipomaster/)
+
+## 주요 기능
+
+- 공모주 청약·환불·상장 일정을 캘린더와 목록으로 제공
+- 확정 공모가, 희망 공모가, 기관 경쟁률 등 핵심 지표 요약
+- 종목별 상세 정보와 참여 판단을 돕는 분석 화면
+- 과거 상장 종목의 공모가 대비 시초가·종가 수익률 분석
+- 청약 경쟁률 수동 보정과 데이터 재집계
+- 데이터 갱신, 정적 빌드, Cafe24 배포 및 Telegram 알림 자동화
+
+## 기술 스택
+
+- Next.js 14 / React 18 / TypeScript
+- Tailwind CSS / Lucide React
+- Cheerio / Playwright / Axios
+- GitHub Actions / Cafe24 FTP
+
+## 로컬 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 `http://localhost:3000`을 엽니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 주요 명령어
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run data:update       # 공모주 데이터 수집 및 집계
+npm run override:apply    # 경쟁률 보정 데이터 반영
+npm run generate:summary # 일정 요약 생성
+npm run build             # 정적 사이트 빌드
+```
 
-## Learn More
+일부 데이터 수집과 운영 기능에는 별도의 환경 변수가 필요합니다. 비밀 값은 저장소에 커밋하지 마세요.
 
-To learn more about Next.js, take a look at the following resources:
+## 안내
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+이 프로젝트는 정보 제공을 위한 개인 프로젝트이며 투자 권유를 목적으로 하지 않습니다.
