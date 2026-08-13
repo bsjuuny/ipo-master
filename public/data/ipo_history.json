@@ -39,10 +39,10 @@
     "companyName": "케이앤에스아이앤씨",
     "listingDate": "2026/08/13",
     "offeringPrice": 11000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 21000,
+    "closingPrice": 15380,
+    "openingReturn": 90.91,
+    "closingReturn": 39.82
   },
   {
     "companyName": "딜리셔스",
