@@ -21,9 +21,9 @@
     "companyName": "기도산업",
     "listingDate": "2026/08/21",
     "offeringPrice": 28400,
-    "openingPrice": 0,
+    "openingPrice": 28000,
     "closingPrice": 0,
-    "openingReturn": 0,
+    "openingReturn": -1.41,
     "closingReturn": 0
   },
   {
