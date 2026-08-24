@@ -12,9 +12,9 @@
     "companyName": "니어스랩",
     "listingDate": "2026/08/24",
     "offeringPrice": 41200,
-    "openingPrice": 0,
+    "openingPrice": 40500,
     "closingPrice": 0,
-    "openingReturn": 0,
+    "openingReturn": -1.7,
     "closingReturn": 0
   },
   {
