@@ -1,30 +1,39 @@
 [
   {
-    "companyName": "해치텍",
-    "listingDate": "2026/08/25",
-    "offeringPrice": 23000,
+    "companyName": "스카이랩스",
+    "listingDate": "2026/09/04",
+    "offeringPrice": 10000,
     "openingPrice": 0,
     "closingPrice": 0,
     "openingReturn": 0,
     "closingReturn": 0
   },
   {
+    "companyName": "해치텍",
+    "listingDate": "2026/08/25",
+    "offeringPrice": 23000,
+    "openingPrice": 20500,
+    "closingPrice": 13930,
+    "openingReturn": -10.87,
+    "closingReturn": -39.43
+  },
+  {
     "companyName": "니어스랩",
     "listingDate": "2026/08/24",
     "offeringPrice": 41200,
     "openingPrice": 40500,
-    "closingPrice": 0,
+    "closingPrice": 28650,
     "openingReturn": -1.7,
-    "closingReturn": 0
+    "closingReturn": -30.46
   },
   {
     "companyName": "기도산업",
     "listingDate": "2026/08/21",
     "offeringPrice": 28400,
     "openingPrice": 28000,
-    "closingPrice": 0,
+    "closingPrice": 18580,
     "openingReturn": -1.41,
-    "closingReturn": 0
+    "closingReturn": -34.58
   },
   {
     "companyName": "인제니아테라퓨틱스",
@@ -340,23 +349,5 @@
     "closingPrice": 49600,
     "openingReturn": 20,
     "closingReturn": -9.82
-  },
-  {
-    "companyName": "미래에셋비전스팩10호",
-    "listingDate": "2025/12/23",
-    "offeringPrice": 2000,
-    "openingPrice": 5050,
-    "closingPrice": 1991,
-    "openingReturn": 152.5,
-    "closingReturn": -0.45
-  },
-  {
-    "companyName": "하나스팩36호",
-    "listingDate": "2025/12/22",
-    "offeringPrice": 2000,
-    "openingPrice": 3000,
-    "closingPrice": 1977,
-    "openingReturn": 50,
-    "closingReturn": -1.15
   }
 ]
