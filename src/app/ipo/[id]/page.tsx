@@ -32,7 +32,8 @@ async function getIpoData(id: string): Promise<IPO | null> {
   }
 }
 
-export default async function IPODetailPage({ params }: { params: { id: string } }) {
+export default async function IPODetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const ipo = await getIpoData(params.id);
 
   if (!ipo) {
