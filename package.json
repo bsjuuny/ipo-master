@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "data:update": "tsx scripts/aggregate.ts",
     "override:apply": "tsx scripts/apply-override.ts",
+    "admin:edit": "node scripts/edit-override.mjs",
     "generate:summary": "tsx scripts/generate-ipo-summary.ts",
     "notify:telegram": "tsx scripts/generate-ipo-summary.ts --send",
     "notify:failure": "tsx scripts/generate-ipo-summary.ts --failure"
@@ -22,7 +23,6 @@
     "iconv-lite": "^0.7.2",
     "lucide-react": "^0.577.0",
     "next": "15.5.24",
-    "otplib": "^13.4.0",
     "playwright": "^1.58.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
