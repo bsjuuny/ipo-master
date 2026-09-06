@@ -12,10 +12,10 @@
     "companyName": "스카이랩스",
     "listingDate": "2026/09/04",
     "offeringPrice": 10000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 8500,
+    "closingPrice": 23500,
+    "openingReturn": -15,
+    "closingReturn": 135
   },
   {
     "companyName": "해치텍",
