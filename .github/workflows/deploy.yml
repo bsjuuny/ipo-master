@@ -33,6 +33,11 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /ipomaster
 
+      - name: Validate static output
+        run: |
+          test -f out/index.html
+          test "$(find out -type f | wc -l)" -gt 5
+
       - name: Deploy to Cafe24 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
