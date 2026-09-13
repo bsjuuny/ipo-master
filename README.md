@@ -2,7 +2,7 @@
 
 국내 공모주 일정과 수요예측·청약 경쟁률·상장 성과를 한곳에서 확인하는 데이터 대시보드입니다.
 
-[서비스 바로가기](https://bsjuun2026.mycafe24.com/ipomaster/)
+[서비스 바로가기](https://bsjuuny2026.mycafe24.com/ipomaster/)
 
 ## 주요 기능
 

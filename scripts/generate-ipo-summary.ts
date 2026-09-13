@@ -102,7 +102,7 @@ async function generateSummary() {
 
   const header = '✅ <b>IPO Master 정보 업데이트 성공!</b>';
   const divider = '━━━━━━━━━━━━━━━━━━━━━';
-  const footer = `🔗 웹사이트 바로가기: <a href="https://bsjuun2026.mycafe24.com/ipomaster/">바로가기</a>\n🔗 리포지토리: <a href="https://github.com/bsjuuny/ipo-master/actions">확인하기</a>`;
+  const footer = `🔗 웹사이트 바로가기: <a href="https://bsjuuny2026.mycafe24.com/ipomaster/">바로가기</a>\n🔗 리포지토리: <a href="https://github.com/bsjuuny/ipo-master/actions">확인하기</a>`;
 
   const finalMessage = `${header}\n\n${divider}\n${sections.join('\n\n')}\n${divider}\n\n${footer}`;
   
