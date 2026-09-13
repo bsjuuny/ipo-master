@@ -1,4 +1,4 @@
-name: Deploy Competition Override
+name: Validate Competition Override
 
 on:
   workflow_dispatch:
@@ -34,12 +34,5 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /ipomaster
 
-      - name: Deploy to Cafe24 via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.CAFE24_FTP_HOST || secrets.CAFE24_FTP_SERVER }}
-          username: ${{ secrets.CAFE24_FTP_USER || secrets.CAFE24_FTP_USERNAME }}
-          password: ${{ secrets.CAFE24_FTP_PASS || secrets.CAFE24_FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /www/ipomaster/
-          dangerous-clean-slate: false
+      - name: Deployment note
+        run: echo "Cafe24 deployment is handled by the local PM2 scheduler."
