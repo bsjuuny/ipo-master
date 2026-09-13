@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { IPO } from '@/types/ipo';
 import Link from 'next/link';
+import SubscriptionSimulator from './SubscriptionSimulator';
 
 interface IPODetailClientProps {
   ipo: IPO;
@@ -83,6 +84,9 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
           </p>
         </div>
       </section>
+
+      {/* Subscription Simulator */}
+      <SubscriptionSimulator ipo={ipo} />
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
