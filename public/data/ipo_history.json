@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "브릴스",
+    "listingDate": "2026/10/01",
+    "offeringPrice": 19500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "덕산넵코어스",
     "listingDate": "2026/09/30",
     "offeringPrice": 14600,
@@ -349,14 +358,5 @@
     "closingPrice": 104000,
     "openingReturn": 300,
     "closingReturn": 300
-  },
-  {
-    "companyName": "카나프테라퓨틱스",
-    "listingDate": "2026/03/16",
-    "offeringPrice": 20000,
-    "openingPrice": 68100,
-    "closingPrice": 50600,
-    "openingReturn": 240.5,
-    "closingReturn": 153
   }
 ]
