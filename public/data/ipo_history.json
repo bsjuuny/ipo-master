@@ -66,10 +66,10 @@
     "companyName": "네오사피엔스",
     "listingDate": "2026/09/21",
     "offeringPrice": 10000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 25250,
+    "closingPrice": 34300,
+    "openingReturn": 152.5,
+    "closingReturn": 243
   },
   {
     "companyName": "NH스팩34호",
