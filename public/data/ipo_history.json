@@ -48,19 +48,19 @@
     "companyName": "KB스팩34호",
     "listingDate": "2026/09/22",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 4000,
+    "closingPrice": 1914,
+    "openingReturn": 100,
+    "closingReturn": -4.3
   },
   {
     "companyName": "한국스팩17호",
     "listingDate": "2026/09/22",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 3415,
+    "closingPrice": 2155,
+    "openingReturn": 70.75,
+    "closingReturn": 7.75
   },
   {
     "companyName": "네오사피엔스",
