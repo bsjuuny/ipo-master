@@ -1,5 +1,23 @@
 [
   {
+    "companyName": "멜콘",
+    "listingDate": "2026/10/15",
+    "offeringPrice": 12300,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "진코스텍",
+    "listingDate": "2026/10/15",
+    "offeringPrice": 23500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "브릴스",
     "listingDate": "2026/10/01",
     "offeringPrice": 19500,
@@ -21,19 +39,19 @@
     "companyName": "빅웨이브로보틱스",
     "listingDate": "2026/09/29",
     "offeringPrice": 18000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 56000,
+    "closingPrice": 29900,
+    "openingReturn": 211.11,
+    "closingReturn": 66.11
   },
   {
     "companyName": "글로벌테크놀로지",
     "listingDate": "2026/09/29",
     "offeringPrice": 10000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 21150,
+    "closingPrice": 18220,
+    "openingReturn": 111.5,
+    "closingReturn": 82.2
   },
   {
     "companyName": "와이즈플래닛컴퍼니",
@@ -340,23 +358,5 @@
     "closingPrice": 39000,
     "openingReturn": 205.56,
     "closingReturn": 80.56
-  },
-  {
-    "companyName": "한패스",
-    "listingDate": "2026/03/25",
-    "offeringPrice": 19000,
-    "openingPrice": 37100,
-    "closingPrice": 27200,
-    "openingReturn": 95.26,
-    "closingReturn": 43.16
-  },
-  {
-    "companyName": "아이엠바이오로직스",
-    "listingDate": "2026/03/20",
-    "offeringPrice": 26000,
-    "openingPrice": 104000,
-    "closingPrice": 104000,
-    "openingReturn": 300,
-    "closingReturn": 300
   }
 ]
