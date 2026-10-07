@@ -1,5 +1,23 @@
 [
   {
+    "companyName": "엠에스바이오",
+    "listingDate": "2026/10/22",
+    "offeringPrice": 7800,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "엘리스그룹",
+    "listingDate": "2026/10/20",
+    "offeringPrice": 90500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "멜콘",
     "listingDate": "2026/10/15",
     "offeringPrice": 12300,
@@ -340,23 +358,5 @@
     "closingPrice": 18450,
     "openingReturn": 241.82,
     "closingReturn": 67.73
-  },
-  {
-    "companyName": "NH스팩33호",
-    "listingDate": "2026/03/27",
-    "offeringPrice": 2000,
-    "openingPrice": 3460,
-    "closingPrice": 2660,
-    "openingReturn": 73,
-    "closingReturn": 33
-  },
-  {
-    "companyName": "메쥬",
-    "listingDate": "2026/03/26",
-    "offeringPrice": 21600,
-    "openingPrice": 66000,
-    "closingPrice": 39000,
-    "openingReturn": 205.56,
-    "closingReturn": 80.56
   }
 ]
