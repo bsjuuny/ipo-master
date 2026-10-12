@@ -125,29 +125,58 @@ async function generateSummary() {
       ? `🚨 <b>IPO Master 배포 실패!</b>\n\n데이터 업데이트 또는 빌드 과정에서 오류가 발생했습니다.\n🔗 리포지토리: <a href="https://github.com/bsjuuny/ipo-master/actions">확인하기</a>`
       : finalMessage;
 
+    console.log(`Sending ${isFailure ? 'failure' : 'success'} notification to Telegram...`);
+    const { sent, attempts } = await sendTelegram(token, chatId, message);
+    if (!sent) {
+      // 예전엔 실패를 console.warn 으로만 남기고 exit 0 으로 끝났다. 스케줄러(lib/shell.mjs
+      // run)는 성공한 명령의 stderr 를 버리므로 실패가 어디에도 안 남았다(2026-10-07·09·12
+      // 미발송). 이제 비정상 종료해서 스케줄러 로그에 남고 watchdog 이 알린다.
+      console.error(`[ipo-notify] Telegram 전송 최종 실패 (${attempts}회 시도)`);
+      process.exit(1);
+    }
+  }
+}
+
+const MAX_SEND_ATTEMPTS = 3;
+
+/** 실패 원인 한 줄. error.config·error.request 에는 봇 토큰이 든 URL 이 있어 쓰지 않는다. */
+function describeSendError(error: any): string {
+  if (error?.response) {
+    const data = error.response.data;
+    const detail = data?.description ?? JSON.stringify(data ?? '').slice(0, 300);
+    return `HTTP ${error.response.status} ${detail}`;
+  }
+  const code = error?.code ? `${error.code} ` : '';
+  return `${code}${error?.message ?? String(error)}`.replace(/bot\d+:[A-Za-z0-9_-]+/g, 'bot<redacted>');
+}
+
+async function sendTelegram(token: string, chatId: string, text: string): Promise<{ sent: boolean; attempts: number }> {
+  for (let attempt = 1; attempt <= MAX_SEND_ATTEMPTS; attempt++) {
     try {
-      console.log(`Sending ${isFailure ? 'failure' : 'success'} notification to Telegram...`);
       const response = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
         chat_id: chatId,
-        text: message,
+        text,
         parse_mode: 'HTML',
         disable_web_page_preview: true
       }, {
-        timeout: 15000 // 15 seconds timeout
+        timeout: 15000,
+        // scheduler/run-tg-report.mjs 와 같은 이유로 IPv4 고정(IPv6 ENETUNREACH 방지).
+        family: 4,
       });
-      console.log('Telegram notification sent successfully. Response status:', response.status);
+      console.log(`Telegram notification sent successfully. Response status: ${response.status} (attempt ${attempt}/${MAX_SEND_ATTEMPTS})`);
+      return { sent: true, attempts: attempt };
     } catch (error: any) {
-      console.warn('Failed to send Telegram notification (non-fatal).');
-      if (error.response) {
-        console.warn('Response Data:', JSON.stringify(error.response.data));
-        console.warn('Response Status:', error.response.status);
-      } else if (error.request) {
-        console.warn('No response received. Error Request:', error.message);
-      } else {
-        console.warn('Error Message:', error.message);
+      const status: number | undefined = error?.response?.status;
+      console.error(`[ipo-notify] Telegram 전송 실패 (시도 ${attempt}/${MAX_SEND_ATTEMPTS}): ${describeSendError(error)}`);
+      // 429 를 뺀 4xx 는 다시 보내도 같다 - 토큰·chat_id·HTML 파싱 문제라 바로 멈춘다.
+      if (status !== undefined && status >= 400 && status < 500 && status !== 429) return { sent: false, attempts: attempt };
+      if (attempt < MAX_SEND_ATTEMPTS) {
+        const retryAfterSec = Number(error?.response?.data?.parameters?.retry_after) || 0;
+        await new Promise((resolve) => setTimeout(resolve, retryAfterSec > 0 ? retryAfterSec * 1000 : 2000 * attempt));
       }
     }
   }
+  return { sent: false, attempts: MAX_SEND_ATTEMPTS };
 }
 
 generateSummary().catch(err => {
