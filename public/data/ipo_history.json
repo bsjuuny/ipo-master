@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "디티에스",
+    "listingDate": "2026/10/23",
+    "offeringPrice": 18500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "엠에스바이오",
     "listingDate": "2026/10/22",
     "offeringPrice": 7800,
@@ -349,14 +358,5 @@
     "closingPrice": 2045,
     "openingReturn": 188,
     "closingReturn": 2.25
-  },
-  {
-    "companyName": "리센스메디컬",
-    "listingDate": "2026/03/31",
-    "offeringPrice": 11000,
-    "openingPrice": 37600,
-    "closingPrice": 18450,
-    "openingReturn": 241.82,
-    "closingReturn": 67.73
   }
 ]
