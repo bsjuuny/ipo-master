@@ -349,14 +349,5 @@
     "closingPrice": 2020,
     "openingReturn": 145,
     "closingReturn": 1
-  },
-  {
-    "companyName": "신한스팩17호",
-    "listingDate": "2026/04/01",
-    "offeringPrice": 2000,
-    "openingPrice": 5760,
-    "closingPrice": 2045,
-    "openingReturn": 188,
-    "closingReturn": 2.25
   }
 ]
