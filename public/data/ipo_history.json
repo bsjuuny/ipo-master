@@ -39,19 +39,19 @@
     "companyName": "멜콘",
     "listingDate": "2026/10/15",
     "offeringPrice": 12300,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 27400,
+    "closingPrice": 17180,
+    "openingReturn": 122.76,
+    "closingReturn": 39.67
   },
   {
     "companyName": "진코스텍",
     "listingDate": "2026/10/15",
     "offeringPrice": 23500,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 24000,
+    "closingPrice": 14450,
+    "openingReturn": 2.13,
+    "closingReturn": -38.51
   },
   {
     "companyName": "브릴스",
