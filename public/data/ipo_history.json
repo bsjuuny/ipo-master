@@ -84,10 +84,10 @@
     "companyName": "디티에스",
     "listingDate": "2026/10/23",
     "offeringPrice": 18500,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 32350,
+    "closingPrice": 25050,
+    "openingReturn": 74.86,
+    "closingReturn": 35.41
   },
   {
     "companyName": "엠에스바이오",
