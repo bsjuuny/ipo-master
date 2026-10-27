@@ -75,10 +75,10 @@
     "companyName": "SK증권스팩14호",
     "listingDate": "2026/10/27",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 4065,
+    "closingPrice": 1905,
+    "openingReturn": 103.25,
+    "closingReturn": -4.75
   },
   {
     "companyName": "디티에스",
