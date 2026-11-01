@@ -9,6 +9,33 @@
     "closingReturn": 0
   },
   {
+    "companyName": "넥스아이",
+    "listingDate": "2026/11/12",
+    "offeringPrice": 8000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "바로팜",
+    "listingDate": "2026/11/11",
+    "offeringPrice": 16400,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
+    "companyName": "동원파츠",
+    "listingDate": "2026/11/10",
+    "offeringPrice": 26500,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "아이엠스팩1호",
     "listingDate": "2026/11/04",
     "offeringPrice": 2000,
@@ -48,28 +75,28 @@
     "companyName": "크리에이츠",
     "listingDate": "2026/10/30",
     "offeringPrice": 15000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 12000,
+    "closingPrice": 9470,
+    "openingReturn": -20,
+    "closingReturn": -36.87
   },
   {
     "companyName": "인텔리빅스",
     "listingDate": "2026/10/30",
     "offeringPrice": 9000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 19290,
+    "closingPrice": 31750,
+    "openingReturn": 114.33,
+    "closingReturn": 252.78
   },
   {
     "companyName": "한화플러스스팩6호",
     "listingDate": "2026/10/30",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 2810,
+    "closingPrice": 1866,
+    "openingReturn": 40.5,
+    "closingReturn": -6.7
   },
   {
     "companyName": "티앤이코리아",
@@ -331,32 +358,5 @@
     "closingPrice": 7200,
     "openingReturn": -8.17,
     "closingReturn": -40
-  },
-  {
-    "companyName": "져스텍",
-    "listingDate": "2026/06/29",
-    "offeringPrice": 12500,
-    "openingPrice": 35350,
-    "closingPrice": 17530,
-    "openingReturn": 182.8,
-    "closingReturn": 40.24
-  },
-  {
-    "companyName": "메리츠스팩2호",
-    "listingDate": "2026/06/19",
-    "offeringPrice": 2000,
-    "openingPrice": 3905,
-    "closingPrice": 1970,
-    "openingReturn": 95.25,
-    "closingReturn": -1.5
-  },
-  {
-    "companyName": "피스피스스튜디오",
-    "listingDate": "2026/06/08",
-    "offeringPrice": 21500,
-    "openingPrice": 32000,
-    "closingPrice": 13730,
-    "openingReturn": 48.84,
-    "closingReturn": -36.14
   }
 ]
