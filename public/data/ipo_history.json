@@ -66,10 +66,10 @@
     "companyName": "영광",
     "listingDate": "2026/11/02",
     "offeringPrice": 17000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 21350,
+    "closingPrice": 21500,
+    "openingReturn": 25.59,
+    "closingReturn": 26.47
   },
   {
     "companyName": "크리에이츠",
