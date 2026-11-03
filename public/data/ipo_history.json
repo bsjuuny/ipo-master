@@ -9,6 +9,15 @@
     "closingReturn": 0
   },
   {
+    "companyName": "영광와이케이엠씨",
+    "listingDate": "2026/11/16",
+    "offeringPrice": 11000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "넥스아이",
     "listingDate": "2026/11/12",
     "offeringPrice": 8000,
@@ -57,10 +66,10 @@
     "companyName": "래블업",
     "listingDate": "2026/11/03",
     "offeringPrice": 19000,
-    "openingPrice": 0,
-    "closingPrice": 0,
+    "openingPrice": 19000,
+    "closingPrice": 14170,
     "openingReturn": 0,
-    "closingReturn": 0
+    "closingReturn": -25.42
   },
   {
     "companyName": "영광",
@@ -349,14 +358,5 @@
     "closingPrice": 1941,
     "openingReturn": 104.5,
     "closingReturn": -2.95
-  },
-  {
-    "companyName": "스트라드비젼",
-    "listingDate": "2026/06/30",
-    "offeringPrice": 12000,
-    "openingPrice": 11020,
-    "closingPrice": 7200,
-    "openingReturn": -8.17,
-    "closingReturn": -40
   }
 ]
