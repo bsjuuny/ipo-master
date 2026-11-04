@@ -48,19 +48,19 @@
     "companyName": "아이엠스팩1호",
     "listingDate": "2026/11/04",
     "offeringPrice": 2000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 2580,
+    "closingPrice": 1861,
+    "openingReturn": 29,
+    "closingReturn": -6.95
   },
   {
     "companyName": "이에스티",
     "listingDate": "2026/11/04",
     "offeringPrice": 12400,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 15890,
+    "closingPrice": 9940,
+    "openingReturn": 28.15,
+    "closingReturn": -19.84
   },
   {
     "companyName": "래블업",
