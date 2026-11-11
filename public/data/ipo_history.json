@@ -57,10 +57,10 @@
     "companyName": "바로팜",
     "listingDate": "2026/11/11",
     "offeringPrice": 16400,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 16000,
+    "closingPrice": 11780,
+    "openingReturn": -2.44,
+    "closingReturn": -28.17
   },
   {
     "companyName": "동원파츠",
