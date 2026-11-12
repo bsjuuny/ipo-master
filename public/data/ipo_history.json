@@ -48,10 +48,10 @@
     "companyName": "넥스아이",
     "listingDate": "2026/11/12",
     "offeringPrice": 8000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 7620,
+    "closingPrice": 4810,
+    "openingReturn": -4.75,
+    "closingReturn": -39.88
   },
   {
     "companyName": "바로팜",
@@ -331,32 +331,5 @@
     "closingPrice": 15380,
     "openingReturn": 90.91,
     "closingReturn": 39.82
-  },
-  {
-    "companyName": "딜리셔스",
-    "listingDate": "2026/08/12",
-    "offeringPrice": 7000,
-    "openingPrice": 6000,
-    "closingPrice": 5140,
-    "openingReturn": -14.29,
-    "closingReturn": -26.57
-  },
-  {
-    "companyName": "에이치엘지노믹스",
-    "listingDate": "2026/07/24",
-    "offeringPrice": 21500,
-    "openingPrice": 21500,
-    "closingPrice": 14790,
-    "openingReturn": 0,
-    "closingReturn": -31.21
-  },
-  {
-    "companyName": "레메디",
-    "listingDate": "2026/07/13",
-    "offeringPrice": 20700,
-    "openingPrice": 30750,
-    "closingPrice": 22000,
-    "openingReturn": 48.55,
-    "closingReturn": 6.28
   }
 ]
