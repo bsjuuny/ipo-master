@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "유캐스트",
+    "listingDate": "2026/11/30",
+    "offeringPrice": 19000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "엠비디",
     "listingDate": "2026/11/24",
     "offeringPrice": 7000,
@@ -30,10 +39,10 @@
     "companyName": "옵토닉스",
     "listingDate": "2026/11/17",
     "offeringPrice": 12000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 31000,
+    "closingPrice": 18170,
+    "openingReturn": 158.33,
+    "closingReturn": 51.42
   },
   {
     "companyName": "영광와이케이엠씨",
@@ -331,5 +340,14 @@
     "closingPrice": 15380,
     "openingReturn": 90.91,
     "closingReturn": 39.82
+  },
+  {
+    "companyName": "딜리셔스",
+    "listingDate": "2026/08/12",
+    "offeringPrice": 7000,
+    "openingPrice": 6000,
+    "closingPrice": 5140,
+    "openingReturn": -14.29,
+    "closingReturn": -26.57
   }
 ]
