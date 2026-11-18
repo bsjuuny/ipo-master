@@ -2,9 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
+const SITE_URL = "https://bsjuuny2026.mycafe24.com/ipomaster/";
+
 export const metadata: Metadata = {
-  title: "IPO MASTER | 공모주 인텔리전스",
-  description: "경쟁률, 수요예측, 상장 수익률까지 데이터로 완성하는 공모주 투자",
+  metadataBase: new URL(SITE_URL),
+  // 공모주 상세는 "회사명 공모주 청약 일정·공모가 | IPO Master" 로 나온다.
+  title: { default: "IPO MASTER | 공모주 청약 일정·수요예측·경쟁률", template: "%s | IPO Master" },
+  description: "이번 주 공모주 청약 일정, 희망 공모가, 기관 수요예측 경쟁률, 상장일과 상장 수익률을 한눈에 보는 공모주 정보 사이트",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: "IPO MASTER | 공모주 인텔리전스",
+    description: "경쟁률, 수요예측, 상장 수익률까지 데이터로 보는 공모주 정보",
+    url: SITE_URL,
+    siteName: "IPO Master",
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

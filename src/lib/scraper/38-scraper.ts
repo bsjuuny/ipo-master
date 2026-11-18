@@ -206,23 +206,6 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
     const totalCompetitionMatch = totalCompetitionRaw.match(/(\d[\d.]*):\s*1/);
     const totalCompetition = totalCompetitionMatch ? `${totalCompetitionMatch[1]}:1` : undefined;
 
-    // Mockup AI Analysis (In real case, this would come from a real AI or more complex scraping)
-    const investmentPoints = [
-      `${sector} 분야 독보적인 기술력 보유`,
-      "글로벌 시장 점유율 매년 15% 이상 성장 중",
-      "탄탄한 재무 구조 및 낮은 부채 비율"
-    ];
-
-    const riskFactors = [
-      "전방 산업의 업황 변화에 따른 실적 변동 가능성",
-      "보호예수 해제에 따른 오버행(Overhang) 이슈 존재",
-      "기술 특례 상장에 따른 수익성 개선 지연 우려"
-    ];
-
-    const aiVerdict = (parseInt(institutionalCompetition) > 1000) 
-      ? "S등급: 압도적인 기관 수요예측 결과와 업종 성장성이 맞물려 적극 공모 참여를 추천합니다."
-      : "A등급: 안정적인 사업 구조를 가지고 있으나, 상장 당일 변동성이 클 수 있으므로 분할 매도를 권장합니다.";
-
     return {
       sector,
       ceo,
@@ -232,9 +215,6 @@ export async function scrape38Detail(id: string): Promise<Partial<IPO>> {
       netIncome,
       institutionalCompetition,
       lockupRatio,
-      investmentPoints,
-      riskFactors,
-      aiVerdict,
       ...(refundDate && { refundDate }),
       ...(listingDate && { listingDate }),
       ...(confirmedOfferingPrice > 0 && { offeringPrice: confirmedOfferingPrice }),

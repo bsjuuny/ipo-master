@@ -5,14 +5,10 @@ import {
   ArrowLeft, 
   BadgeCheck, 
   Info, 
-  Zap, 
-  AlertTriangle, 
   Building2, 
   Users, 
   Coins, 
   LineChart,
-  ShieldCheck,
-  Star
 } from 'lucide-react';
 import { IPO } from '@/types/ipo';
 import Link from 'next/link';
@@ -66,25 +62,6 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
         </div>
       </header>
 
-      {/* AI Verdict Card */}
-      <section className="glass-morphism overflow-hidden relative group">
-        <div className="absolute inset-0 bg-blue-600/5 blur-[100px] -z-10 group-hover:bg-indigo-600/10 transition-colors duration-700" />
-        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-all duration-700 group-hover:scale-110">
-          <Star className="h-32 w-32 text-blue-400 fill-blue-400" />
-        </div>
-        <div className="relative z-10 p-8 md:p-12 space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-blue-500/10 rounded-lg">
-              <Zap className="h-6 w-6 text-blue-400" />
-            </div>
-            <h2 className="text-xl font-black text-white uppercase tracking-tight">AI Master Verdict</h2>
-          </div>
-          <p className="text-2xl md:text-3xl font-bold text-slate-200 leading-tight">
-            &quot;{ipo.aiVerdict || '분석 데이터를 수집 중입니다. 잠시만 기다려 주세요.'}&quot;
-          </p>
-        </div>
-      </section>
-
       {/* Subscription Simulator */}
       <SubscriptionSimulator ipo={ipo} />
 
@@ -121,46 +98,6 @@ export default function IPODetailClient({ ipo }: IPODetailClientProps) {
             </div>
           </div>
 
-          {/* Investment Points & Risks */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-morphism p-8 space-y-6 border-rose-500/10">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 text-rose-400" />
-                <h3 className="text-lg font-black text-rose-400 uppercase tracking-tight">투자 포인트</h3>
-              </div>
-              <ul className="space-y-4">
-                {(ipo.investmentPoints || [
-                  "동종 업계 대비 높은 매출 성장세",
-                  "자체 원천 기술 기반의 시장 경쟁력",
-                  "주요 고객사와의 장기 공급 계약 체결"
-                ]).map((pt, i) => (
-                  <li key={i} className="flex gap-3 text-sm font-medium text-slate-300 leading-relaxed">
-                    <span className="text-rose-500 font-black">•</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="glass-morphism p-8 space-y-6 border-blue-500/10">
-              <div className="flex items-center gap-3">
-                <AlertTriangle className="h-5 w-5 text-blue-400" />
-                <h3 className="text-lg font-black text-blue-400 uppercase tracking-tight">리스크 요인</h3>
-              </div>
-              <ul className="space-y-4">
-                {(ipo.riskFactors || [
-                  "원자재 가격 상승에 따른 수익성 저하 리스크",
-                  "유통 가능 물량(오버행) 부담 존재",
-                  "글로벌 경쟁 심화에 따른 시장 점유율 하락 우려"
-                ]).map((rf, i) => (
-                  <li key={i} className="flex gap-3 text-sm font-medium text-slate-300 leading-relaxed">
-                    <span className="text-blue-500 font-black">•</span>
-                    {rf}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
 
         {/* Right Column: Company Info */}
