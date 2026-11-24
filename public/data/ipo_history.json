@@ -1,5 +1,14 @@
 [
   {
+    "companyName": "신영스팩12호",
+    "listingDate": "2026/12/03",
+    "offeringPrice": 2000,
+    "openingPrice": 0,
+    "closingPrice": 0,
+    "openingReturn": 0,
+    "closingReturn": 0
+  },
+  {
     "companyName": "유캐스트",
     "listingDate": "2026/11/30",
     "offeringPrice": 19000,
@@ -12,10 +21,10 @@
     "companyName": "엠비디",
     "listingDate": "2026/11/24",
     "offeringPrice": 7000,
-    "openingPrice": 0,
-    "closingPrice": 0,
-    "openingReturn": 0,
-    "closingReturn": 0
+    "openingPrice": 5930,
+    "closingPrice": 4230,
+    "openingReturn": -15.29,
+    "closingReturn": -39.57
   },
   {
     "companyName": "하나에어로다이내믹스",
@@ -349,14 +358,5 @@
     "closingPrice": 5140,
     "openingReturn": -14.29,
     "closingReturn": -26.57
-  },
-  {
-    "companyName": "에이치엘지노믹스",
-    "listingDate": "2026/07/24",
-    "offeringPrice": 21500,
-    "openingPrice": 21500,
-    "closingPrice": 14790,
-    "openingReturn": 0,
-    "closingReturn": -31.21
   }
 ]
